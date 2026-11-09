@@ -1,5 +1,6 @@
 // Frame-exact capture through headless Chrome. No npm packages (Node 22+). Run from the project folder.
 //   node tools/capture.mjs check                         boot, list shots + captions, report errors
+//   node tools/capture.mjs events                        per-shot camera move + ev() list; flags gaps of 4 s or more
 //   node tools/capture.mjs cues                          write data/cues.json (the sound cues, for tools/mix.py)
 //   node tools/capture.mjs sheet review/all.jpg [step=0.5] [cols=9]   contact sheet, a frame every `step` s, time-stamped
 //   node tools/capture.mjs frames review/full "1.2,8.4"  full-size JPEGs of those times
@@ -85,6 +86,19 @@ else {
       let bad = 0; for (let t = 0; t < dur; t += 0.25) { try { await P.ev(`OP.draw(${t})`); } catch (e) { bad++; console.log(`ERROR at ${t.toFixed(2)}: ${e.message.split('\n')[0]}`); } }
       if (P.logs.length) console.log(P.logs.join('\n'));
       console.log(bad || P.logs.length ? 'CHECK FAILED' : 'CHECK OK');
+    } else if (mode === 'events') {
+      // per shot: its camera move, whip, and every ev() with its time; flag any span of 4 s or more with no visual event
+      const shots = await P.ev('OP.shots()'), moves = await P.ev('OP.moves()'), evs = await P.ev('OP.events()'); let gaps = 0;
+      shots.forEach((s, i) => {
+        const m = moves[i], marks = [s.at, ...evs.filter((e) => e.t >= s.at && e.t < s.end).map((e) => e.t)];
+        if (m.snapAt != null) marks.push(m.snapAt);
+        marks.sort((a, b) => a - b); marks.push(s.end);
+        let worst = 0; for (let k = 1; k < marks.length; k++) worst = Math.max(worst, marks[k] - marks[k - 1]);
+        const flag = worst >= 4 ? '  <-- GAP ' + worst.toFixed(2) + ' s' : ''; if (flag) gaps++;
+        console.log(`${s.id.padEnd(6)} ${s.at.toFixed(2).padStart(7)}-${s.end.toFixed(2).padEnd(7)} cam=${m.move}${m.whip ? ' whip=' + m.whip : ''}${m.snapAt != null ? ' snap@' + m.snapAt.toFixed(2) : ''}${flag}`);
+        evs.filter((e) => e.t >= s.at && e.t < s.end).forEach((e) => console.log(`         ${e.t.toFixed(2).padStart(7)}  ${e.kind}${e.note ? '  ' + e.note : ''}`));
+      });
+      console.log(gaps ? `EVENTS: ${gaps} shot(s) with a gap of 4 s or more` : 'EVENTS OK: no gap of 4 s or more');
     } else if (mode === 'cues') {
       const cues = await P.ev('OP.cues()');
       fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });
