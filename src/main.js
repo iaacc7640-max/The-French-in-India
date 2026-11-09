@@ -21,13 +21,15 @@ function drawShot(i, t, ox = 0, oy = 0) {
   sh.draw(lt, d, t);
   ctx.restore(); ctx.globalAlpha = 1; ctx.letterSpacing = '0px';
 }
-/** whip pan: 6 sub-frame samples averaged (running mean) for directional motion blur */
-function whipBlur(i, t, dir, e0, e1, sign) {
-  const [vx, vy] = WHIP_DIR[dir] || [-1, 0], main = ctx; const N = 6;
+/** whip pan across the cut into shot j: both shots slide together (outgoing out, incoming in);
+ *  6 sub-frame samples spread over one frame's travel are averaged (running mean) for directional motion blur */
+function whipBlur(j, t, dir) {
+  const S = OP._shots, cutAt = S[j].at, [vx, vy] = WHIP_DIR[dir] || [-1, 0], main = ctx, N = 6, fr = 1 / 30;
   for (let k = 0; k < N; k++) {
-    const e = lerp(e0, e1, (k + 0.5) / N);
+    const tt = t + fr * ((k + 0.5) / N - 0.5), u = eio(clamp((tt - (cutAt - WHIP / 2)) / WHIP));
     setCtx(offCtx); offCtx.setTransform(1, 0, 0, 1, 0, 0); offCtx.fillStyle = '#000'; offCtx.fillRect(0, 0, W, H);
-    drawShot(i, t, sign * vx * W * e, sign * vy * H * e);
+    drawShot(j - 1, Math.min(t, cutAt - 1e-3), -vx * W * u, -vy * H * u);
+    drawShot(j, Math.max(t, cutAt), vx * W * (1 - u), vy * H * (1 - u));
     setCtx(main); main.globalAlpha = 1 / (k + 1); main.drawImage(off, 0, 0); main.globalAlpha = 1;
   }
 }
@@ -36,10 +38,10 @@ function draw(t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.letterSpacing = '0px';
   ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
   const S = OP._shots; let i = S.length - 1; while (i > 0 && S[i].at > t) i--;
-  const sh = S[i], next = S[i + 1], lt = t - sh.at, hw = WHIP / 2, fr = 1 / 30;
+  const sh = S[i], next = S[i + 1], lt = t - sh.at, hw = WHIP / 2;
   // a whip pan replaces every cross-fade: the outgoing shot slides out, the incoming slides in, both motion-blurred
-  if (next && next.whip && next.at - t < hw) { const a = 1 - (next.at - t) / hw; whipBlur(i, t, next.whip, eio(a) * 0.5, eio(clamp(a + fr / hw)) * 0.5, -1); }
-  else if (sh.whip && lt < hw) { const a = lt / hw; whipBlur(i, t, sh.whip, 0.5 - eio(a) * 0.5, 0.5 - eio(clamp(a + fr / hw)) * 0.5, 1); }
+  if (next && next.whip && next.at - t < hw) whipBlur(i + 1, t, next.whip);
+  else if (sh.whip && i > 0 && lt < hw) whipBlur(i, t, sh.whip);
   else drawShot(i, t);
   // era bar sits in screen space (outside the camera), so it never zooms or drifts
   if (sh.era != null) eraBar(sh.era, sh.eraP ? sh.eraP(lt) : 1);

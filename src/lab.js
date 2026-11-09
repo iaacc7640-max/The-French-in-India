@@ -22,7 +22,7 @@ export function buildShots(lab) {
     S.push({ id: 'KIT', at: 0, move: cam.drift(0), era: 5, draw(lt, d, t) {
       const v = A.realMap({ view: 'india', t });
       const fr = (n) => A.at(v, n);
-      A.inkBleed(...fr('Pondicherry'), 420, seg(lt, 0.3, 1.6), P.royal, { clipFn: A.landPath(v), seed: 2 });
+      A.inkBleed(...fr('Pondicherry'), 300, seg(lt, 0.3, 1.6), P.royal, { clipFn: A.landPath(v), seed: 2 });
       A.inkBleed(...fr('Calcutta'), 220, seg(lt, 0.8, 2.0), P.crimson, { clipFn: A.landPath(v), seed: 5 });
       A.krishna(v, seg(lt, 0, 1.2));
       A.supplyLine([fr('Calcutta'), [1330, 330], [1150, 560], fr('Madras')], { p: seg(lt, 1.5, 3), t });
@@ -30,10 +30,10 @@ export function buildShots(lab) {
       for (const n of ['Pondicherry', 'Chandernagore', 'Masulipatnam', 'Mahe', 'Karaikal', 'Yanam', 'Surat']) A.pin(...fr(n), 'french', { star: n === 'Pondicherry', sc: eob(seg(lt, 0.2, 0.5)) });
       for (const n of ['Madras', 'Fort St David', 'Calcutta', 'Bombay']) A.pin(...fr(n), 'english', { sc: eob(seg(lt, 0.4, 0.7)) });
       for (const n of ['Arcot', 'Ambur', 'Wandiwash', 'Trichinopoly', 'Hyderabad', 'Bijapur', 'Plassey']) { const [x, y] = fr(n); K.circle?.(x, y, 6, P.ink); ctx.beginPath(); ctx.arc(x, y, 6, 0, 7); ctx.fillStyle = P.ink; ctx.fill(); }
-      A.placeLabel('PONDICHERRY', ...fr('Pondicherry'), { dy: 40 }); A.placeLabel('MADRAS', ...fr('Madras'), { dy: -30 }); A.placeLabel('CALCUTTA', ...fr('Calcutta')); A.placeLabel('HYDERABAD', ...fr('Hyderabad'));
-      A.placeLabel('SURAT', ...fr('Surat')); A.placeLabel('MAHE', ...fr('Mahe'), { dy: 34 }); A.placeLabel('ARCOT', ...fr('Arcot'), { dy: -26, size: 20 }); A.placeLabel('WANDIWASH', ...fr('Wandiwash'), { dy: 26, size: 20 });
-      A.flag(...fr('Pondicherry'), t, A.FLAGS.french, { s: 0.6 });
-      A.statCard({ x: 1560, y: 520, from: fr('Madras'), title: 'Adyar', stats: ['~350 French + ~700 sepoys', 'vs ~10,000'], date: '24 Oct 1746', p: seg(lt, 3.2, 3.8), portrait: portrait('paradis'), hi: 1 });
+      A.placeLabel('PONDICHERRY', ...fr('Pondicherry'), { dx: 120, dy: 0, size: 22 }); A.placeLabel('MADRAS', ...fr('Madras'), { dx: 90, dy: 0, size: 22 }); A.placeLabel('CALCUTTA', ...fr('Calcutta')); A.placeLabel('HYDERABAD', ...fr('Hyderabad'));
+      A.placeLabel('SURAT', ...fr('Surat')); A.placeLabel('MAHE', ...fr('Mahe'), { dy: 34 }); A.placeLabel('ARCOT', ...fr('Arcot'), { dx: -60, dy: -18, size: 18 }); A.placeLabel('WANDIWASH', ...fr('Wandiwash'), { dx: -90, dy: 8, size: 18 });
+      A.flag(fr('Pondicherry')[0] + 40, fr('Pondicherry')[1] + 60, t, A.FLAGS.french, { s: 0.5 });
+      A.statCard({ x: 1500, y: 560, from: fr('Madras'), title: 'Adyar', stats: ['~350 French + ~700 sepoys', 'vs ~10,000'], date: '24 Oct 1746', p: seg(lt, 3.2, 3.8), portrait: portrait('paradis'), hi: 1 });
     } });
   }
   if (lab === 'chess') {

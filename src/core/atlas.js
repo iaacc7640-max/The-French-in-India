@@ -30,7 +30,7 @@ export const PLACES = {
 export const KRISHNA = [[73.6, 17.9], [74.6, 16.9], [75.7, 16.4], [76.6, 16.3], [77.6, 16.1], [78.3, 16.1], [79.2, 16.6], [80.1, 16.6], [80.6, 16.3], [81.1, 15.8]];
 /** map views: centre lon/lat and degrees of longitude across the frame */
 export const VIEWS = {
-  india: { lon: 83, lat: 15, deg: 34 },          // south India + Bengal, Bay of Bengal on the right for cards
+  india: { lon: 83, lat: 15.6, deg: 36 },          // south India + Bengal, Bay of Bengal on the right for cards
   south: { lon: 80.6, lat: 13.6, deg: 17 },      // the Carnatic + Hyderabad
   carnatic: { lon: 80.0, lat: 12.4, deg: 9 },    // Madras, Arcot, Ambur, Wandiwash, Pondicherry, Trichinopoly
   bengal: { lon: 87.5, lat: 22.0, deg: 9 },
@@ -81,8 +81,8 @@ export function pin(x, y, side = 'french', { sc = 1, star = false, glow = 0, r =
   ctx.restore();
 }
 /** a place label on a small paper slip so it reads over any colour (keep labels above y 840) */
-export function placeLabel(text, x, y, { size = 26, sc = 1, dy = -36, color = P.ink } = {}) {
-  if (sc <= 0) return; ctx.save(); ctx.translate(x, y + dy); ctx.scale(sc, sc);
+export function placeLabel(text, x, y, { size = 26, sc = 1, dy = -36, dx = 0, color = P.ink } = {}) {
+  if (sc <= 0) return; ctx.save(); ctx.translate(x + dx, y + dy); ctx.scale(sc, sc);
   ctx.font = `700 ${size}px ${SERIF}`; ctx.letterSpacing = '2px'; const w = ctx.measureText(text).width + 22;
   ctx.fillStyle = 'rgba(243,233,210,0.86)'; ctx.beginPath(); ctx.roundRect(-w / 2, -size * 0.62, w, size * 1.24, 4); ctx.fill();
   ctx.fillStyle = color; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 0, 1); ctx.letterSpacing = '0px'; ctx.restore();
@@ -120,7 +120,9 @@ export function inkBleed(cx, cy, R, p, color, { clipFn, seed = 1, alpha = 0.62 }
 /** a torn paper card popping from a map pin: { x, y (card centre), from: [px, py] pin, title, stats: [..1-3], date, portrait(fn at 0,0), p } */
 export function statCard(o) {
   const p = o.p ?? 1; if (p <= 0) return; const sc = eob(clamp(p / 0.6));
-  const w = o.w || 430, lines = o.stats || [], h = 112 + lines.length * 46 + (o.date ? 44 : 0);
+  const lines = o.stats || [], h = 112 + lines.length * 46 + (o.date ? 44 : 0);
+  ctx.font = `700 31px ${SERIF}`; const tw = Math.max(...lines.map((l) => ctx.measureText(l).width), 0); ctx.font = `700 40px ${SERIF}`;
+  const w = o.w || Math.max(300, Math.max(tw, ctx.measureText(o.title).width) + (o.portrait ? 150 : 70));
   if (o.from) { ctx.save(); ctx.globalAlpha = clamp(p * 2); ctx.setLineDash([6, 8]); line([o.from, [lerp(o.from[0], o.x, sc), lerp(o.from[1], o.y, sc)]], P.ink, 3); ctx.restore(); }
   ctx.save(); ctx.translate(o.x, o.y); ctx.scale(sc, sc); ctx.rotate(o.rot ?? -0.02);
   cut(() => { ctx.beginPath(); ctx.moveTo(-w / 2, -h / 2); for (let x = -w / 2; x <= w / 2; x += 20) ctx.lineTo(x, -h / 2 + (rnd(x + 3) - 0.5) * 8); for (let y = -h / 2; y <= h / 2; y += 20) ctx.lineTo(w / 2 + (rnd(y + 9) - 0.5) * 8, y); for (let x = w / 2; x >= -w / 2; x -= 20) ctx.lineTo(x, h / 2 + (rnd(x + 7) - 0.5) * 8); ctx.closePath(); }, '#F3E9D2', { shadow: 0.9, edge: 0 });
