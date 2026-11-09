@@ -129,3 +129,25 @@ export function crossedSwords(x, y, s = 1, strike = 0) {
   if (strike > 0) line([[-170, -110], [-170 + 340 * clamp(strike), -110 + 220 * clamp(strike)]], P.crimson, 16);
   ctx.restore();
 }
+
+/** floating dust motes: soft specks drifting slowly in the light (screen space, kept above the caption band, y < 830) */
+export function dustMotes(t, { n = 26, a = 1, seed = 3 } = {}) {
+  ctx.save();
+  for (let i = 0; i < n; i++) {
+    const sp = 6 + rnd(i * 3 + seed) * 14, x = ((rnd(i + seed) * (W + 200) + t * sp) % (W + 200)) - 100;
+    const y = 120 + ((rnd(i * 7 + seed) * 700 - t * (3 + rnd(i) * 6)) % 700 + 700) % 700 + Math.sin(t * 0.7 + i) * 10;
+    const r = 2 + rnd(i * 5 + seed) * 3.5; ctx.globalAlpha = a * (0.16 + 0.16 * Math.sin(t * 1.3 + i * 2) ** 2);
+    ctx.fillStyle = '#F7EFDC'; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill();
+  }
+  ctx.restore();
+}
+/** drifting smoke: soft grey paper puffs rising and fading from (x, y) (far battle smoke, told without violence) */
+export function smokeDrift(x, y, t, { s = 1, a = 0.6, seed = 1 } = {}) {
+  ctx.save();
+  for (let i = 0; i < 6; i++) {
+    const u = ((t * 0.18 + i / 6 + rnd(seed + i) * 0.1) % 1), r = (30 + u * 70) * s;
+    ctx.globalAlpha = a * Math.sin(Math.PI * u) * 0.7; ctx.fillStyle = i % 2 ? '#8F8578' : '#A39A8C';
+    ctx.beginPath(); ctx.arc(x + Math.sin(u * 3 + i) * 30 * s + u * 60 * s, y - u * 260 * s, r, 0, TAU); ctx.fill();
+  }
+  ctx.restore();
+}

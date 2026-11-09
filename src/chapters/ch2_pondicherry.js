@@ -4,7 +4,7 @@ import * as K from '../core/kit.js';
 import * as A from '../core/atlas.js';
 import * as R from '../core/props.js';
 import * as SC from '../core/scenes.js';
-import { person } from '../core/cast.js';
+import { person, portrait } from '../core/cast.js';
 import { cam } from '../core/motion.js';
 const { P } = K;
 
@@ -18,7 +18,7 @@ function beach(t, stake = 0) {
 
 export function build(X, C) {
   const ch = 2, era = C.era, sh = (o) => X.add({ chapter: ch, era, ...o });
-  X.amb(X.at('2.1'), X.end('2.3') + 0.2, 'sea', 0.9);
+  X.amb(X.at('2.1'), X.end('2.3') + 0.2, 'sea', 0.9); X.amb(X.at('2.1'), X.end('2.3') + 0.2, 'gulls', 0.8);
   { const st = X.at('2.1');
     sh({ id: 'Q01', at: st, move: cam.drift(0.03), note: 'Coromandel beach, waves, gulls; 1673', draw(lt, d, t) { beach(t); K.ribbon('1673', W / 2, 160, eob(seg(lt, 0.2, 0.6)), 80); } });
     X.ev(st + 0.2, 'ribbon', '1673'); X.ev(st + 1.0, 'flag', 'gulls', { sound: false }); }
@@ -30,7 +30,7 @@ export function build(X, C) {
     sh({ id: 'Q03', at: st, move: cam.push(0.06, [1080, 600]), note: 'a stake with a blue flag goes into the sand', draw(lt, d, t) { beach(t, seg(lt, si - 0.1, si + 0.3)); person('sherkhan', { x: 620, y: 760, h: 520, t, arm: 50 }); person('martin', { x: 980, y: 760, h: 500, t, dir: -1 }); K.slip('COROMANDEL COAST', 1400, 300, eob(seg(lt, co, co + 0.3)), 0.02, 36); } });
     X.ev(st + si + 0.2, 'drop', 'stake driven'); X.ev(st + co, 'slip', 'COROMANDEL COAST'); }
   { const st = X.at('2.4');
-    sh({ id: 'Q04', at: st, whip: 'down', move: cam.drift(0.03, [900, 520]), note: 'Pondicherry town grid draws itself; stat card', draw(lt, d, t) { K.parchment(65); SC.townGrid(820, 500, seg(lt, 0, 2.6)); A.statCard({ x: 1500, y: 420, title: 'Pondicherry', stats: ['French from 1674', 'capital of French India'], p: seg(lt, 1.2, 1.8) }); } });
+    sh({ id: 'Q04', at: st, whip: 'down', move: cam.drift(0.03, [900, 520]), note: 'Pondicherry town grid draws itself; stat card', draw(lt, d, t) { K.parchment(65); SC.townGrid(820, 500, seg(lt, 0, 2.6)); A.statCard({ x: 1500, y: 420, title: 'Pondicherry', stats: ['French from 1674', 'capital of French India'], p: seg(lt, 1.2, 1.8), portrait: portrait('martin') }); } });
     X.ev(st, 'route', 'streets draw', { dur: 2 }); X.ev(st + 1.2, 'card', 'Pondicherry card'); }
   { const st = X.at('2.5'), he = X.w('heart', '2.5') - st;
     sh({ id: 'Q05', at: st, move: cam.push(0.05, [900, 520]), note: 'Martin with his town plan; the star pin', draw(lt, d, t) { K.parchment(65); SC.townGrid(1180, 470, 1, { cols: 7, rows: 5, cell: 90 }); person('martin', { x: 480, y: 900, h: 640, t }); A.pin(1180, 470, 'french', { star: true, sc: eob(seg(lt, he, he + 0.3)), r: 26, glow: 1 }); } });
@@ -45,7 +45,7 @@ export function build(X, C) {
     sh({ id: 'Q08', at: st, move: cam.drift(0.03), note: 'calendar 1693 → 1699, treaty scroll, blue bleeds back', draw(lt, d, t) { K.parchment(65); SC.townGrid(820, 500, 1); A.inkBleed(820, 500, 520, 1 - seg(lt, tr + 0.4, tr + 1.4), '#D9792B', { seed: 6, alpha: 0.55 }); A.inkBleed(820, 500, 520, seg(lt, tr + 0.8, tr + 1.8), P.royal, { seed: 3, alpha: 0.4 }); SC.calendar(1520, 420, lt < tr ? '1693' : '1699', seg(lt, tr - 0.3, tr)); } });
     X.ev(st + tr - 0.3, 'page', 'calendar flips'); X.ev(st + tr + 0.4, 'ink', 'blue bleeds back'); }
   { const st = X.at('2.9'), tw = X.w('seventeen', '2.9') - st;
-    sh({ id: 'Q09', at: st, move: cam.push(0.05, [960, 500]), note: 'company hall, ledgers; seal "1720s"', draw(lt, d, t) { K.hall(); R.table(960, 760, 700, { h: 120, cloth: P.royal }); R.ledger(860, 735, 1.2); R.ledger(1100, 735, 1.0); person('director', { x: 500, y: 860, h: 560, t }); A.wordSeal('1720s', 1450, 420, eob(seg(lt, tw, tw + 0.3)) * 0.95, clamp((lt - tw) * 4), P.crimson, 40); } });
+    sh({ id: 'Q09', at: st, whip: 'right', move: cam.push(0.05, [960, 500]), note: 'company hall, ledgers; seal "1720s"', draw(lt, d, t) { K.hall(); R.table(960, 760, 700, { h: 120, cloth: P.royal }); R.ledger(860, 735, 1.2); R.ledger(1100, 735, 1.0); person('director', { x: 500, y: 860, h: 560, t }); A.wordSeal('1720s', 1450, 420, eob(seg(lt, tw, tw + 0.3)) * 0.95, clamp((lt - tw) * 4), P.crimson, 40); } });
     X.ev(st + tw, 'seal', '1720s'); X.ev(st + 0.3, 'light', 'hall', { sound: false }); }
   const ocean = (t, lt, { net = 0, lane = 0, pins = 0 } = {}) => {
     const v = A.realMap({ view: 'ocean', set: 'south_asia', also: ['indian_ocean'], t }), mu = A.proj(v, 57.55, -20.2), re = A.proj(v, 55.5, -21.1), pd = A.at(v, 'Pondicherry');

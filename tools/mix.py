@@ -166,7 +166,12 @@ def amb_gen(name, d):
             i = int(k * beat * SR); h = np.sin(2 * np.pi * 55 * tt(0.4)) * env(int(0.4 * SR), 0.01, 6)
             if i + len(h) < n: x[i:i + len(h)] += h
     elif name == 'rain': x = bp(noise(d), 800, 4200) * 0.5 + lp(noise(d), 200) * 0.3
-    elif name == 'gulls': x = lp(noise(d), 600) * 0.6
+    elif name == 'gulls':
+        x = lp(noise(d), 600) * 0.4
+        for k in range(int(d * 0.8)):
+            i = rng.integers(0, max(1, n - SR)); c = sweep(1400, 900, 0.25) * env(int(0.25 * SR), 0.02, 3); x[i:i + len(c)] += c * 1.2
+            if i + len(c) * 2 < n: x[i + len(c):i + 2 * len(c)] += c * 0.8
+    elif name == 'crowd': x = bp(noise(d), 200, 900) * (0.7 + 0.3 * lp(rng.standard_normal(n), 2) / 0.05).clip(0, 1.5) * 0.7
     elif name == 'market':
         x = bp(noise(d), 300, 1500) * (0.6 + 0.4 * lp(rng.standard_normal(n), 4) / 0.05).clip(0, 2)
     elif name == 'sea': x = lp(noise(d), 600) * (0.5 + 0.5 * np.sin(2 * np.pi * t / 4.0) ** 2)

@@ -3,7 +3,7 @@ import { ctx, W, H, clamp, seg, eo, eob, eio, lerp } from '../core/lib.js';
 import * as K from '../core/kit.js';
 import * as A from '../core/atlas.js';
 import * as R from '../core/props.js';
-import { person } from '../core/cast.js';
+import { person, portrait } from '../core/cast.js';
 import { cam } from '../core/motion.js';
 const { P } = K;
 
@@ -80,13 +80,13 @@ export function build(X, C) {
       A.pin(...at('Pondicherry'), 'french', { star: true }); A.pin(...at('Madras'), 'english'); A.placeLabel('PONDICHERRY', ...at('Pondicherry'), { dx: 150, dy: 0, size: 24 }); A.placeLabel('MADRAS', ...at('Madras'), { dx: 100, dy: 0, size: 24 });
       const [ax, ay] = at('Ambur'); A.pin(ax, ay, 'nawab', { sc: eob(seg(lt, am - 0.2, am + 0.1)), r: 16 }); A.placeLabel('AMBUR', ax, ay, { sc: eob(seg(lt, am, am + 0.3)), size: 28 });
       A.flag(ax - 70, ay + 10, t, A.FLAGS.nawab, { s: 0.7 }); A.flag(ax + 30, ay + 10, t, A.FLAGS.french, { s: 0.7, seed: 2 });
-      A.statCard({ x: 1460, y: 330, from: [ax, ay], title: 'Ambur', stats: ['Nawab Anwar-ud-din killed'], date: '1749', p: seg(lt, am + 0.6, am + 1.2) });
+      A.statCard({ x: 1460, y: 330, from: [ax, ay], title: 'Ambur', stats: ['Nawab Anwar-ud-din killed'], date: '1749', p: seg(lt, am + 0.6, am + 1.2), portrait: portrait('nawab') }); R.smokeDrift(ax + 20, ay - 20, t, { s: 0.6, a: 0.5 });
       K.ribbon('1749', 760, 170, eob(seg(lt, 0.2, 0.6)), 80);
     } });
     X.ev(st + 0.2, 'ribbon', '1749'); X.ev(st + am - 0.2, 'pop', 'Ambur pin'); X.ev(st + am + 0.6, 'card', 'Ambur stat card'); X.cue(st, 'drums', { dur: 4.0, gain: 0.6 }); }
   // 4.9 · a green king falls slowly; cut-in: a turban resting on an empty saddle (serious, no sting)
   { const st = X.at('4.9'), ki = X.w('killed', '4.9') - st;
-    sh({ id: 'K09', at: st, move: cam.push(0.06, [1120, 470]), note: 'Anwar-ud-din king falls slowly → turban on an empty saddle', draw(lt, d, t) {
+    sh({ id: 'K09', at: st, whip: 'down', move: cam.push(0.06, [1120, 470]), note: 'Anwar-ud-din king falls slowly → turban on an empty saddle', draw(lt, d, t) {
       if (lt < ki + 0.1) { const sq = boardOver(t); pieces(sq, lt, { fall: seg(lt, 0.2, ki) }); }
       else { K.parchment(47); ctx.save(); ctx.globalAlpha = 0.25; ctx.fillStyle = '#2F3550'; ctx.fillRect(-300, -300, W + 600, H + 600); ctx.restore(); R.emptySaddle(W / 2 - 60, 830, t, { s: 1.15, turban: P.gold }); K.slip('AMBUR · 1749', W / 2, 190, 1, -0.02, 40); }
     } });
@@ -117,7 +117,7 @@ export function build(X, C) {
     X.ev(st + pa, 'coin', 'purse passes'); }
   // 4.13 · Dupleix holding the crowned king
   { const st = X.at('4.13'), br = X.w('brilliant', '4.13') - st;
-    sh({ id: 'K13', at: st, move: cam.drift(0.03, [900, 460]), note: 'Dupleix holds the crowned king; gold glint', draw(lt, d, t) {
+    sh({ id: 'K13', at: st, whip: 'left', move: cam.drift(0.03, [900, 460]), note: 'Dupleix holds the crowned king; gold glint', draw(lt, d, t) {
       study(t); person('dupleix', { x: 820, y: 940, h: 700, t, arm: 95 });
       const g = Math.exp(-((lt - br) ** 2) * 18); if (g > 0.02) { ctx.save(); ctx.globalAlpha = g; K.cut(K.P_poly([[1010, 260], [1022, 290], [1052, 302], [1022, 314], [1010, 344], [998, 314], [968, 302], [998, 290]]), '#F2C14E', { shadow: 0, edge: 2 }); ctx.restore(); }
     } });

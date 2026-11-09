@@ -1,259 +1,286 @@
 {
- "duration": 348.938,
+ "duration": 364.491,
  "cues": [
   {
    "t": 0,
    "type": "amb",
    "name": "wind",
-   "dur": 13.616,
+   "dur": 18.542,
    "gain": 0.6
   },
   {
-   "t": 0.6,
+   "t": 0.05,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 1,
+   "type": "pop"
+  },
+  {
+   "t": 4.1,
+   "type": "thud"
+  },
+  {
+   "t": 4.7,
+   "type": "pop"
+  },
+  {
+   "t": 5.197,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 5.947,
    "type": "parchment"
   },
   {
-   "t": 1.2,
+   "t": 6.547,
    "type": "drums",
    "dur": 3,
    "gain": 0.45
   },
   {
-   "t": 2.3,
+   "t": 7.647,
    "type": "pop"
   },
   {
-   "t": 5.74,
+   "t": 10.66,
    "type": "pop"
   },
   {
-   "t": 5.98,
+   "t": 10.9,
    "type": "snapthump"
   },
   {
-   "t": 6.49,
+   "t": 11.41,
    "type": "parchment"
   },
   {
-   "t": 7.27,
+   "t": 12.197,
    "type": "whoosh",
    "gain": 0.5
   },
   {
-   "t": 8.279,
+   "t": 13.206,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 8.429,
+   "t": 13.356,
    "type": "amb",
    "name": "room",
-   "dur": 5.087,
+   "dur": 5.086,
    "gain": 0.5
   },
   {
-   "t": 8.479,
+   "t": 13.406,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 8.929,
+   "t": 13.856,
    "type": "pop"
   },
   {
-   "t": 12.6,
+   "t": 15.256,
+   "type": "swell",
+   "gain": 0.35
+  },
+  {
+   "t": 17.54,
    "type": "snapthump"
   },
   {
-   "t": 12.66,
+   "t": 17.6,
    "type": "click"
   },
   {
-   "t": 13.336,
+   "t": 18.262,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 13.486,
+   "t": 18.412,
    "type": "amb",
    "name": "street",
    "dur": 7.435,
    "gain": 0.6
   },
   {
-   "t": 13.536,
+   "t": 18.462,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 13.786,
+   "t": 18.712,
    "type": "parchment"
   },
   {
-   "t": 16.32,
+   "t": 21.26,
    "type": "snapthump"
   },
   {
-   "t": 16.38,
+   "t": 21.32,
    "type": "puff"
   },
   {
-   "t": 16.88,
+   "t": 21.82,
    "type": "waxthud"
   },
   {
-   "t": 16.93,
+   "t": 21.87,
    "type": "gavel"
   },
   {
-   "t": 17.78,
+   "t": 22.72,
    "type": "door",
    "gain": 0.8
   },
   {
-   "t": 19.646,
+   "t": 24.572,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 19.746,
+   "t": 24.672,
    "type": "pop"
   },
   {
-   "t": 20.741,
+   "t": 25.667,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 20.891,
+   "t": 25.817,
    "type": "amb",
    "name": "wind",
-   "dur": 8.641,
+   "dur": 8.515,
    "gain": 0.5
   },
   {
-   "t": 22.091,
+   "t": 26.217,
+   "type": "brush",
+   "gain": 0.35
+  },
+  {
+   "t": 27.017,
    "type": "pop",
    "gain": 0.4
   },
   {
-   "t": 23.631,
+   "t": 27.347,
    "type": "brush"
   },
   {
-   "t": 25.115,
+   "t": 29.915,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 26.18,
+   "t": 30.98,
    "type": "pop"
   },
   {
-   "t": 26.83,
+   "t": 31.63,
    "type": "quill"
   },
   {
-   "t": 28.06,
+   "t": 32.86,
    "type": "snapthump"
   },
   {
-   "t": 28.12,
+   "t": 32.92,
    "type": "quill"
   },
   {
-   "t": 29.052,
+   "t": 33.852,
    "type": "sting"
   },
   {
-   "t": 29.102,
+   "t": 33.902,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 29.302,
+   "t": 34.102,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 29.302,
+   "t": 34.102,
    "type": "pageturn"
   },
   {
-   "t": 30.102,
+   "t": 34.352,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 34.352,
+   "type": "amb",
+   "name": "wind",
+   "dur": 1.5,
+   "gain": 0.55
+  },
+  {
+   "t": 34.902,
    "type": "waxthud"
   },
   {
-   "t": 30.702,
+   "t": 35.502,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 30.852,
+   "t": 35.652,
    "type": "amb",
    "name": "sea",
    "dur": 4.756,
    "gain": 0.5
   },
   {
-   "t": 31.002,
+   "t": 35.802,
    "type": "flutter"
   },
   {
-   "t": 31.302,
+   "t": 36.102,
    "type": "flutter"
   },
   {
-   "t": 31.602,
+   "t": 36.402,
    "type": "flutter"
   },
   {
-   "t": 31.902,
+   "t": 36.702,
    "type": "flutter"
   },
   {
-   "t": 33.852,
+   "t": 38.652,
    "type": "quill"
   },
   {
-   "t": 34.74,
+   "t": 39.54,
    "type": "snapthump"
   },
   {
-   "t": 34.8,
+   "t": 39.6,
    "type": "flutter"
   },
   {
-   "t": 35.428,
+   "t": 40.228,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 35.578,
+   "t": 40.378,
    "type": "amb",
    "name": "court",
-   "dur": 11.247,
+   "dur": 12.071,
    "gain": 0.8
   },
   {
-   "t": 35.628,
-   "type": "swell",
-   "gain": 0.5
-  },
-  {
-   "t": 35.778,
-   "type": "parchment"
-  },
-  {
-   "t": 36.778,
-   "type": "pop"
-  },
-  {
-   "t": 39.26,
-   "type": "pop"
-  },
-  {
-   "t": 40.528,
+   "t": 40.428,
    "type": "swell",
    "gain": 0.5
   },
@@ -262,1545 +289,2076 @@
    "type": "parchment"
   },
   {
-   "t": 43.36,
-   "type": "snapthump"
-  },
-  {
-   "t": 43.42,
-   "type": "waxthud"
-  },
-  {
-   "t": 46.645,
-   "type": "whoosh",
-   "gain": 0.8
-  },
-  {
-   "t": 47.195,
-   "type": "coins"
-  },
-  {
-   "t": 49.195,
-   "type": "coins",
-   "gain": 0.5
-  },
-  {
-   "t": 50.3,
-   "type": "snapthump"
-  },
-  {
-   "t": 50.36,
+   "t": 41.578,
    "type": "pop"
   },
   {
-   "t": 51.26,
-   "type": "whoosh",
-   "gain": 0.8
+   "t": 44.88,
+   "type": "pop"
   },
   {
-   "t": 51.46,
+   "t": 46.148,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 53.338,
+   "t": 46.198,
+   "type": "parchment"
+  },
+  {
+   "t": 48.96,
+   "type": "snapthump"
+  },
+  {
+   "t": 49.02,
+   "type": "waxthud"
+  },
+  {
+   "t": 52.269,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 52.519,
+   "type": "amb",
+   "name": "rain",
+   "dur": 4.8,
+   "gain": 0.55
+  },
+  {
+   "t": 52.819,
+   "type": "coins"
+  },
+  {
+   "t": 54.819,
+   "type": "coins",
+   "gain": 0.5
+  },
+  {
+   "t": 55.94,
+   "type": "snapthump"
+  },
+  {
+   "t": 56,
+   "type": "pop"
+  },
+  {
+   "t": 56.884,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 57.034,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.2,
+   "gain": 0.55
+  },
+  {
+   "t": 57.084,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 57.134,
+   "type": "swell",
+   "gain": 0.35
+  },
+  {
+   "t": 58.812,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 58.962,
    "type": "amb",
    "name": "sea",
    "dur": 4.64,
    "gain": 0.7
   },
   {
-   "t": 53.538,
+   "t": 59.162,
    "type": "parchment"
   },
   {
-   "t": 54.338,
+   "t": 59.962,
    "type": "pop"
   },
   {
-   "t": 57.32,
+   "t": 62.92,
    "type": "pop"
   },
   {
-   "t": 58.008,
+   "t": 63.632,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 58.158,
+   "t": 63.782,
    "type": "amb",
    "name": "court",
    "dur": 7.79,
    "gain": 0.8
   },
   {
-   "t": 58.208,
+   "t": 63.832,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 59.558,
+   "t": 65.182,
    "type": "pop"
   },
   {
-   "t": 61.72,
+   "t": 67.36,
    "type": "pop"
   },
   {
-   "t": 62.485,
+   "t": 68.109,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 62.535,
+   "t": 68.159,
    "type": "parchment"
   },
   {
-   "t": 65.2,
+   "t": 70.82,
    "type": "waxthud"
   },
   {
-   "t": 65.878,
+   "t": 71.502,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 66.128,
+   "t": 71.652,
+   "type": "amb",
+   "name": "court",
+   "dur": 2.7,
+   "gain": 0.55
+  },
+  {
+   "t": 71.752,
    "type": "quill"
   },
   {
-   "t": 67.2,
+   "t": 72.8,
    "type": "pop"
   },
   {
-   "t": 68.616,
+   "t": 74.14,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.6,
+   "gain": 0.55
+  },
+  {
+   "t": 74.24,
    "type": "pop",
    "gain": 0.4
   },
   {
-   "t": 68.916,
+   "t": 74.54,
    "type": "pop"
   },
   {
-   "t": 70.905,
+   "t": 76.479,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.6,
+   "gain": 0.55
+  },
+  {
+   "t": 76.529,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 73.031,
+   "t": 76.979,
+   "type": "swell",
+   "gain": 0.35
+  },
+  {
+   "t": 78.655,
    "type": "sting"
   },
   {
-   "t": 73.081,
+   "t": 78.705,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 73.281,
+   "t": 78.855,
+   "type": "amb",
+   "name": "wind",
+   "dur": 1.9,
+   "gain": 0.55
+  },
+  {
+   "t": 78.905,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 73.281,
+   "t": 78.905,
    "type": "pageturn"
   },
   {
-   "t": 74.081,
+   "t": 79.155,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 79.705,
    "type": "waxthud"
   },
   {
-   "t": 74.681,
+   "t": 80.305,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 74.831,
+   "t": 80.455,
    "type": "amb",
    "name": "sea",
    "dur": 10.465,
    "gain": 0.9
   },
   {
-   "t": 75.031,
+   "t": 80.455,
+   "type": "amb",
+   "name": "gulls",
+   "dur": 10.465,
+   "gain": 0.8
+  },
+  {
+   "t": 80.655,
    "type": "parchment"
   },
   {
-   "t": 77.231,
+   "t": 81.455,
+   "type": "flutter",
+   "gain": 0.35
+  },
+  {
+   "t": 82.855,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 77.381,
+   "t": 83.005,
    "type": "pop"
   },
   {
-   "t": 78.681,
+   "t": 84.305,
    "type": "pop"
   },
   {
-   "t": 80.76,
+   "t": 86.38,
    "type": "pop"
   },
   {
-   "t": 82.081,
+   "t": 87.705,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 83.02,
+   "t": 88.66,
    "type": "thud"
   },
   {
-   "t": 83.94,
+   "t": 89.44,
    "type": "pop"
   },
   {
-   "t": 85.116,
+   "t": 90.74,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 85.266,
+   "t": 90.89,
    "type": "quill",
    "dur": 2
   },
   {
-   "t": 86.466,
+   "t": 90.99,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.4,
+   "gain": 0.55
+  },
+  {
+   "t": 92.09,
    "type": "parchment"
   },
   {
-   "t": 88.526,
+   "t": 94.1,
+   "type": "amb",
+   "name": "wind",
+   "dur": 4.3,
+   "gain": 0.55
+  },
+  {
+   "t": 94.15,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 90.68,
+   "t": 94.6,
+   "type": "swell",
+   "gain": 0.35
+  },
+  {
+   "t": 96.32,
    "type": "pop"
   },
   {
-   "t": 92.351,
+   "t": 97.975,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 93.54,
+   "t": 98.125,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.5,
+   "gain": 0.55
+  },
+  {
+   "t": 99.16,
    "type": "whoosh"
   },
   {
-   "t": 95.56,
+   "t": 101.184,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 95.71,
+   "t": 101.334,
    "type": "drums",
    "dur": 2.5,
    "gain": 0.5
   },
   {
-   "t": 95.76,
+   "t": 101.334,
+   "type": "amb",
+   "name": "wind",
+   "dur": 4.4,
+   "gain": 0.55
+  },
+  {
+   "t": 101.384,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 95.91,
+   "t": 101.534,
    "type": "parchment"
   },
   {
-   "t": 97.72,
+   "t": 103.5,
    "type": "brush"
   },
   {
-   "t": 100.28,
+   "t": 105.434,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.9,
+   "gain": 0.55
+  },
+  {
+   "t": 106.04,
    "type": "pageturn"
   },
   {
-   "t": 100.98,
+   "t": 106.74,
    "type": "brush"
   },
   {
-   "t": 102.432,
-   "type": "swell",
-   "gain": 0.5
-  },
-  {
-   "t": 104.32,
-   "type": "waxthud"
-  },
-  {
-   "t": 105.757,
+   "t": 107.942,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 105.907,
+   "t": 108.092,
+   "type": "amb",
+   "name": "sea",
+   "dur": 3.8,
+   "gain": 0.55
+  },
+  {
+   "t": 108.142,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 108.392,
+   "type": "swell",
+   "gain": 0.35
+  },
+  {
+   "t": 110.02,
+   "type": "waxthud"
+  },
+  {
+   "t": 111.468,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 111.618,
    "type": "amb",
    "name": "sea",
    "dur": 9.951,
    "gain": 0.8
   },
   {
-   "t": 106.4,
+   "t": 112.12,
    "type": "pop"
   },
   {
-   "t": 110.06,
+   "t": 115.74,
    "type": "pop"
   },
   {
-   "t": 111.32,
+   "t": 117.02,
    "type": "quill"
   },
   {
-   "t": 112.335,
+   "t": 118.046,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 112.685,
+   "t": 118.396,
    "type": "pop"
   },
   {
-   "t": 115.06,
+   "t": 120.78,
    "type": "snapthump"
   },
   {
-   "t": 115.12,
+   "t": 120.84,
    "type": "flutter"
   },
   {
-   "t": 115.578,
+   "t": 121.289,
    "type": "sting"
   },
   {
-   "t": 115.628,
+   "t": 121.339,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 115.828,
+   "t": 121.539,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 115.828,
+   "t": 121.539,
    "type": "pageturn"
   },
   {
-   "t": 116.628,
+   "t": 121.589,
+   "type": "amb",
+   "name": "wind",
+   "dur": 1.8,
+   "gain": 0.55
+  },
+  {
+   "t": 121.789,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 122.339,
    "type": "waxthud"
   },
   {
-   "t": 117.228,
+   "t": 122.939,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 117.478,
+   "t": 123.089,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.9,
+   "gain": 0.55
+  },
+  {
+   "t": 123.189,
    "type": "parchment"
   },
   {
-   "t": 120.3,
+   "t": 126.1,
    "type": "whoosh"
   },
   {
-   "t": 120.854,
+   "t": 126.615,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 121.004,
+   "t": 126.765,
    "type": "amb",
    "name": "sea",
-   "dur": 6.959,
+   "dur": 6.958,
    "gain": 0.8
   },
   {
-   "t": 121.054,
+   "t": 126.815,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 121.204,
+   "t": 126.965,
    "type": "pop"
   },
   {
-   "t": 123.36,
+   "t": 129.12,
    "type": "pop"
   },
   {
-   "t": 124.374,
+   "t": 130.135,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 124.524,
+   "t": 130.285,
    "type": "quill"
   },
   {
-   "t": 126.28,
+   "t": 132.04,
    "type": "snapthump"
   },
   {
-   "t": 126.34,
+   "t": 132.1,
    "type": "brush"
   },
   {
-   "t": 127.783,
+   "t": 133.543,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 127.933,
+   "t": 133.693,
    "type": "amb",
    "name": "court",
-   "dur": 5.361,
+   "dur": 5.362,
    "gain": 0.6
   },
   {
-   "t": 128.48,
+   "t": 134.24,
    "type": "parchment"
   },
   {
-   "t": 129.133,
+   "t": 134.893,
    "type": "pop"
   },
   {
-   "t": 132.52,
+   "t": 138.28,
    "type": "snapthump"
   },
   {
-   "t": 132.58,
+   "t": 138.34,
    "type": "pop"
   },
   {
-   "t": 133.164,
+   "t": 138.925,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 133.314,
+   "t": 139.075,
    "type": "drums",
    "dur": 3,
    "gain": 0.55
   },
   {
-   "t": 133.364,
+   "t": 139.075,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.1,
+   "gain": 0.55
+  },
+  {
+   "t": 139.125,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 134.32,
+   "t": 140.08,
    "type": "flutter"
   },
   {
-   "t": 136.051,
+   "t": 141.812,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 136.201,
+   "t": 141.962,
    "type": "amb",
    "name": "sea",
    "dur": 7.77,
    "gain": 0.5
   },
   {
-   "t": 136.251,
+   "t": 142.012,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 136.58,
+   "t": 142.28,
    "type": "parchment"
   },
   {
-   "t": 138.701,
+   "t": 144.462,
    "type": "pop",
    "gain": 0.4
   },
   {
-   "t": 141.16,
+   "t": 146.92,
    "type": "pop"
   },
   {
-   "t": 141.5,
+   "t": 147.26,
    "type": "snapthump"
   },
   {
-   "t": 141.86,
+   "t": 147.62,
    "type": "parchment"
   },
   {
-   "t": 143.34,
+   "t": 149.1,
    "type": "whoosh",
    "gain": 0.5
   },
   {
-   "t": 143.791,
+   "t": 149.552,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 144.241,
+   "t": 149.802,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.5,
+   "gain": 0.55
+  },
+  {
+   "t": 150.002,
    "type": "flutter"
   },
   {
-   "t": 146.42,
+   "t": 152.18,
    "type": "pop"
   },
   {
-   "t": 147.321,
+   "t": 153.032,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.7,
+   "gain": 0.55
+  },
+  {
+   "t": 153.082,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 148.04,
+   "t": 153.8,
    "type": "waxthud"
   },
   {
-   "t": 150.561,
+   "t": 156.322,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 150.76,
+   "t": 156.472,
+   "type": "amb",
+   "name": "wind",
+   "dur": 4.7,
+   "gain": 0.55
+  },
+  {
+   "t": 156.5,
    "type": "parchment"
   },
   {
-   "t": 153.42,
+   "t": 159.2,
    "type": "brush"
   },
   {
-   "t": 154.975,
+   "t": 160.736,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 155.125,
+   "t": 160.886,
    "type": "amb",
    "name": "room",
    "dur": 3.26,
    "gain": 0.5
   },
   {
-   "t": 155.175,
+   "t": 160.936,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 156.725,
+   "t": 161.386,
+   "type": "swell",
+   "gain": 0.35
+  },
+  {
+   "t": 162.486,
    "type": "click",
    "gain": 0.4
   },
   {
-   "t": 158.005,
+   "t": 163.766,
    "type": "sting"
   },
   {
-   "t": 158.055,
+   "t": 163.816,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 158.205,
+   "t": 163.966,
    "type": "amb",
    "name": "room",
    "dur": 10.54,
    "gain": 0.5
   },
   {
-   "t": 158.255,
+   "t": 164.016,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 158.255,
+   "t": 164.016,
    "type": "pageturn"
   },
   {
-   "t": 159.055,
+   "t": 164.266,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 164.816,
    "type": "waxthud"
   },
   {
-   "t": 159.655,
+   "t": 165.416,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 159.855,
+   "t": 165.616,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 160.105,
+   "t": 165.866,
    "type": "whoosh",
    "gain": 0.35
   },
   {
-   "t": 160.805,
+   "t": 166.566,
    "type": "pop"
   },
   {
-   "t": 162.615,
+   "t": 168.376,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 164.345,
+   "t": 168.526,
+   "type": "swell",
+   "gain": 0.35
+  },
+  {
+   "t": 170.106,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 164.495,
+   "t": 170.256,
    "type": "amb",
    "name": "pulse",
    "dur": 14.129,
    "gain": 0.4
   },
   {
-   "t": 164.595,
+   "t": 170.356,
    "type": "brush"
   },
   {
-   "t": 167.04,
+   "t": 172.8,
    "type": "snapthump"
   },
   {
-   "t": 167.1,
+   "t": 172.86,
    "type": "click"
   },
   {
-   "t": 170.3,
+   "t": 176.06,
    "type": "click"
   },
   {
-   "t": 171.64,
+   "t": 177.4,
    "type": "click"
   },
   {
-   "t": 172.825,
+   "t": 178.586,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 173.64,
+   "t": 179.4,
    "type": "click"
   },
   {
-   "t": 176.465,
+   "t": 182.226,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 177.12,
+   "t": 182.88,
    "type": "click"
   },
   {
-   "t": 178.344,
+   "t": 184.105,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 178.494,
+   "t": 184.255,
    "type": "drums",
    "dur": 4,
    "gain": 0.6
   },
   {
-   "t": 178.544,
+   "t": 184.305,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 178.694,
+   "t": 184.455,
    "type": "parchment"
   },
   {
-   "t": 180.24,
+   "t": 184.455,
+   "type": "amb",
+   "name": "wind",
+   "dur": 4.7,
+   "gain": 0.55
+  },
+  {
+   "t": 186.2,
    "type": "pop"
   },
   {
-   "t": 181.04,
+   "t": 187,
    "type": "parchment"
   },
   {
-   "t": 182.954,
+   "t": 188.715,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 188.865,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.8,
+   "gain": 0.55
+  },
+  {
+   "t": 188.915,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 183.104,
+   "t": 189.065,
    "type": "thud",
    "gain": 0.5
   },
   {
-   "t": 185.297,
+   "t": 190.82,
+   "type": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 191.226,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 185.547,
+   "t": 191.376,
+   "type": "amb",
+   "name": "sea",
+   "dur": 5.3,
+   "gain": 0.55
+  },
+  {
+   "t": 191.476,
    "type": "quill",
    "dur": 1.2
   },
   {
-   "t": 187.36,
+   "t": 193.3,
    "type": "waxthud"
   },
   {
-   "t": 189.46,
+   "t": 195.38,
    "type": "brush"
   },
   {
-   "t": 190.337,
+   "t": 196.266,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 190.487,
+   "t": 196.416,
    "type": "amb",
    "name": "court",
    "dur": 6.085,
    "gain": 0.7
   },
   {
-   "t": 190.537,
+   "t": 196.466,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 190.687,
+   "t": 196.616,
    "type": "pop"
   },
   {
-   "t": 191.96,
+   "t": 197.88,
    "type": "pop"
   },
   {
-   "t": 194.317,
+   "t": 200.246,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 194.36,
+   "t": 200.28,
    "type": "coins"
   },
   {
-   "t": 197.14,
+   "t": 202.321,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 202.571,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.3,
+   "gain": 0.55
+  },
+  {
+   "t": 203.04,
+   "type": "swell",
+   "gain": 0.35
+  },
+  {
+   "t": 203.04,
    "type": "sparkle",
    "dur": 0.6,
    "gain": 0.4
   },
   {
-   "t": 198.523,
+   "t": 204.452,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 198.673,
+   "t": 204.602,
    "type": "amb",
    "name": "room",
    "dur": 3.964,
    "gain": 0.5
   },
   {
-   "t": 198.873,
+   "t": 204.802,
    "type": "pop"
   },
   {
-   "t": 200.28,
+   "t": 206.18,
    "type": "snapthump"
   },
   {
-   "t": 200.34,
+   "t": 206.24,
    "type": "pop",
    "gain": 0.5
   },
   {
-   "t": 202.257,
+   "t": 208.186,
    "type": "sting"
   },
   {
-   "t": 202.307,
+   "t": 208.236,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 202.507,
+   "t": 208.436,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 202.507,
+   "t": 208.436,
    "type": "pageturn"
   },
   {
-   "t": 203.307,
+   "t": 208.586,
+   "type": "amb",
+   "name": "room",
+   "dur": 1.7,
+   "gain": 0.55
+  },
+  {
+   "t": 208.686,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 209.236,
    "type": "waxthud"
   },
   {
-   "t": 203.907,
+   "t": 209.836,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 204.257,
+   "t": 209.986,
+   "type": "amb",
+   "name": "room",
+   "dur": 3.9,
+   "gain": 0.55
+  },
+  {
+   "t": 210.186,
    "type": "parchment"
   },
   {
-   "t": 206.9,
+   "t": 212.84,
    "type": "snapthump"
   },
   {
-   "t": 206.96,
+   "t": 212.9,
    "type": "thud"
   },
   {
-   "t": 207.26,
+   "t": 213.2,
    "type": "pop"
   },
   {
-   "t": 207.597,
+   "t": 213.526,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 207.747,
+   "t": 213.676,
    "type": "amb",
    "name": "rain",
    "dur": 7.281,
    "gain": 1
   },
   {
-   "t": 207.797,
+   "t": 213.726,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 207.947,
+   "t": 213.876,
    "type": "quill"
   },
   {
-   "t": 208.947,
+   "t": 214.876,
    "type": "thunder",
    "gain": 0.6
   },
   {
-   "t": 210.64,
+   "t": 216.58,
    "type": "parchment"
   },
   {
-   "t": 212.087,
+   "t": 218.016,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 212.287,
+   "t": 218.216,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 212.337,
+   "t": 218.266,
    "type": "tock",
    "gain": 0.5
   },
   {
-   "t": 213.237,
+   "t": 219.16,
+   "type": "waxthud"
+  },
+  {
+   "t": 219.166,
    "type": "thunder",
    "gain": 0.7
   },
   {
-   "t": 213.24,
-   "type": "waxthud"
-  },
-  {
-   "t": 214.748,
+   "t": 220.677,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 216.92,
+   "t": 221.027,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.5,
+   "gain": 0.55
+  },
+  {
+   "t": 222.84,
    "type": "click"
   },
   {
-   "t": 218.42,
+   "t": 224.299,
+   "type": "amb",
+   "name": "wind",
+   "dur": 6.1,
+   "gain": 0.55
+  },
+  {
+   "t": 224.349,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 221.42,
+   "t": 224.499,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 227.48,
    "type": "click",
    "gain": 0.4
   },
   {
-   "t": 223.944,
+   "t": 230.01,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 224.094,
+   "t": 230.16,
    "type": "amb",
    "name": "street",
-   "dur": 5.925,
+   "dur": 5.924,
    "gain": 0.5
   },
   {
-   "t": 224.144,
+   "t": 230.21,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 224.394,
+   "t": 230.46,
    "type": "quill",
    "dur": 2.2
   },
   {
-   "t": 224.8,
+   "t": 230.86,
    "type": "pop"
   },
   {
-   "t": 227.054,
+   "t": 233.12,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 227.7,
+   "t": 233.76,
    "type": "parchment"
   },
   {
-   "t": 229.839,
+   "t": 235.904,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 229.989,
+   "t": 236.054,
    "type": "amb",
    "name": "sea",
-   "dur": 3.23,
+   "dur": 3.25,
    "gain": 0.8
   },
   {
-   "t": 230.189,
+   "t": 236.254,
    "type": "parchment"
   },
   {
-   "t": 232.58,
+   "t": 238.66,
    "type": "pop"
   },
   {
-   "t": 233.199,
+   "t": 239.274,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 233.449,
+   "t": 239.424,
+   "type": "amb",
+   "name": "sea",
+   "dur": 3.3,
+   "gain": 0.55
+  },
+  {
+   "t": 239.524,
    "type": "parchment"
   },
   {
-   "t": 234.9,
+   "t": 241.08,
    "type": "waxthud"
   },
   {
-   "t": 236.086,
+   "t": 242.313,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 236.286,
+   "t": 242.463,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3,
+   "gain": 0.55
+  },
+  {
+   "t": 242.513,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 236.436,
+   "t": 242.663,
    "type": "click"
   },
   {
-   "t": 239.077,
+   "t": 245.255,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.4,
+   "gain": 0.55
+  },
+  {
+   "t": 245.305,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 240.18,
+   "t": 246.4,
    "type": "click"
   },
   {
-   "t": 240.956,
+   "t": 247.184,
    "type": "sting"
   },
   {
-   "t": 241.006,
+   "t": 247.234,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 241.206,
+   "t": 247.384,
+   "type": "amb",
+   "name": "wind",
+   "dur": 1.9,
+   "gain": 0.55
+  },
+  {
+   "t": 247.434,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 241.206,
+   "t": 247.434,
    "type": "pageturn"
   },
   {
-   "t": 242.006,
+   "t": 247.684,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 248.234,
    "type": "waxthud"
   },
   {
-   "t": 242.606,
+   "t": 248.834,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 242.756,
+   "t": 248.984,
    "type": "drums",
    "dur": 2,
    "gain": 0.4
   },
   {
-   "t": 243.1,
+   "t": 248.984,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.2,
+   "gain": 0.55
+  },
+  {
+   "t": 249.32,
    "type": "pop"
   },
   {
-   "t": 243.7,
+   "t": 249.92,
    "type": "whoosh"
   },
   {
-   "t": 244.656,
+   "t": 250.794,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 244.806,
+   "t": 250.944,
    "type": "amb",
    "name": "sea",
-   "dur": 3.715,
+   "dur": 6.1,
    "gain": 0.7
   },
   {
-   "t": 244.856,
+   "t": 250.994,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 246.306,
+   "t": 252.4,
+   "type": "pop"
+  },
+  {
+   "t": 252.444,
    "type": "thud",
    "gain": 0.4
   },
   {
-   "t": 246.36,
+   "t": 253.96,
    "type": "pop"
   },
   {
-   "t": 248.341,
+   "t": 256.864,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 249.28,
+   "t": 257.114,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.2,
+   "gain": 0.55
+  },
+  {
+   "t": 257.8,
    "type": "click"
   },
   {
-   "t": 250.08,
+   "t": 258.6,
    "type": "pop"
   },
   {
-   "t": 251.358,
+   "t": 259.881,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 252.7,
+   "t": 260.031,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.5,
+   "gain": 0.55
+  },
+  {
+   "t": 261.22,
    "type": "swell"
   },
   {
-   "t": 252.94,
+   "t": 261.46,
    "type": "snapthump"
   },
   {
-   "t": 253.778,
+   "t": 262.251,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2,
+   "gain": 0.55
+  },
+  {
+   "t": 262.301,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 253.828,
+   "t": 262.351,
    "type": "brush"
   },
   {
-   "t": 254.88,
+   "t": 263.34,
    "type": "pop"
   },
   {
-   "t": 255.64,
+   "t": 264.001,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.6,
+   "gain": 0.55
+  },
+  {
+   "t": 264.16,
    "type": "quill"
   },
   {
-   "t": 256.08,
+   "t": 264.6,
    "type": "snapthump"
   },
   {
-   "t": 256.44,
+   "t": 264.96,
    "type": "coins",
    "gain": 0.6
   },
   {
-   "t": 256.54,
+   "t": 265.06,
    "type": "pop"
   },
   {
-   "t": 257.838,
+   "t": 266.311,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.9,
+   "gain": 0.55
+  },
+  {
+   "t": 266.361,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 257.988,
+   "t": 266.511,
    "type": "quill"
   },
   {
-   "t": 260.3,
+   "t": 268.78,
    "type": "pop"
   },
   {
-   "t": 261.255,
+   "t": 269.779,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 261.405,
+   "t": 269.929,
    "type": "amb",
    "name": "wind",
-   "dur": 8.114,
+   "dur": 9.613,
    "gain": 0.8
   },
   {
-   "t": 261.405,
+   "t": 269.929,
    "type": "drums",
    "dur": 3.5,
    "gain": 0.7
   },
   {
-   "t": 261.455,
+   "t": 269.979,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 261.705,
+   "t": 270.229,
    "type": "parchment"
   },
   {
-   "t": 264.92,
+   "t": 273.613,
    "type": "snapthump"
   },
   {
-   "t": 265.18,
+   "t": 273.873,
    "type": "parchment"
   },
   {
-   "t": 267.48,
+   "t": 277.76,
    "type": "flutter"
   },
   {
-   "t": 269.239,
+   "t": 279.262,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 269.389,
+   "t": 279.412,
    "type": "amb",
    "name": "wind",
-   "dur": 8.912,
+   "dur": 9.128,
    "gain": 0.5
   },
   {
-   "t": 269.439,
+   "t": 279.462,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 269.689,
+   "t": 279.712,
    "type": "pageturn"
   },
   {
-   "t": 273.32,
+   "t": 283.34,
    "type": "parchment"
   },
   {
-   "t": 274.123,
+   "t": 284.146,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 274.273,
+   "t": 284.296,
    "type": "parchment"
   },
   {
-   "t": 277.18,
+   "t": 287.44,
    "type": "flutter"
   },
   {
-   "t": 278.021,
+   "t": 288.81,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3,
+   "gain": 0.55
+  },
+  {
+   "t": 288.86,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 289.11,
+   "type": "swell"
+  },
+  {
+   "t": 290.76,
+   "type": "pop"
+  },
+  {
+   "t": 291.391,
    "type": "sting"
   },
   {
-   "t": 278.071,
+   "t": 291.441,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 278.271,
+   "t": 291.591,
+   "type": "amb",
+   "name": "wind",
+   "dur": 1.8,
+   "gain": 0.55
+  },
+  {
+   "t": 291.641,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 278.271,
+   "t": 291.641,
    "type": "pageturn"
   },
   {
-   "t": 279.071,
+   "t": 291.891,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 292.441,
    "type": "waxthud"
   },
   {
-   "t": 279.671,
+   "t": 293.041,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 279.821,
+   "t": 293.191,
    "type": "amb",
    "name": "room",
    "dur": 7.101,
    "gain": 0.5
   },
   {
-   "t": 279.921,
+   "t": 293.291,
    "type": "parchment"
   },
   {
-   "t": 281.04,
+   "t": 293.491,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 294.42,
    "type": "waxthud"
   },
   {
-   "t": 282.901,
+   "t": 296.271,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 283.101,
+   "t": 296.471,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 283.351,
+   "t": 296.721,
    "type": "pop",
    "gain": 0.5
   },
   {
-   "t": 285.88,
+   "t": 299.26,
    "type": "brush"
   },
   {
-   "t": 286.742,
+   "t": 300.112,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 286.942,
+   "t": 300.312,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 287.192,
+   "t": 300.362,
+   "type": "amb",
+   "name": "room",
+   "dur": 3.6,
+   "gain": 0.55
+  },
+  {
+   "t": 300.562,
    "type": "pop"
   },
   {
-   "t": 290.352,
+   "t": 303.672,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.4,
+   "gain": 0.55
+  },
+  {
+   "t": 303.722,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 291.72,
+   "t": 305.08,
    "type": "whoosh",
    "gain": 0.5
   },
   {
-   "t": 293.316,
+   "t": 306.687,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 294.96,
+   "t": 306.837,
+   "type": "amb",
+   "name": "sea",
+   "dur": 4.7,
+   "gain": 0.55
+  },
+  {
+   "t": 308.3,
    "type": "waxthud"
   },
   {
-   "t": 295.76,
+   "t": 309.1,
    "type": "pop"
   },
   {
-   "t": 298.22,
+   "t": 311.301,
+   "type": "amb",
+   "name": "sea",
+   "dur": 5.2,
+   "gain": 0.55
+  },
+  {
+   "t": 311.6,
    "type": "snapthump"
   },
   {
-   "t": 298.28,
+   "t": 311.66,
    "type": "waxthud"
   },
   {
-   "t": 301.76,
+   "t": 315.12,
    "type": "brush"
   },
   {
-   "t": 302.746,
+   "t": 316.117,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 302.896,
+   "t": 316.267,
    "type": "amb",
    "name": "street",
-   "dur": 8.116,
+   "dur": 7.492,
    "gain": 0.5
   },
   {
-   "t": 302.946,
+   "t": 316.317,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 305.12,
+   "t": 316.64,
    "type": "pop"
   },
   {
-   "t": 305.728,
+   "t": 318.475,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 305.878,
+   "t": 318.625,
    "type": "amb",
    "name": "sea",
    "dur": 1.7,
    "gain": 0.7
   },
   {
-   "t": 306.96,
+   "t": 319.7,
    "type": "pop"
   },
   {
-   "t": 307.438,
+   "t": 320.185,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 307.888,
+   "t": 320.635,
    "type": "pop"
   },
   {
-   "t": 309.5,
+   "t": 322.26,
    "type": "snapthump"
   },
   {
-   "t": 309.56,
+   "t": 322.32,
    "type": "puff"
   },
   {
-   "t": 309.96,
+   "t": 322.72,
    "type": "waxthud"
   },
   {
-   "t": 310.01,
+   "t": 322.77,
    "type": "gavel"
   },
   {
-   "t": 310.632,
+   "t": 323.929,
+   "type": "amb",
+   "name": "room",
+   "dur": 2.7,
+   "gain": 0.55
+  },
+  {
+   "t": 323.979,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 324.229,
+   "type": "swell"
+  },
+  {
+   "t": 325.5,
+   "type": "pop"
+  },
+  {
+   "t": 326.185,
    "type": "sting"
   },
   {
-   "t": 310.682,
+   "t": 326.235,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 310.832,
+   "t": 326.385,
    "type": "amb",
    "name": "market",
    "dur": 14.182,
    "gain": 0.7
   },
   {
-   "t": 310.882,
+   "t": 326.435,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 310.882,
+   "t": 326.435,
    "type": "pageturn"
   },
   {
-   "t": 311.682,
+   "t": 326.685,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 327.235,
    "type": "waxthud"
   },
   {
-   "t": 312.282,
+   "t": 327.835,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 312.732,
+   "t": 328.285,
    "type": "pop",
    "gain": 0.4
   },
   {
-   "t": 314.16,
+   "t": 329.72,
    "type": "pop"
   },
   {
-   "t": 314.951,
+   "t": 330.504,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 316.56,
+   "t": 332.12,
    "type": "brush"
   },
   {
-   "t": 318.151,
+   "t": 332.42,
+   "type": "parchment",
+   "gain": 0.35
+  },
+  {
+   "t": 333.704,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 320.66,
+   "t": 336.22,
    "type": "brush",
    "gain": 0.6
   },
   {
-   "t": 321.01,
+   "t": 336.57,
    "type": "brush",
    "gain": 0.6
   },
   {
-   "t": 321.36,
+   "t": 336.92,
    "type": "brush",
    "gain": 0.6
   },
   {
-   "t": 321.71,
+   "t": 337.27,
    "type": "brush",
    "gain": 0.6
   },
   {
-   "t": 322.851,
+   "t": 338.404,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 323.051,
+   "t": 338.604,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 323.7,
+   "t": 339.26,
    "type": "ballot"
   },
   {
-   "t": 323.9,
+   "t": 339.46,
    "type": "parchment"
   },
   {
-   "t": 324.734,
+   "t": 340.287,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 324.934,
+   "t": 340.487,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 325.84,
+   "t": 340.637,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.5,
+   "gain": 0.55
+  },
+  {
+   "t": 341.4,
    "type": "pop"
   },
   {
-   "t": 327.356,
+   "t": 342.858,
+   "type": "amb",
+   "name": "wind",
+   "dur": 2.4,
+   "gain": 0.55
+  },
+  {
+   "t": 342.908,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 327.406,
+   "t": 342.958,
    "type": "click"
   },
   {
-   "t": 328.74,
+   "t": 344.28,
    "type": "click"
   },
   {
-   "t": 329.706,
+   "t": 345.058,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.3,
+   "gain": 0.55
+  },
+  {
+   "t": 345.258,
    "type": "click",
    "gain": 0.5
   },
   {
-   "t": 331.74,
+   "t": 347.28,
    "type": "pop"
   },
   {
-   "t": 332.435,
+   "t": 347.987,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 332.685,
+   "t": 348.137,
+   "type": "amb",
+   "name": "street",
+   "dur": 2,
+   "gain": 0.55
+  },
+  {
+   "t": 348.237,
    "type": "whoosh"
   },
   {
-   "t": 333.62,
+   "t": 349.18,
    "type": "pop"
   },
   {
-   "t": 334.425,
+   "t": 349.927,
+   "type": "amb",
+   "name": "street",
+   "dur": 3.3,
+   "gain": 0.55
+  },
+  {
+   "t": 349.977,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 334.775,
+   "t": 350.327,
    "type": "quill",
    "dur": 1.5
   },
   {
-   "t": 336.46,
+   "t": 352.02,
    "type": "pop"
   },
   {
-   "t": 337.485,
+   "t": 352.987,
+   "type": "amb",
+   "name": "wind",
+   "dur": 3.6,
+   "gain": 0.55
+  },
+  {
+   "t": 353.037,
    "type": "swell",
    "gain": 0.5
   },
   {
-   "t": 340.605,
+   "t": 356.094,
    "type": "pop"
   },
   {
-   "t": 340.625,
+   "t": 356.178,
    "type": "whoosh",
    "gain": 0.8
   },
   {
-   "t": 340.805,
+   "t": 356.294,
    "type": "coins",
    "gain": 0.6
   },
   {
-   "t": 341.075,
+   "t": 356.328,
+   "type": "amb",
+   "name": "wind",
+   "dur": 4.3,
+   "gain": 0.55
+  },
+  {
+   "t": 356.628,
    "type": "click"
   },
   {
-   "t": 343.14,
+   "t": 358.7,
    "type": "click"
   },
   {
-   "t": 344.86,
+   "t": 360.4,
    "type": "quill"
   },
   {
-   "t": 344.905,
+   "t": 360.408,
+   "type": "amb",
+   "name": "wind",
+   "dur": 4.3,
+   "gain": 0.55
+  },
+  {
+   "t": 360.458,
    "type": "swell",
    "gain": 0.5
+  },
+  {
+   "t": 362.808,
+   "type": "pop",
+   "gain": 0.35
   }
  ],
  "chapters": [
@@ -1810,7 +2368,7 @@
    "title": "Cold open",
    "music": "tension",
    "start": 0,
-   "end": 29.252,
+   "end": 34.052,
    "firstLine": 0.5
   },
   {
@@ -1819,9 +2377,9 @@
    "title": "Last to the Party",
    "music": "bed",
    "era": 0,
-   "start": 29.252,
-   "end": 73.231,
-   "firstLine": 30.932
+   "start": 34.052,
+   "end": 78.855,
+   "firstLine": 35.732
   },
   {
    "ch": 2,
@@ -1829,9 +2387,9 @@
    "title": "A Home Called Pondicherry",
    "music": "bed",
    "era": 1,
-   "start": 73.231,
-   "end": 115.778,
-   "firstLine": 74.911
+   "start": 78.855,
+   "end": 121.489,
+   "firstLine": 80.535
   },
   {
    "ch": 3,
@@ -1839,9 +2397,9 @@
    "title": "One Thousand vs Ten Thousand",
    "music": "rising",
    "era": 2,
-   "start": 115.778,
-   "end": 158.205,
-   "firstLine": 117.458
+   "start": 121.489,
+   "end": 163.966,
+   "firstLine": 123.169
   },
   {
    "ch": 4,
@@ -1849,9 +2407,9 @@
    "title": "The Kingmaker",
    "music": "pulse",
    "era": 3,
-   "start": 158.205,
-   "end": 202.457,
-   "firstLine": 159.885
+   "start": 163.966,
+   "end": 208.386,
+   "firstLine": 165.646
   },
   {
    "ch": 5,
@@ -1859,9 +2417,9 @@
    "title": "The Clerk Who Struck Back",
    "music": "tension",
    "era": 4,
-   "start": 202.457,
-   "end": 241.156,
-   "firstLine": 204.137
+   "start": 208.386,
+   "end": 247.384,
+   "firstLine": 210.066
   },
   {
    "ch": 6,
@@ -1869,9 +2427,9 @@
    "title": "Wandiwash",
    "music": "tension",
    "era": 5,
-   "start": 241.156,
-   "end": 278.221,
-   "firstLine": 242.836
+   "start": 247.384,
+   "end": 291.591,
+   "firstLine": 249.064
   },
   {
    "ch": 7,
@@ -1879,9 +2437,9 @@
    "title": "The Real Turning Point",
    "music": "minor",
    "era": 6,
-   "start": 278.221,
-   "end": 310.832,
-   "firstLine": 279.901
+   "start": 291.591,
+   "end": 326.385,
+   "firstLine": 293.271
   },
   {
    "ch": 8,
@@ -1889,9 +2447,9 @@
    "title": "What Really Decided India",
    "music": "warm",
    "era": 7,
-   "start": 310.832,
-   "end": 348.938,
-   "firstLine": 312.512
+   "start": 326.385,
+   "end": 364.491,
+   "firstLine": 328.065
   }
  ]
 }

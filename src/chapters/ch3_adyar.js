@@ -21,6 +21,7 @@ function adyarFord(t, { scatter = 0, ten = 0 } = {}) {
   K.cut(() => { ctx.beginPath(); ctx.moveTo(-300, 560); for (let x = -300; x <= W + 300; x += 40) ctx.lineTo(x, 560 + Math.sin(x * 0.01 + t) * 8); ctx.lineTo(W + 300, 700); for (let x = W + 300; x >= -300; x -= 40) ctx.lineTo(x, 680 + Math.sin(x * 0.012 + t * 1.3) * 8); ctx.closePath(); }, P.sea, { shadow: 0.5, edge: 5 });
   R.dotArmy(420, 800, 20, 7, 18, P.royal, { t, r: 6, seed: 3 });
   if (ten > 0) R.dotArmy(1380, 360, 60, 18, 13, P.forest, { t, r: 5, seed: 9, march: clamp(ten), scatter, dir: 1 });
+  R.smokeDrift(1500, 470, t, { s: 0.6, a: 0.45 }); R.smokeDrift(300, 700, t, { s: 0.6, a: 0.35, seed: 4 });
   K.slip('ADYAR RIVER', 960, 620, 1, -0.01, 32);
 }
 const P_ground = () => { ctx.beginPath(); ctx.rect(-300, 200, W + 600, H + 300); };

@@ -4,7 +4,7 @@ import { ctx, W, H, clamp, seg, eo, eob, eio, lerp } from '../core/lib.js';
 import * as K from '../core/kit.js';
 import * as A from '../core/atlas.js';
 import * as R from '../core/props.js';
-import { person } from '../core/cast.js';
+import { person, portrait } from '../core/cast.js';
 import { cam } from '../core/motion.js';
 const { P } = K;
 
@@ -22,9 +22,20 @@ export function build(X, C) {
   const ch = 0, sh = (o) => X.add({ chapter: ch, ...o });
   X.amb(0, X.end('0.4') + 0.3, 'wind', 0.6);
 
+  // 0.0 · the paradox as a question: a crowned blue king topples on Dupleix's board
+  { const st = 0, lo = X.w('lose', '0.0') - st;
+    sh({ id: 'H00', at: st, move: cam.push(0.06, [1180, 470]), note: 'opening question: the crowned blue king topples; slip "?"', draw(lt, d, t) {
+      K.parchment(29); const sq = A.chessboard({ x: 1180, y: 520, size: 560, tilt: 0.5 });
+      A.chessPiece(...sq(3, 4), { kind: 'king', side: 'french', s: 1.4, crown: true, fall: eio(seg(lt, lo - 0.2, lo + 0.6)) });
+      A.chessPiece(...sq(5, 2), { kind: 'king', side: 'english', s: 1.4 });
+      R.dotArmy(380, 420, 10, 6, 16, P.royal, { t, r: 5, seed: 2 }); R.dotArmy(380, 640, 30, 10, 11, P.forest, { t, r: 4, seed: 7 });
+      K.slip('×10', 380, 250, eob(seg(lt, 1.0, 1.3)), -0.02, 44); K.slip('?', 1520, 200, eob(seg(lt, lo + 0.4, lo + 0.7)), 0.03, 70);
+    } });
+    X.ev(st + 1.0, 'slip', 'x10'); X.ev(st + lo - 0.2, 'fall', 'blue king topples'); X.ev(st + lo + 0.4, 'slip', 'question mark'); }
+
   // 0.1 · a tidy block of ~1,000 blue dots marches in; 1746 ribbon
-  { const st = 0, rib = 0.6;
-    sh({ id: 'H01', at: st, move: cam.drift(0.03), note: '1,000 blue dots march in; 1746 ribbon', draw(lt, d, t) {
+  { const st = X.at('0.1'), rib = 0.6;
+    sh({ id: 'H01', at: st, whip: 'right', move: cam.drift(0.03), note: '1,000 blue dots march in; 1746 ribbon', draw(lt, d, t) {
       K.parchment(31); R.dotArmy(520 + eo(clamp(lt / 3)) * 80, 560, 40, 25, 15, P.royal, { t, march: clamp(lt / 2.6), r: 5, seed: 2 });
       K.ribbon('1746', W / 2, 190, eob(seg(lt, rib, rib + 0.4)), 90);
       K.slip('~1,000', 520, 820, eob(seg(lt, 2.3, 2.6)), -0.02, 46);
@@ -37,7 +48,7 @@ export function build(X, C) {
       K.parchment(31); R.dotArmy(600, 560, 40, 25, 15, P.royal, { t, r: 5, seed: 2 });
       const sc = seg(lt, d - 0.9, d);
       R.dotArmy(1380, 520, 64, 44, 11, P.forest, { t, r: 4, march: clamp((lt - ten + 0.6) / 0.6), seed: 7, scatter: eio(sc) });
-      A.statCard({ x: 1440, y: 600, title: 'Adyar', stats: ['~350 French + ~700 sepoys', 'vs ~10,000'], date: '24 Oct 1746', p: seg(lt, ten + 0.45, ten + 1.0), hi: 1, from: [1100, 560] });
+      A.statCard({ x: 1440, y: 600, title: 'Adyar', stats: ['~350 French + ~700 sepoys', 'vs ~10,000'], date: '24 Oct 1746', p: seg(lt, ten + 0.45, ten + 1.0), hi: 1, from: [1100, 560], portrait: portrait('paradis') });
     } });
     X.ev(st + ten - 0.3, 'pop', 'green cloud appears'); X.ev(st + ten + 0.45, 'card', 'Adyar stat card'); X.ev(st + 2.2, 'whip', 'cloud scatters', { gain: 0.5 }); }
 

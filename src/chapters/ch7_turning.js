@@ -49,4 +49,7 @@ export function build(X, C) {
   { const st = X.at('7.9'), ex = X.w('executed', '7.9') - st;
     sh({ id: 'V09', at: st, whip: 'left', move: cam.snap(ex, 0.12, [1180, 560]), note: 'the Paris door from CH0; snap "executed": the candle goes out (the loop closes)', draw(lt, d, t) { SC.parisRoom(t, { out: seg(lt, ex, ex + 0.5) + (lt > ex + 0.5 ? (lt - ex - 0.5) * 0.4 : 0), seal: lt - ex - 0.4 }); K.slip('9 MAY 1766', 400, 140, eob(seg(lt, 0.3, 0.6)), -0.03, 40); } });
     X.ev(st + 0.3, 'slip', '9 MAY 1766'); X.ev(st + ex, 'candle', 'candle goes out'); X.ev(st + ex + 0.4, 'seal', 'COUPABLE'); X.cue(st + ex + 0.45, 'gavel'); }
+  { const st = X.at('7.10'), fa = X.w('fault', '7.10') - st;
+    sh({ id: 'V10', at: st, move: cam.push(0.06, [860, 560]), note: 'the empty chair and the coat; HIS FAULT?', draw(lt, d, t) { SC.parisRoom(t, { out: 2, seal: 1 }); K.slip('HIS FAULT?', 860, 260, eob(seg(lt, fa - 0.2, fa + 0.1)), 0.02, 46); } });
+    X.ev(st + 0.3, 'light', 'empty chair'); X.ev(st + fa - 0.2, 'slip', 'HIS FAULT?'); }
 }

@@ -57,7 +57,7 @@ export function build(X, C) {
     sh({ id: 'P07', at: st, whip: 'up', move: cam.push(0.07, [420, 400]), note: 'back to India, push toward the west coast', draw(lt, d, t) { const v = A.realMap({ view: 'india', t }); indiaFlags(v, t, 9); } });
     X.ev(st + 0.1, 'push', 'push to the west coast', { sound: false }); }
   { const st = X.at('1.8'), su = X.w('surat', '1.8') - st;
-    sh({ id: 'P08', at: st, move: cam.drift(0.03), note: 'Surat harbour: a French ship; Caron on the pier; blue pin', draw(lt, d, t) {
+    sh({ id: 'P08', at: st, whip: 'right', move: cam.drift(0.03), note: 'Surat harbour: a French ship; Caron on the pier; blue pin', draw(lt, d, t) {
       SC.seaPage(t, lerp(1500, 1150, eo(clamp(lt / 2))), {}); K.cut(K.P_rr(-40, 700, 520, 36, 6), P.sepia); for (const x of [20, 200, 380]) K.cut(K.P_rr(x, 700, 24, 200, 4), P.sepia);
       person('caron', { x: 300, y: 705, h: 380, t }); K.ribbon('1668', W / 2, 140, eob(seg(lt, 0.2, 0.6)), 80);
       K.slip('FRANÇOIS CARON', 300, 260, eob(seg(lt, 1.0, 1.3)), -0.02, 34); K.slip('SURAT', 1500, 260, eob(seg(lt, su, su + 0.3)), 0.02, 40);

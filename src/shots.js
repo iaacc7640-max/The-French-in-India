@@ -40,7 +40,7 @@ export function buildShots(lab, script) {
     w: (word, cut, which = 's') => Wd(word, idx(cut), which),
     cue: (t, type, o = {}) => CUES.push({ t: +Math.max(0, t).toFixed(3), type, ...o }),
     /** a visual event at film time t (listed by `capture.mjs events`) with its sound */
-    ev(t, kind, note = '', o = {}) { EV.push({ t: +t.toFixed(3), kind, note }); if (o.sound !== false) X.cue(t, sfxFor(kind), o); },
+    ev(t, kind, note = '', o = {}) { EV.push({ t: +t.toFixed(3), kind, note }); X.cue(t, sfxFor(kind), o.sound === false ? { gain: 0.35 } : o); },
     /** an ambience bed from t0 to t1 (foley under the music, ducked under the voice) */
     amb: (t0, t1, name, gain = 1) => CUES.push({ t: +t0.toFixed(3), type: 'amb', name, dur: +(t1 - t0).toFixed(3), gain }),
     add(o) {
@@ -71,6 +71,12 @@ export function buildShots(lab, script) {
   // first shot of each chapter after a card enters with a whip
   for (const c of chapters) if (c.ch > 0) { const s = S.find((s) => s.chapter === c.ch && !s.id.startsWith('CARD')); if (s && !s.whip) { s.whip = 'left'; X.cue(s.at - WHIP / 2, 'whoosh', { gain: 0.8 }); } }
   S.forEach((s) => { if (s.chapter == null) throw new Error(`shot ${s.id} has no chapter`); });
+  // ambience under every shot: fill any stretch no bed covers, with a bed that suits the scene
+  S.sort((a, b) => a.at - b.at);
+  const ambs = CUES.filter((c) => c.type === 'amb'), covered = (t) => ambs.some((c) => t >= c.t && t < c.t + c.dur);
+  const bedFor = (n) => /harbour|sea|ship|sail|beach|Mauritius|fleet/i.test(n) ? 'sea' : /court|hall|Versailles|Golconda|Hyderabad/i.test(n) ? 'court' : /Paris|directors/i.test(n) ? 'street' : /rain|Arcot walls/i.test(n) ? 'rain' : /Kizhur|ballot/i.test(n) ? 'crowd' : /room|study|clerk|window|chair|Clive|Dupleix turns|lifts/i.test(n) ? 'room' : 'wind';
+  S.forEach((s, i) => { const e = i < S.length - 1 ? S[i + 1].at : T.dur; let a = null;
+    for (let t = s.at; t <= e; t += 0.1) { const c = covered(t); if (!c && a == null) a = t; if ((c || t + 0.1 > e) && a != null) { if (t - a > 0.3) X.amb(a, Math.min(e + 0.3, t + 0.3), bedFor(s.note || ''), 0.55); a = null; } } });
   return { shots: S, cues: CUES, events: EV, chapters };
 }
 

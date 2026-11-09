@@ -3,6 +3,7 @@
 import { W, H, setCtx, ctx, clamp, eo, eio, lerp } from './core/lib.js';
 import { camAt, WHIP, WHIP_DIR } from './core/motion.js';
 import { setGeo } from './core/atlas.js';
+import { dustMotes } from './core/props.js';
 import { T, loadTiming } from './core/timing.js';
 import { buildCaptions, drawCaption, captionList } from './core/captions.js';
 import { eraBar, guides } from './core/kit.js';
@@ -43,6 +44,7 @@ function draw(t) {
   if (next && next.whip && next.at - t < hw) whipBlur(i + 1, t, next.whip);
   else if (sh.whip && i > 0 && lt < hw) whipBlur(i, t, sh.whip);
   else drawShot(i, t);
+  if (!OP.lab && !sh.noDust) dustMotes(t, { seed: (i % 7) + 1 });
   // era bar sits in screen space (outside the camera), so it never zooms or drifts
   if (sh.era != null) eraBar(sh.era, sh.eraP ? sh.eraP(lt) : 1);
   // fade from / to black on the first and last 0.25 s

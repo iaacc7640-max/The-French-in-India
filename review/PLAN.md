@@ -25,6 +25,7 @@ Events (`ev`) are listed in order; every cut opens on its cut-in, and any cut ov
 
 | # | Narration | Captions | Shot · camera · events |
 |---|---|---|---|
+| 0.0 | How did France beat an army ten times its size, and still lose India? | How did *France \| *beat an army \| ten times its *size, \| and still *lose India? | Dupleix's chessboard: a crowned blue king topples; slip "?" · push 6% · ev: king falls, slip |
 | 0.1 | In seventeen forty-six, about a thousand French-led soldiers | In *1746, \| about a *thousand \| *French-led soldiers | Parchment field, a tidy block of ~1,000 blue dots marching in. drift · ev: ribbon "1746" pops, dots fill row by row |
 | 0.2 | beat an army of ten thousand in southern India. | *beat an army \| of ten *thousand \| in southern *India. | snap "ten": pull back, the 10,000 green cloud fills the frame · ev: Adyar stat card pops (~350 French + ~700 sepoys vs ~10,000 · 24 Oct 1746), the green cloud scatters (no figures hurt) |
 | 0.3 | Within a few years, a French governor was choosing | Within a few *years, \| a French *governor \| was *choosing | whip → Dupleix at a paper chessboard, candle flicker. push 6% · ev: name slip "DUPLEIX" |
@@ -32,8 +33,8 @@ Events (`ev`) are listed in order; every cut opens on its cut-in, and any cut ov
 | 0.5 | Yet in May seventeen sixty-six, | Yet in May *1766, | whip → Paris door at dawn, Lally's coat on a chair, candle. push 8% · ev: ribbon "1766", street foley |
 | 0.6 | France executed its own general, the Comte de Lally, | France *executed \| its own *general, \| the Comte de *Lally, | snap "executed" · ev: candle goes out, seal "COUPABLE" stamps (gavel + heavy door) |
 | 0.7 | for losing it all. | for losing it *all. | hold on the empty chair, push continues · ev: slip "COMTE DE LALLY" drifts in |
-| 0.8 | So how do you go from almost winning India | So how do *you go \| from almost *winning India | Two-colour India map, half blue, half red. drift · ev: blue pins pulse |
-| 0.9 | to losing everything? | to losing *everything? | ev: the blue ink DRAINS back to its pins (ink-bleed reversed) |
+| 0.8 | So what went wrong, | So what went *wrong, | Two-colour India map, half blue, half red. drift · ev: blue pins pulse |
+| 0.9 | between almost winning and losing everything? | between almost *winning \| and losing *everything? | ev: the blue ink DRAINS back to its pins (ink-bleed reversed) |
 | 0.10 | The answer wasn't a battle. | The *answer wasn't \| a *battle. | push 5% on the map · ev: a crossed-swords slip pops and is struck through |
 | 0.11 | It was a supply line. | It was a *supply line. | half-beat pause before · snap "supply" onto a faint crimson arrow silhouette from Bengal, which fades (teaser) |
 | card | (gap) | — | Title: ribbon "1664 → 1954", slip "SO CLOSE TO EMPIRE", fleur-de-lis seal. sting |
@@ -44,7 +45,7 @@ Events (`ev`) are listed in order; every cut opens on its cut-in, and any cut ov
 |---|---|---|---|
 | 1.1 | The French were the last Europeans to arrive, | The *French were \| the *last Europeans \| to *arrive, | India map; Portuguese, Dutch, English and Danish flags flutter at their posts. drift · ev: the four flags pop in one by one |
 | 1.2 | so they had to move fast. | so they *had to \| move *fast. | snap "fast" · ev: a blue route draws itself in from the west edge with a ship riding the tip, a blue flag hurries in last |
-| 1.3 | In sixteen sixty-four, King Louis the Fourteenth's minister, Colbert, | In *1664, \| King *Louis XIV's \| minister, *Colbert, | whip → Versailles hall with a map table, court murmur; Louis XIV (wig, sun emblem) breathes. push 5% · ev: ribbon "1664", Colbert slides in with a ledger |
+| 1.3 | In sixteen sixty-four, King Louis the Fourteenth's ambitious minister, Colbert, | In *1664, \| King *Louis XIV's \| *ambitious minister, \| *Colbert, | whip → Versailles hall with a map table, court murmur; Louis XIV (wig, sun emblem) breathes. push 5% · ev: ribbon "1664", Colbert slides in with a ledger |
 | 1.4 | created the French East India Company, | *created the French \| East India *Company, | ev: a charter unrolls on the table, fleur-de-lis seal |
 | 1.5 | with a fifty-year monopoly on France's eastern trade. | a *50-year \| *monopoly \| on eastern *trade. | snap "fifty" · ev: seal "50 YEARS" stamps |
 | 1.6 | But it wasted its first years, and much of its money, on Madagascar. | But it *wasted \| its first *years, \| much of its *money, \| on *Madagascar. | whip ↓ to the Madagascar inset: the flag droops, coins drain off the edge · ev: snap "Madagascar", coin trickle (mid event at +2.5 s) |
@@ -66,7 +67,7 @@ Events (`ev`) are listed in order; every cut opens on its cut-in, and any cut ov
 | 2.4 | Pondicherry grew there from sixteen seventy-four, | *Pondicherry grew there \| from *1674, | Top-down: the town grid draws itself street by street. drift · ev: Pondicherry stat card pops (founded 1674 · capital of French India) |
 | 2.5 | and François Martin turned it into the heart of French India. | François *Martin \| *turned it into \| the *heart \| of *French India. | Martin with a town plan, the grid behind him · ev: a star pin ink-bleeds in |
 | 2.6 | But France's wars in Europe kept following it. | But France's *wars \| in *Europe \| kept *following it. | whip ↑ to the Europe map; two paper crowns clash · ev: whoosh clash |
-| 2.7 | In sixteen ninety-three the Dutch captured Pondicherry, | In *1693 \| the *Dutch \| captured *Pondicherry, | Dutch flag ink-bleeds over the town grid, low drums. push 6% |
+| 2.7 | So in sixteen ninety-three, the Dutch captured Pondicherry, | So in *1693, \| the *Dutch \| *captured Pondicherry, | Dutch flag ink-bleeds over the town grid, low drums. push 6% |
 | 2.8 | and only a peace treaty in Europe got it back. | only a peace *treaty \| got it *back. | ev: calendar flips 1693 → 1699, treaty scroll, blue bleeds back over the town |
 | 2.9 | So when the company was rebuilt in the seventeen-twenties, | So when the *company \| was *rebuilt \| in the *1720s, | Company hall, ledgers. push 5% · ev: seal "1720s" stamps |
 | 2.10 | it built a safety net: | it *built \| a safety *net: | whip ↓ south · ev: a paper net unfurls across the Indian Ocean |
@@ -77,7 +78,7 @@ Events (`ev`) are listed in order; every cut opens on its cut-in, and any cut ov
 
 | # | Narration | Captions | Shot · camera · events |
 |---|---|---|---|
-| 3.1 | In seventeen forty-six, Europe went to war again. | In *1746, \| Europe went to *war again. | Europe map, two crowns clash (whoosh). drift · ev: ribbon "1746" |
+| 3.1 | But in seventeen forty-six, Europe went to war again. | But in *1746, \| Europe went to *war again. | Europe map, two crowns clash (whoosh). drift · ev: ribbon "1746" |
 | 3.2 | A French fleet from Mauritius, under La Bourdonnais, | A French *fleet \| from *Mauritius, \| under *La Bourdonnais, | Mauritius harbour, La Bourdonnais on deck, flag flutters. push 5% · ev: name slip |
 | 3.3 | sailed to India and captured Madras from the English. | *sailed to India \| and captured *Madras \| from the *English. | whip → map: route Mauritius → Madras draws itself · snap "Madras", blue ink-bleeds over Fort St George |
 | 3.4 | The French had promised Madras to the Nawab of the Carnatic. | The French had *promised \| Madras to the *Nawab \| of the *Carnatic. | Close-up: a sealed promise scroll held out toward the Nawab's green-and-gold banner. drift · ev: scroll slides in |
@@ -101,7 +102,7 @@ Events (`ev`) are listed in order; every cut opens on its cut-in, and any cut ov
 | 4.5 | So when rival princes fought over Hyderabad and the Carnatic, | So when rival *princes \| fought over *Hyderabad \| and the *Carnatic, | Four king pieces with slips: Muzaffar Jang, Chanda Sahib, Nasir Jang, Anwar-ud-din · ev: kings pop in pairs facing each other |
 | 4.6 | Dupleix backed Muzaffar Jang and Chanda Sahib, | Dupleix *backed \| Muzaffar *Jang \| and Chanda *Sahib, | ev: blue pieces slide behind those two kings (clicks) |
 | 4.7 | and the English backed their rivals. | the *English backed \| their *rivals. | ev: crimson pieces slide behind Nasir Jang and Anwar-ud-din |
-| 4.8 | In seventeen forty-nine, at Ambur, Dupleix's side won, | In *1749, \| at *Ambur, \| Dupleix's side *won, | whip → map, Ambur pin, marching drums. push 7% · ev: ribbon "1749", Ambur stat card |
+| 4.8 | So in seventeen forty-nine, at Ambur, Dupleix's side won, | So in *1749, \| at *Ambur, \| Dupleix's side *won, | whip → map, Ambur pin, marching drums. push 7% · ev: ribbon "1749", Ambur stat card |
 | 4.9 | and the Nawab Anwar-ud-din was killed. | the Nawab *Anwar-ud-din \| was *killed. | No sting; serious · ev: a green king falls slowly; cut-in on a turban resting on an empty saddle |
 | 4.10 | Therefore Dupleix was made governor of the Mughal lands south of the Krishna, | *Therefore Dupleix \| was made *governor \| of the *Mughal lands \| south of the *Krishna, | Map: the Krishna river line draws itself · ev: blue ink-bleeds over everything south of it (mid event: gold title seal at +2.5 s) |
 | 4.11 | and a French army under Bussy stayed at Hyderabad, | a *French army \| under *Bussy \| stayed at *Hyderabad, | whip → Hyderabad court, murmur; Bussy (French coat) beside the throne. push 5% · ev: name slip |
@@ -117,10 +118,10 @@ Events (`ev`) are listed in order; every cut opens on its cut-in, and any cut ov
 | 5.2 | took the Carnatic capital, Arcot, with about five hundred men, | took the capital, *Arcot, \| with *about \| *500 men, | Map: a small crimson column's route draws itself to Arcot in rain and thunder · ev: Arcot stat card (~500 men · ~52 days · 1751) |
 | 5.3 | and held it through a fifty-two-day siege. | held it *through \| a *52-day siege. | Arcot fort walls in rain. push 8% · ev: a day counter on the wall ticks 1 → 52, thunder at the midpoint |
 | 5.4 | Therefore Dupleix's princes started losing. | *Therefore \| *Dupleix's princes \| started *losing. | whip → the chessboard · ev: blue-backed kings wobble |
-| 5.5 | In seventeen fifty-two, Chanda Sahib was captured and put to death. | In *1752, \| *Chanda Sahib \| was *captured \| and put to *death. | Chessboard, slow · ev: Chanda Sahib's king is laid down slowly; SILENCE BEAT (no sting, music dips) |
+| 5.5 | So in seventeen fifty-two, Chanda Sahib was captured and put to death. | So in *1752, \| Chanda Sahib \| was *captured \| and put to *death. | Chessboard, slow · ev: Chanda Sahib's king is laid down slowly; SILENCE BEAT (no sting, music dips) |
 | 5.6 | And back in Paris, the company's directors | And back in *Paris, \| the company's *directors | whip → Paris directors' table (three black coats around a ledger). push 5% · ev: quills scratch |
 | 5.7 | were adding up the cost of Dupleix's wars. | adding up the *cost \| of Dupleix's *wars. | ev: a bill unrolls off the table edge and keeps rolling |
-| 5.8 | In seventeen fifty-four they called him home, | In *1754 \| they called him *home, | Dupleix on a ship sailing left, waves. drift · ev: ribbon "1754" |
+| 5.8 | So in seventeen fifty-four they called him home, | So in *1754 \| they called him *home, | Dupleix on a ship sailing left, waves. drift · ev: ribbon "1754" |
 | 5.9 | and his successor signed a truce with the English. | his *successor signed \| a *truce \| with the *English. | ev: truce scroll, wax seal (thud) |
 | 5.10 | France had walked away from the board. | France had *walked away \| from the *board. | The chessboard, empty but for fallen pieces. push 6% |
 | 5.11 | But the game was not over. | But the *game \| was *not over. | half-beat pause before · ev: one blue pawn rocks back upright · sting |
@@ -130,16 +131,17 @@ Events (`ev`) are listed in order; every cut opens on its cut-in, and any cut ov
 | # | Narration | Captions | Shot · camera · events |
 |---|---|---|---|
 | 6.1 | When the Seven Years War began, | When the *Seven Years War \| *began, | Europe map, crowns clash again (no year shown). drift · ev: crowns collide, sparks of paper |
-| 6.2 | France sent the Comte de Lally to finish the English for good. | *France sent \| the Comte de *Lally \| to finish the *English \| for *good. | whip → Lally arrives at Pondicherry in the coat from the cold open (Irish green ribbon). push 5% · ev: name slip |
+| 6.2 | France sent the Comte de Lally, a proud and desperate general, to finish the English for good. | *France sent \| the Comte de *Lally, \| a proud, *desperate general, \| to finish the *English \| for *good. | whip → Lally arrives at Pondicherry in the coat from the cold open (Irish green ribbon). push 5% · ev: name slip |
 | 6.3 | At first, he pushed them back toward Madras. | At first, he *pushed them \| back toward *Madras. | Chessboard over the map · ev: blue pieces push the crimson pieces back (clicks) |
 | 6.4 | But the English had something he didn't: | But the *English had \| something he *didn't: | whip → the two-colour map · ev: Bengal glows |
 | 6.5 | Bengal, won at Plassey, | *Bengal, \| won at *Plassey, | ev: Bengal ink-bleeds crimson, a small "PLASSEY 1757" pin |
 | 6.6 | sending them money, food and men. | sending them *money, \| *food \| and *men. | snap "money": THE SUPPLY LINE, now full; a thick crimson arrow from Bengal to the English camp with coin, rice and soldier icons riding it, one per word |
 | 6.7 | Lally's supplies had to come the long way, overland. | Lally's *supplies \| had to *come \| the *long way, \| *overland. | ev: a thin, broken blue dashed line struggles overland; a break appears on "overland" (slip "SUPPLY LINE") |
 | 6.8 | So on the twenty-second of January, seventeen sixty, | So on the *22nd \| of *January, \| *1760, | Wandiwash plain, marching drums. push 6% · ev: ribbon "22 JAN 1760" |
-| 6.9 | at Wandiwash, Sir Eyre Coote's army defeated him decisively. | at *Wandiwash, \| Sir Eyre *Coote's army \| defeated him *decisively. | snap "Wandiwash": Lally vs Coote two-shot across the wide frame · ev: Wandiwash stat card (22 Jan 1760 · Coote vs Lally), blue banners pull back, blue ink drains |
+| 6.9 | at Wandiwash, Sir Eyre Coote, patient and well supplied, defeated him decisively. | at *Wandiwash, \| Sir Eyre *Coote, \| patient and well *supplied, \| defeated him *decisively. | snap "Wandiwash": Lally vs Coote two-shot across the wide frame · ev: Wandiwash stat card (22 Jan 1760 · Coote vs Lally), blue banners pull back, blue ink drains |
 | 6.10 | Lally retreated into Pondicherry and held out for about eight months. | Lally *retreated \| into *Pondicherry \| *held out for \| about eight *months. | whip → Pondicherry walls at night, torches flicker. push 6% · ev: calendar flips through eight months, siege stat card (~8 months · Jan 1761) |
-| 6.11 | Then, in January seventeen sixty-one, the city surrendered. | Then, in *January \| *1761, \| the city *surrendered. | ev: a white flag rises over the walls · sting |
+| 6.11 | Therefore, in January seventeen sixty-one, the city surrendered. | *Therefore, in January \| *1761, \| the city *surrendered. | ev: a white flag rises over the walls · sting |
+| 6.12 | But France still needed someone to blame. | But France still *needed \| someone to *blame. | half-beat pause before · Lally alone by the walls, head bowed; slip "WHO IS TO BLAME?" · push 7% · sting |
 
 ## CH7 · card "1763: The Real Turning Point" · music slow, minor · foley: quill, sea, Paris street, door
 
@@ -151,9 +153,10 @@ Events (`ev`) are listed in order; every cut opens on its cut-in, and any cut ov
 | 7.4 | exactly what the French had planned to do to them. | *exactly what the French \| had *planned \| to *do to them. | ev: two paper arrows swap direction (blue → crimson) |
 | 7.5 | Many historians call Plassey the turning point for British India. | Many historians call *Plassey \| the *turning point \| for British *India. | ev: seal "PLASSEY 1757" stamps (left) |
 | 7.6 | But it was Wandiwash that left the English with no European rival at all. | But it was *Wandiwash \| that left the *English \| with no European *rival \| at *all. | snap "Wandiwash" · ev: seal "WANDIWASH 1760" stamps (right) and glows; map cut-in, only crimson among the Europeans (mid event) |
-| 7.7 | Therefore someone had to take the blame. | *Therefore someone \| had to take the *blame. | push 6% on an empty chair |
+| 7.7 | So the blame fell on one man. | So the *blame \| fell on one *man. | push 6% on an empty chair |
 | 7.8 | Lally went home a prisoner, | *Lally went home \| a *prisoner, | A ship under guard sailing left, waves · ev: guard figures on deck |
 | 7.9 | and five years later, France executed him. | five years *later, \| France *executed him. | whip → the Paris door from CH0. push 8% · snap "executed": the candle goes out (the loop closes) |
+| 7.10 | But was the loss really his fault? | But was the *loss \| really his *fault? | half-beat pause before · the empty chair and the coat; slip "HIS FAULT?" · push 6% · sting |
 
 ## CH8 · card "1954: What Really Decided India" (the takeaway) · music warm, resolving only on the last line · foley: market bustle, crowd hush, ballot drop
 

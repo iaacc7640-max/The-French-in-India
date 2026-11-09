@@ -13,6 +13,12 @@
  ],
  "lines": [
   {
+   "text": "How did France beat an army ten times its size, and still lose India?",
+   "caps": "How did *France | *beat an army | ten times its *size, | and still *lose India?",
+   "chapter": 0,
+   "cut": "0.0"
+  },
+  {
    "text": "In seventeen forty-six, about a thousand French-led soldiers",
    "caps": "In *1746, | about a *thousand | *French-led soldiers",
    "chapter": 0,
@@ -55,14 +61,14 @@
    "cut": "0.7"
   },
   {
-   "text": "So how do you go from almost winning India",
-   "caps": "So how do *you go | from almost *winning India",
+   "text": "So what went wrong,",
+   "caps": "So what went *wrong,",
    "chapter": 0,
    "cut": "0.8"
   },
   {
-   "text": "to losing everything?",
-   "caps": "to losing *everything?",
+   "text": "between almost winning and losing everything?",
+   "caps": "between almost *winning | and losing *everything?",
    "chapter": 0,
    "cut": "0.9"
   },
@@ -93,8 +99,8 @@
    "cut": "1.2"
   },
   {
-   "text": "In sixteen sixty-four, King Louis the Fourteenth's minister, Kol-bair,",
-   "caps": "In *1664, | King *Louis XIV's | minister, *Colbert,",
+   "text": "In sixteen sixty-four, King Louis the Fourteenth's ambitious minister, Kol-bair,",
+   "caps": "In *1664, | King *Louis XIV's | *ambitious minister, | *Colbert,",
    "chapter": 1,
    "cut": "1.3"
   },
@@ -197,8 +203,8 @@
    "cut": "2.6"
   },
   {
-   "text": "In sixteen ninety-three the Dutch captured Pon-di-cherry,",
-   "caps": "In *1693 | the *Dutch | captured *Pondicherry,",
+   "text": "So in sixteen ninety-three, the Dutch captured Pon-di-cherry,",
+   "caps": "So in *1693, | the *Dutch | *captured Pondicherry,",
    "chapter": 2,
    "cut": "2.7"
   },
@@ -235,8 +241,8 @@
    "gap": 1.8
   },
   {
-   "text": "In seventeen forty-six, Europe went to war again.",
-   "caps": "In *1746, | Europe went to *war again.",
+   "text": "But in seventeen forty-six, Europe went to war again.",
+   "caps": "But in *1746, | Europe went to *war again.",
    "chapter": 3,
    "cut": "3.1"
   },
@@ -351,8 +357,8 @@
    "cut": "4.7"
   },
   {
-   "text": "In seventeen forty-nine, at Aam-boor, Doo-play's side won,",
-   "caps": "In *1749, | at *Ambur, | Dupleix's side *won,",
+   "text": "So in seventeen forty-nine, at Aam-boor, Doo-play's side won,",
+   "caps": "So in *1749, | at *Ambur, | Dupleix's side *won,",
    "chapter": 4,
    "cut": "4.8"
   },
@@ -420,8 +426,8 @@
    "gap": 0.5
   },
   {
-   "text": "In seventeen fifty-two, Chun-da Saa-hib was captured and put to death.",
-   "caps": "In *1752, | *Chanda Sahib | was *captured | and put to *death.",
+   "text": "So in seventeen fifty-two, Chun-da Saa-hib was captured and put to death.",
+   "caps": "So in *1752, | Chanda Sahib | was *captured | and put to *death.",
    "chapter": 5,
    "cut": "5.5",
    "gap": 0.9
@@ -439,8 +445,8 @@
    "cut": "5.7"
   },
   {
-   "text": "In seventeen fifty-four they called him home,",
-   "caps": "In *1754 | they called him *home,",
+   "text": "So in seventeen fifty-four they called him home,",
+   "caps": "So in *1754 | they called him *home,",
    "chapter": 5,
    "cut": "5.8"
   },
@@ -471,8 +477,8 @@
    "cut": "6.1"
   },
   {
-   "text": "France sent the Kont duh Lally to finish the English for good.",
-   "caps": "*France sent | the Comte de *Lally | to finish the *English | for *good.",
+   "text": "France sent the Kont duh Lally, a proud and desperate general, to finish the English for good.",
+   "caps": "*France sent | the Comte de *Lally, | a proud, *desperate general, | to finish the *English | for *good.",
    "chapter": 6,
    "cut": "6.2"
   },
@@ -513,8 +519,8 @@
    "cut": "6.8"
   },
   {
-   "text": "at Won-dee-wosh, Sir Air Koot's army defeated him decisively.",
-   "caps": "at *Wandiwash, | Sir Eyre *Coote's army | defeated him *decisively.",
+   "text": "at Won-dee-wosh, Sir Air Koot, patient and well supplied, defeated him decisively.",
+   "caps": "at *Wandiwash, | Sir Eyre *Coote, | patient and well *supplied, | defeated him *decisively.",
    "chapter": 6,
    "cut": "6.9"
   },
@@ -525,10 +531,17 @@
    "cut": "6.10"
   },
   {
-   "text": "Then, in January seventeen sixty-one, the city surrendered.",
-   "caps": "Then, in *January | *1761, | the city *surrendered.",
+   "text": "Therefore, in January seventeen sixty-one, the city surrendered.",
+   "caps": "*Therefore, in January | *1761, | the city *surrendered.",
    "chapter": 6,
    "cut": "6.11",
+   "gap": 0.55
+  },
+  {
+   "text": "But France still needed someone to blame.",
+   "caps": "But France still *needed | someone to *blame.",
+   "chapter": 6,
+   "cut": "6.12",
    "gap": 1.8
   },
   {
@@ -568,8 +581,8 @@
    "cut": "7.6"
   },
   {
-   "text": "Therefore someone had to take the blame.",
-   "caps": "*Therefore someone | had to take the *blame.",
+   "text": "So the blame fell on one man.",
+   "caps": "So the *blame | fell on one *man.",
    "chapter": 7,
    "cut": "7.7"
   },
@@ -584,6 +597,13 @@
    "caps": "five years *later, | France *executed him.",
    "chapter": 7,
    "cut": "7.9",
+   "gap": 0.55
+  },
+  {
+   "text": "But was the loss really his fault?",
+   "caps": "But was the *loss | really his *fault?",
+   "chapter": 7,
+   "cut": "7.10",
    "gap": 1.8
   },
   {
