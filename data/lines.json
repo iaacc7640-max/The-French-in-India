@@ -1,12 +1,637 @@
 {
- "duration": 7.855,
- "estimated": true,
+ "duration": 357.25,
+ "voice": "bm_george",
+ "speed": 0.98,
  "lines": [
   {
    "i": 0,
-   "text": "In seventeen forty-six, about a thousand French-led soldiers beat an army of ten thousand in southern India.",
-   "start": 0.4,
-   "end": 6.755
+   "text": "In seventeen forty-six, about a thousand French-led soldiers",
+   "start": 0.5,
+   "end": 4.8
+  },
+  {
+   "i": 1,
+   "text": "beat an army of ten thousand in southern India.",
+   "start": 5.15,
+   "end": 8.259
+  },
+  {
+   "i": 2,
+   "text": "Within a few years, a French governor was choosing",
+   "start": 8.579,
+   "end": 11.509
+  },
+  {
+   "i": 3,
+   "text": "who sat on India's thrones.",
+   "start": 11.659,
+   "end": 13.411
+  },
+  {
+   "i": 4,
+   "text": "Yet in May seventeen sixty-six,",
+   "start": 13.731,
+   "end": 15.821
+  },
+  {
+   "i": 5,
+   "text": "France executed its own general, the Kont duh Lally,",
+   "start": 16.181,
+   "end": 19.641
+  },
+  {
+   "i": 6,
+   "text": "for losing it all.",
+   "start": 19.921,
+   "end": 20.962
+  },
+  {
+   "i": 7,
+   "text": "So how do you go from almost winning India",
+   "start": 21.282,
+   "end": 23.622
+  },
+  {
+   "i": 8,
+   "text": "to losing everything?",
+   "start": 23.942,
+   "end": 25.225
+  },
+  {
+   "i": 9,
+   "text": "The answer wasn't a battle.",
+   "start": 25.545,
+   "end": 27.469
+  },
+  {
+   "i": 10,
+   "text": "It was a supply line.",
+   "start": 28.019,
+   "end": 29.58
+  },
+  {
+   "i": 11,
+   "text": "The French were the last Europeans to arrive,",
+   "start": 31.58,
+   "end": 34.24
+  },
+  {
+   "i": 12,
+   "text": "so they had to move fast.",
+   "start": 34.58,
+   "end": 36.085
+  },
+  {
+   "i": 13,
+   "text": "In sixteen sixty-four, King Louis the Fourteenth's minister, Kol-bair,",
+   "start": 36.405,
+   "end": 40.935
+  },
+  {
+   "i": 14,
+   "text": "created the French East India Company,",
+   "start": 41.305,
+   "end": 43.545
+  },
+  {
+   "i": 15,
+   "text": "with a fifty-year monopoly on France's eastern trade.",
+   "start": 43.975,
+   "end": 47.448
+  },
+  {
+   "i": 16,
+   "text": "But it wasted its first years, and much of its money, on Madagascar.",
+   "start": 47.768,
+   "end": 52.163
+  },
+  {
+   "i": 17,
+   "text": "So it turned to India.",
+   "start": 52.483,
+   "end": 54.224
+  },
+  {
+   "i": 18,
+   "text": "In sixteen sixty-eight, Fran\u00e7ois Ka-ron opened a factory at Surat,",
+   "start": 54.544,
+   "end": 58.934
+  },
+  {
+   "i": 19,
+   "text": "and a year later, an Armenian merchant in French service, Mar-kaa-ra,",
+   "start": 59.394,
+   "end": 63.699
+  },
+  {
+   "i": 20,
+   "text": "won trading rights from the Sultan of Golconda,",
+   "start": 63.699,
+   "end": 66.974
+  },
+  {
+   "i": 21,
+   "text": "opening the way to Mussoo-lee-putnam.",
+   "start": 67.354,
+   "end": 69.597
+  },
+  {
+   "i": 22,
+   "text": "The French had a foothold.",
+   "start": 69.917,
+   "end": 71.706
+  },
+  {
+   "i": 23,
+   "text": "What they still lacked was a home.",
+   "start": 72.256,
+   "end": 74.463
+  },
+  {
+   "i": 24,
+   "text": "That came in sixteen seventy-three,",
+   "start": 76.463,
+   "end": 78.443
+  },
+  {
+   "i": 25,
+   "text": "when Shayr Khaan Lo-dee, a governor under the Sultan of Bee-jah-poor,",
+   "start": 78.813,
+   "end": 83.303
+  },
+  {
+   "i": 26,
+   "text": "granted them a site on the Coromandel coast.",
+   "start": 83.713,
+   "end": 86.697
+  },
+  {
+   "i": 27,
+   "text": "Pon-di-cherry grew there from sixteen seventy-four,",
+   "start": 87.017,
+   "end": 89.857
+  },
+  {
+   "i": 28,
+   "text": "and Fran\u00e7ois Martin turned it into the heart of French India.",
+   "start": 90.277,
+   "end": 94.102
+  },
+  {
+   "i": 29,
+   "text": "But France's wars in Europe kept following it.",
+   "start": 94.422,
+   "end": 97.398
+  },
+  {
+   "i": 30,
+   "text": "In sixteen ninety-three the Dutch captured Pon-di-cherry,",
+   "start": 97.718,
+   "end": 101.358
+  },
+  {
+   "i": 31,
+   "text": "and only a peace treaty in Europe got it back.",
+   "start": 101.728,
+   "end": 104.174
+  },
+  {
+   "i": 32,
+   "text": "So when the company was rebuilt in the seventeen-twenties,",
+   "start": 104.494,
+   "end": 108.036
+  },
+  {
+   "i": 33,
+   "text": "it built a safety net:",
+   "start": 108.036,
+   "end": 109.184
+  },
+  {
+   "i": 34,
+   "text": "French islands in the Indian Ocean, Mauritius and Ray-oon-yon.",
+   "start": 109.644,
+   "end": 114.098
+  },
+  {
+   "i": 35,
+   "text": "That safety net was about to become a weapon.",
+   "start": 114.648,
+   "end": 117.741
+  },
+  {
+   "i": 36,
+   "text": "In seventeen forty-six, Europe went to war again.",
+   "start": 119.741,
+   "end": 123.242
+  },
+  {
+   "i": 37,
+   "text": "A French fleet from Mauritius, under La Boor-do-nay,",
+   "start": 123.562,
+   "end": 126.802
+  },
+  {
+   "i": 38,
+   "text": "sailed to India and captured Madras from the English.",
+   "start": 127.112,
+   "end": 130.328
+  },
+  {
+   "i": 39,
+   "text": "The French had promised Madras to the Nawab of the Carnatic.",
+   "start": 130.648,
+   "end": 134.7
+  },
+  {
+   "i": 40,
+   "text": "But they kept it,",
+   "start": 135.02,
+   "end": 135.85
+  },
+  {
+   "i": 41,
+   "text": "so the Nawab sent an army to throw them out.",
+   "start": 136.16,
+   "end": 138.835
+  },
+  {
+   "i": 42,
+   "text": "At the Ud-yaar river, about a thousand French soldiers and trained sepoys",
+   "start": 139.155,
+   "end": 143.815
+  },
+  {
+   "i": 43,
+   "text": "faced some ten thousand men, and won.",
+   "start": 143.995,
+   "end": 146.746
+  },
+  {
+   "i": 44,
+   "text": "Every European in India learned the same lesson:",
+   "start": 147.066,
+   "end": 149.976
+  },
+  {
+   "i": 45,
+   "text": "a small, drilled army could beat a far bigger one.",
+   "start": 150.466,
+   "end": 153.7
+  },
+  {
+   "i": 46,
+   "text": "A treaty in Europe soon handed Madras back to the English.",
+   "start": 154.02,
+   "end": 157.922
+  },
+  {
+   "i": 47,
+   "text": "But one Frenchman had learned something bigger.",
+   "start": 158.472,
+   "end": 161.396
+  },
+  {
+   "i": 48,
+   "text": "His name was Joseph Fran\u00e7ois Doo-play,",
+   "start": 163.396,
+   "end": 165.836
+  },
+  {
+   "i": 49,
+   "text": "and his idea was simple:",
+   "start": 166.216,
+   "end": 167.726
+  },
+  {
+   "i": 50,
+   "text": "why conquer India's thrones,",
+   "start": 168.176,
+   "end": 169.976
+  },
+  {
+   "i": 51,
+   "text": "when you can choose who sits on them?",
+   "start": 170.316,
+   "end": 172.116
+  },
+  {
+   "i": 52,
+   "text": "So when rival princes fought over Hyderabad and the Carnatic,",
+   "start": 172.436,
+   "end": 176.166
+  },
+  {
+   "i": 53,
+   "text": "Doo-play backed Moo-zaf-far Jung and Chun-da Saa-hib,",
+   "start": 176.616,
+   "end": 179.846
+  },
+  {
+   "i": 54,
+   "text": "and the English backed their rivals.",
+   "start": 180.286,
+   "end": 182.172
+  },
+  {
+   "i": 55,
+   "text": "In seventeen forty-nine, at Aam-boor, Doo-play's side won,",
+   "start": 182.492,
+   "end": 186.542
+  },
+  {
+   "i": 56,
+   "text": "and the Nawab Un-war-ood-deen was killed.",
+   "start": 186.952,
+   "end": 189.297
+  },
+  {
+   "i": 57,
+   "text": "Therefore Doo-play was made governor of the Mughal lands south of the Krishna,",
+   "start": 189.617,
+   "end": 194.227
+  },
+  {
+   "i": 58,
+   "text": "and a French army under Boo-see stayed at Hyderabad,",
+   "start": 194.707,
+   "end": 198.097
+  },
+  {
+   "i": 59,
+   "text": "paid for by the ruler it protected.",
+   "start": 198.507,
+   "end": 200.538
+  },
+  {
+   "i": 60,
+   "text": "It was a brilliant plan.",
+   "start": 200.858,
+   "end": 202.465
+  },
+  {
+   "i": 61,
+   "text": "But the English had a young clerk who was watching closely.",
+   "start": 203.015,
+   "end": 206.636
+  },
+  {
+   "i": 62,
+   "text": "In seventeen fifty-one, that clerk, Robert Clive,",
+   "start": 208.636,
+   "end": 212.036
+  },
+  {
+   "i": 63,
+   "text": "took the Carnatic capital, Aar-kot, with about five hundred men,",
+   "start": 212.346,
+   "end": 216.496
+  },
+  {
+   "i": 64,
+   "text": "and held it through a fifty-two-day siege.",
+   "start": 216.886,
+   "end": 219.352
+  },
+  {
+   "i": 65,
+   "text": "Therefore Doo-play's princes started losing.",
+   "start": 219.672,
+   "end": 222.694
+  },
+  {
+   "i": 66,
+   "text": "In seventeen fifty-two, Chun-da Saa-hib was captured and put to death.",
+   "start": 223.194,
+   "end": 228.043
+  },
+  {
+   "i": 67,
+   "text": "And back in Paris, the company's directors",
+   "start": 228.943,
+   "end": 231.733
+  },
+  {
+   "i": 68,
+   "text": "were adding up the cost of Doo-play's wars.",
+   "start": 231.853,
+   "end": 234.644
+  },
+  {
+   "i": 69,
+   "text": "In seventeen fifty-four they called him home,",
+   "start": 234.964,
+   "end": 237.944
+  },
+  {
+   "i": 70,
+   "text": "and his successor signed a truce with the English.",
+   "start": 238.374,
+   "end": 241.037
+  },
+  {
+   "i": 71,
+   "text": "France had walked away from the board.",
+   "start": 241.357,
+   "end": 243.598
+  },
+  {
+   "i": 72,
+   "text": "But the game was not over.",
+   "start": 244.148,
+   "end": 246.107
+  },
+  {
+   "i": 73,
+   "text": "When the Seven Years War began,",
+   "start": 248.107,
+   "end": 249.797
+  },
+  {
+   "i": 74,
+   "text": "France sent the Kont duh Lally to finish the English for good.",
+   "start": 250.177,
+   "end": 253.674
+  },
+  {
+   "i": 75,
+   "text": "At first, he pushed them back toward Madras.",
+   "start": 253.994,
+   "end": 256.847
+  },
+  {
+   "i": 76,
+   "text": "But the English had something he didn't:",
+   "start": 257.167,
+   "end": 258.997
+  },
+  {
+   "i": 77,
+   "text": "Bengal, won at Plassey,",
+   "start": 259.427,
+   "end": 260.937
+  },
+  {
+   "i": 78,
+   "text": "sending them money, food and men.",
+   "start": 261.167,
+   "end": 263.268
+  },
+  {
+   "i": 79,
+   "text": "Lally's supplies had to come the long way, overland.",
+   "start": 263.588,
+   "end": 267.085
+  },
+  {
+   "i": 80,
+   "text": "So on the twenty-second of January, seventeen sixty,",
+   "start": 267.405,
+   "end": 270.535
+  },
+  {
+   "i": 81,
+   "text": "at Won-dee-wosh, Sir Air Koot's army defeated him decisively.",
+   "start": 270.885,
+   "end": 275.264
+  },
+  {
+   "i": 82,
+   "text": "Lally retreated into Pon-di-cherry and held out for about eight months.",
+   "start": 275.584,
+   "end": 280.052
+  },
+  {
+   "i": 83,
+   "text": "Then, in January seventeen sixty-one, the city surrendered.",
+   "start": 280.372,
+   "end": 284.321
+  },
+  {
+   "i": 84,
+   "text": "The Treaty of Paris, in seventeen sixty-three,",
+   "start": 286.321,
+   "end": 289.291
+  },
+  {
+   "i": 85,
+   "text": "gave the French back their trading posts, but not their power.",
+   "start": 289.591,
+   "end": 293.229
+  },
+  {
+   "i": 86,
+   "text": "Clive himself said the English had done to the French",
+   "start": 293.549,
+   "end": 296.569
+  },
+  {
+   "i": 87,
+   "text": "exactly what the French had planned to do to them.",
+   "start": 296.979,
+   "end": 299.899
+  },
+  {
+   "i": 88,
+   "text": "Many historians call Plassey the turning point for British India.",
+   "start": 300.219,
+   "end": 304.487
+  },
+  {
+   "i": 89,
+   "text": "But it was Won-dee-wosh that left the English with no European rival at all.",
+   "start": 304.807,
+   "end": 309.65
+  },
+  {
+   "i": 90,
+   "text": "Therefore someone had to take the blame.",
+   "start": 309.97,
+   "end": 312.755
+  },
+  {
+   "i": 91,
+   "text": "Lally went home a prisoner,",
+   "start": 313.075,
+   "end": 314.505
+  },
+  {
+   "i": 92,
+   "text": "and five years later, France executed him.",
+   "start": 314.815,
+   "end": 317.904
+  },
+  {
+   "i": 93,
+   "text": "Yet the French never fully left.",
+   "start": 319.904,
+   "end": 322.212
+  },
+  {
+   "i": 94,
+   "text": "Chun-der-na-gore joined India in nineteen fifty,",
+   "start": 322.532,
+   "end": 325.432
+  },
+  {
+   "i": 95,
+   "text": "and Pon-di-cherry and the other French towns followed in nineteen fifty-four,",
+   "start": 325.862,
+   "end": 330.452
+  },
+  {
+   "i": 96,
+   "text": "after a vote at Kee-zhoor.",
+   "start": 330.892,
+   "end": 332.525
+  },
+  {
+   "i": 97,
+   "text": "So what really decided India?",
+   "start": 332.845,
+   "end": 335.063
+  },
+  {
+   "i": 98,
+   "text": "France had the smartest idea:",
+   "start": 335.383,
+   "end": 337.253
+  },
+  {
+   "i": 99,
+   "text": "rule through India's thrones, not around them.",
+   "start": 337.613,
+   "end": 340.462
+  },
+  {
+   "i": 100,
+   "text": "But ideas need money,",
+   "start": 340.782,
+   "end": 342.162
+  },
+  {
+   "i": 101,
+   "text": "and a company that waits for orders from Paris",
+   "start": 342.572,
+   "end": 345.422
+  },
+  {
+   "i": 102,
+   "text": "can't outlast one that pays for itself from Bengal.",
+   "start": 345.662,
+   "end": 348.777
+  },
+  {
+   "i": 103,
+   "text": "The English took Doo-play's idea, added Bengal's money,",
+   "start": 349.097,
+   "end": 352.817
+  },
+  {
+   "i": 104,
+   "text": "and built an empire with both.",
+   "start": 353.177,
+   "end": 354.93
   }
  ]
 }
