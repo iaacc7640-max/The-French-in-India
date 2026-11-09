@@ -1,0 +1,13 @@
+{
+  "title": "So Close to Empire: The French in India, 1664-1954",
+  "voice": "bm_george",
+  "speed": 0.98,
+  "lead": 0.4,
+  "outro": 1.1,
+  "gap": 0.3,
+  "music": "tension",
+  "sources": ["16:9 layout proof only: the full script.json comes with the plan screen"],
+  "lines": [
+    { "text": "In seventeen forty-six, about a thousand French-led soldiers beat an army of ten thousand in southern India.", "caps": "In *1746, | about a *thousand | *French-led soldiers | beat an army of | ten *thousand | in southern *India." }
+  ]
+}
