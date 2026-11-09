@@ -40,7 +40,7 @@ export function build(X, C) {
     sh({ id: 'S04', at: st, whip: 'up', move: cam.drift(0.03, [W / 2, 470]), note: 'chessboard: the blue-backed kings wobble', draw(lt, d, t) { const sq = boardOver(t); const wob = Math.sin(lt * 9) * 0.08 * seg(lt, lo - 0.4, lo); pieces(sq, lt, { fall: 1, crown: true, wobble: wob }); } });
     X.ev(st + lo - 0.4, 'chess', 'kings wobble'); }
   { const st = X.at('5.5'), ca = X.w('captured', '5.5') - st;
-    sh({ id: 'S05', at: st, move: cam.push(0.06, [760, 470]), note: 'Chanda Sahib\'s king is laid down slowly (silence beat, no sting)', draw(lt, d, t) { const sq = boardOver(t); pieces(sq, lt, { fall: 1, crown: true, fallChanda: seg(lt, ca, ca + 1.6) }); K.ribbon('1752', W / 2, 150, eob(seg(lt, 0.2, 0.6)), 70); } });
+    sh({ id: 'S05', at: st, move: cam.push(0.06, [760, 470]), note: 'Chanda Sahib\'s king is laid down slowly (silence beat, no sting)', draw(lt, d, t) { const sq = boardOver(t); pieces(sq, lt, { fall: 1, crown: true, fallChanda: seg(lt, ca, ca + 1.6) }); K.ribbon('1752', 1640, 300, eob(seg(lt, 0.2, 0.6)), 60); } });
     X.ev(st + 0.2, 'ribbon', '1752', { sound: false }); X.ev(st + ca, 'chess', 'king laid down', { gain: 0.4 }); }
   { const st = X.at('5.6'), pa = X.w('paris', '5.6') - st;
     sh({ id: 'S06', at: st, whip: 'left', move: cam.push(0.05, [960, 560]), note: 'Paris: three directors around a ledger; quills scratch', draw(lt, d, t) { directors(t); K.slip('PARIS', 400, 160, eob(seg(lt, pa, pa + 0.3)), -0.02, 40); } });
