@@ -10,7 +10,7 @@ const { P } = K;
 
 function carnatic(t, { madras = 0, green = 0, pins = true } = {}) {
   const v = A.realMap({ view: 'carnatic', t }), md = A.at(v, 'Madras'), pd = A.at(v, 'Pondicherry');
-  if (madras !== 0) A.inkBleed(...md, 150, Math.abs(madras), madras > 0 ? P.royal : P.crimson, { clipFn: A.landPath(v), seed: 8, alpha: 0.7 });
+  if (madras !== 0) A.inkBleed(...md, 150, Math.abs(madras), madras > 0 ? P.royal : P.crimson, { clipFn: A.mainland(v), seed: 8, alpha: 0.7 });
   if (pins) { A.pin(...pd, 'french', { star: true }); A.placeLabel('PONDICHERRY', ...pd, { dx: 150, dy: 0, size: 24 }); A.pin(...md, madras > 0.5 ? 'french' : 'english', { r: 16 }); A.placeLabel('MADRAS', ...md, { dx: 100, dy: 0, size: 24 }); }
   if (green > 0) { const ar = A.at(v, 'Arcot'); for (let i = 0; i < 3; i++) { const k = eio(clamp(green - i * 0.15)); A.flag(lerp(ar[0] - 120, md[0] - 80, k) - i * 50, lerp(ar[1], md[1] + 20, k) + i * 30, t, A.FLAGS.nawab, { s: 0.6, seed: i }); } }
   return v;

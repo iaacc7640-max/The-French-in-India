@@ -88,8 +88,8 @@ export function build(X, C) {
   // 0.8-0.10 · the two-colour map: half blue, half red; the blue drains away
   const twoColour = (t, blue, swords = 0, strike = 0) => {
     const v = A.realMap({ view: 'india', t }), at = (n) => A.at(v, n);
-    A.inkBleed(...at('Calcutta'), 760, 1, P.crimson, { clipFn: A.landPath(v), seed: 5, alpha: 0.55 });
-    A.inkBleed(...at('Pondicherry'), 560, blue, P.royal, { clipFn: A.landPath(v), seed: 2, alpha: 0.82 });
+    A.inkBleed(...at('Calcutta'), 760, 1, P.crimson, { clipFn: A.mainland(v), seed: 5, alpha: 0.55 });
+    A.inkBleed(...at('Pondicherry'), 560, blue, P.royal, { clipFn: A.mainland(v), seed: 2, alpha: 0.82 });
     for (const n of ['Pondicherry', 'Chandernagore', 'Masulipatnam', 'Mahe', 'Karaikal', 'Yanam']) A.pin(...at(n), 'french', { star: n === 'Pondicherry', glow: 0.5 + 0.5 * Math.sin(t * 3) });
     for (const n of ['Madras', 'Calcutta', 'Bombay']) A.pin(...at(n), 'english');
     if (swords > 0) R.crossedSwords(1450, 420, eob(clamp(swords)) * 0.9, strike);

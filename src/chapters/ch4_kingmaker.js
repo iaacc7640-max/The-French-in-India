@@ -144,6 +144,6 @@ function hydCourt(t) {
 }
 /** clip to the land south of the Krishna (a polygon: the river line closed around the south of the map) */
 function clipSouthOfKrishna(v) {
-  A.landPath(v)(); ctx.clip();
+  A.mainland(v)(); ctx.clip();
   const pts = A.KRISHNA.map(([a, b]) => A.proj(v, a, b)); ctx.beginPath(); ctx.moveTo(-400, pts[0][1]); pts.forEach((p) => ctx.lineTo(...p)); ctx.lineTo(W + 400, pts[pts.length - 1][1]); ctx.lineTo(W + 400, H + 400); ctx.lineTo(-400, H + 400); ctx.closePath();
 }

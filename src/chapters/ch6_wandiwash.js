@@ -12,7 +12,7 @@ const { P } = K;
 /** the full supply-line map: thick crimson from Bengal, thin broken blue overland to the French */
 export function supplyMap(t, { red = 1, blue = 1, teaser = 0 } = {}) {
   const v = A.realMap({ view: 'india', t }), at = (n) => A.at(v, n);
-  A.inkBleed(...at('Calcutta'), 260, 1, P.crimson, { clipFn: A.landPath(v), seed: 5, alpha: 0.6 });
+  A.inkBleed(...at('Calcutta'), 260, 1, P.crimson, { clipFn: A.mainland(v), seed: 5, alpha: 0.6 });
   A.pin(...at('Calcutta'), 'english', { r: 16 }); A.placeLabel('BENGAL', ...at('Calcutta'), { dx: -120, dy: 0, size: 26 });
   A.pin(...at('Madras'), 'english', { r: 16 }); A.placeLabel('MADRAS', ...at('Madras'), { dx: 100, dy: 0, size: 24 });
   A.pin(...at('Pondicherry'), 'french', { star: true }); A.placeLabel('PONDICHERRY', ...at('Pondicherry'), { dx: 150, dy: 10, size: 24 });

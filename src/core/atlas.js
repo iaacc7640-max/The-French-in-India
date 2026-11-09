@@ -46,6 +46,8 @@ export function proj(v, lon, lat) {
 export const at = (v, name) => proj(v, ...PLACES[name]);
 function ringPath(v, rings) { ctx.beginPath(); for (const r of rings) { r.forEach(([lo, la], i) => { const [x, y] = proj(v, lo, la); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.closePath(); } }
 export const landPath = (v, set = 'south_asia') => () => ringPath(v, GEO[set]);
+/** the Indian mainland only (rings reaching north of 10.5°N): territory ink never spills onto Ceylon or the islands */
+export const mainland = (v) => () => { ringPath(v, GEO.south_asia.filter((r) => Math.max(...r.map((p) => p[1])) > 10.5)); ctx.clip(); const [x] = proj(v, 92.3, v.lat); ctx.beginPath(); ctx.rect(-500, -500, x + 500, H + 1000); };   // ...and not east of Bengal (no Burma)
 
 /** a real-coastline map page. o = { view, set ('south_asia'|'indian_ocean'|'europe'), t (water ripple), grid } */
 export function realMap(o = {}) {

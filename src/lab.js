@@ -22,8 +22,8 @@ export function buildShots(lab) {
     S.push({ id: 'KIT', at: 0, move: cam.drift(0), era: 5, draw(lt, d, t) {
       const v = A.realMap({ view: 'india', t });
       const fr = (n) => A.at(v, n);
-      A.inkBleed(...fr('Pondicherry'), 300, seg(lt, 0.3, 1.6), P.royal, { clipFn: A.landPath(v), seed: 2 });
-      A.inkBleed(...fr('Calcutta'), 220, seg(lt, 0.8, 2.0), P.crimson, { clipFn: A.landPath(v), seed: 5 });
+      A.inkBleed(...fr('Pondicherry'), 300, seg(lt, 0.3, 1.6), P.royal, { clipFn: A.mainland(v), seed: 2 });
+      A.inkBleed(...fr('Calcutta'), 220, seg(lt, 0.8, 2.0), P.crimson, { clipFn: A.mainland(v), seed: 5 });
       A.krishna(v, seg(lt, 0, 1.2));
       A.supplyLine([fr('Calcutta'), [1330, 330], [1150, 560], fr('Madras')], { p: seg(lt, 1.5, 3), t });
       A.supplyLine([fr('Mahe'), [640, 650], fr('Wandiwash')], { p: seg(lt, 2.2, 3.4), t, side: 'french', broken: true });
@@ -50,6 +50,18 @@ export function buildShots(lab) {
     S.push({ id: 'MAP', at: 0, move: cam.drift(), era: 0, draw(lt, d, t) { A.realMap({ view: 'europe', set: 'europe', t }); } });
     S.push({ id: 'CARD', at: 2.0, whip: 'left', move: cam.push(0.05), draw(lt, d, t) { A.chapterCard('1749', 'The Kingmaker', lt); } });
     S.push({ id: 'OCEAN', at: 4.6, whip: 'down', move: cam.snap(1.0, 0.18, [1100, 560]), era: 1, draw(lt, d, t) { const v = A.realMap({ view: 'ocean', set: 'south_asia', also: ['indian_ocean'], t }); } });
+  }
+  if (lab === 'thumb') {
+    S.push({ id: 'THUMB', at: 0, move: cam.drift(0), draw(lt, d, t) {
+      const v = A.realMap({ view: 'india', t: 0 }), at = (n) => A.at(v, n);
+      A.inkBleed(...at('Calcutta'), 760, 1, P.crimson, { clipFn: A.mainland(v), seed: 5, alpha: 0.6 });
+      A.inkBleed(...at('Pondicherry'), 560, 1, P.royal, { clipFn: A.mainland(v), seed: 2, alpha: 0.82 });
+      person('dupleix', { x: 1450, y: 1000, h: 820, t: 0, arm: 95 });
+      K.ribbon('1760', 1450, 150, 1, 90);
+      ctx.save(); ctx.font = '700 104px Caladea'; ctx.textAlign = 'left'; ctx.textBaseline = 'middle'; ctx.lineJoin = 'round'; ctx.lineWidth = 18; ctx.strokeStyle = '#F3E9D2';
+      for (const [txt, y, c] of [['SO CLOSE', 760, P.ink], ['TO EMPIRE', 880, P.crimson]]) { ctx.strokeText(txt, 80, y); ctx.fillStyle = c; ctx.fillText(txt, 80, y); }
+      ctx.restore();
+    } });
   }
   return { shots: S, cues, events };
 }

@@ -70,7 +70,7 @@ export function fortWalls(t, { rain = 0, night = false, flagCols = A.FLAGS.engli
   cut(() => { ctx.beginPath(); ctx.moveTo(100, 780); ctx.lineTo(100, 380); for (let x = 100; x < 1820; x += 80) { ctx.lineTo(x, 380); ctx.lineTo(x, 340); ctx.lineTo(x + 40, 340); ctx.lineTo(x + 40, 380); } ctx.lineTo(1820, 380); ctx.lineTo(1820, 780); ctx.closePath(); }, P.stone, { shadow: 0.8, edge: 4 });
   cut(P_rr(820, 200, 280, 580, 6), P.stoneDark, { shadow: 0.8, edge: 4 }); cut(P_rr(900, 600, 120, 180, 60), '#2A1E16', { shadow: 0, edge: 3 });
   ctx.strokeStyle = 'rgba(62,44,30,0.25)'; ctx.lineWidth = 3; for (let r = 0; r < 6; r++) for (let c = 0; c < 22; c++) { const x = 110 + c * 80 + (r % 2) * 40, y = 400 + r * 62; if (x > 800 && x < 1110) continue; ctx.strokeRect(x, y, 80, 62); }
-  A.flag(960, 200, t, white > 0 ? ['#F4EEDD', '#F4EEDD', '#F4EEDD'] : flagCols, { s: 1.4 });
+  A.flag(1250, 340, t, white > 0 ? ['#F4EEDD', '#F4EEDD', '#F4EEDD'] : flagCols, { s: 1.5 });
   if (torches) for (const tx of [300, 640, 1280, 1620]) { R.candle(tx, 420, t, { s: 1.2 }); }
   if (night) { ctx.save(); ctx.globalAlpha = 0.35; ctx.fillStyle = '#1D2236'; ctx.fillRect(-300, -300, W + 600, H + 600); ctx.restore(); }
   if (rain > 0) rainFx(t, rain);

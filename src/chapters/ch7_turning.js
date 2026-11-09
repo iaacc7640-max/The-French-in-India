@@ -10,7 +10,7 @@ const { P } = K;
 
 function pinsMap(t, shrink = 0, onlyRed = 0) {
   const v = A.realMap({ view: 'india', t }), at = (n) => A.at(v, n);
-  A.inkBleed(...at('Calcutta'), 760, clamp(onlyRed), P.crimson, { clipFn: A.landPath(v), seed: 5, alpha: 0.5 });
+  A.inkBleed(...at('Calcutta'), 760, clamp(onlyRed), P.crimson, { clipFn: A.mainland(v), seed: 5, alpha: 0.5 });
   for (const n of ['Pondicherry', 'Chandernagore', 'Mahe', 'Karaikal', 'Yanam']) A.pin(...at(n), 'french', { star: n === 'Pondicherry', r: lerp(13, 6, eio(clamp(shrink))) });
   for (const n of ['Madras', 'Calcutta', 'Bombay']) A.pin(...at(n), 'english', { r: 16 });
   return v;
