@@ -21,7 +21,7 @@ export function crown(x, y, s = 1, col = P.gold) { ctx.save(); ctx.translate(x, 
 export function europeClash(t, p, { a = 'FRANCE', b = 'BRITAIN' } = {}) {
   const v = A.realMap({ view: 'europe', set: 'europe', t });
   const [fx, fy] = A.proj(v, 2.3, 47), [bx, by] = A.proj(v, -1.5, 52.5);
-  A.inkBleed(fx, fy, 260, 1, P.royal, { clipFn: A.landPath(v, 'europe'), seed: 4, alpha: 0.35 });
+  A.inkBleed(fx, fy, 260, 1, P.royal, { clipFn: A.landPath(v, 'europe'), seed: 4, alpha: 0.6 });
   A.placeLabel(a, fx, fy + 70, { size: 28 }); A.placeLabel(b, bx - 30, by - 40, { size: 28 });
   const k = eio(clamp(p)), mx = (fx + bx) / 2, my = (fy + by) / 2 - 60;
   crown(lerp(fx + 160, mx + 70, k), lerp(fy, my, k), 0.9, P.gold); crown(lerp(bx - 200, mx - 70, k), lerp(by, my, k), 0.9, '#B98B3A');

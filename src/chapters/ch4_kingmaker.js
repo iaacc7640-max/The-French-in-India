@@ -8,19 +8,19 @@ import { cam } from '../core/motion.js';
 const { P } = K;
 
 /** Dupleix's study in Pondicherry at night: window over the sea, candle */
-function study(t) { R.room({ wall: '#C2AE88', floor: '#7A5236', fl: 860, seed: 43, wash: '#2F3550', washA: 0.4 }); R.windowPane(260, 110, 340, 480, { t, moon: true }); R.table(1420, 700, 420, { h: 160 }); R.candle(1420, 676, t, { s: 1.0 }); }
+export function study(t) { R.room({ wall: '#C2AE88', floor: '#7A5236', fl: 860, seed: 43, wash: '#2F3550', washA: 0.4 }); R.windowPane(260, 110, 340, 480, { t, moon: true }); R.table(1420, 700, 420, { h: 160 }); R.candle(1420, 676, t, { s: 1.0 }); }
 /** the chessboard over the south India map; returns the square→xy function */
-function boardOver(t, { p = 1, view = 'south' } = {}) { A.realMap({ view, t }); return A.chessboard({ x: W / 2, y: 500, size: 980, tilt: 0.55, p }); }
-const KINGS = [  // name, side colour, file, rank, backer
+export function boardOver(t, { p = 1, view = 'south' } = {}) { A.realMap({ view, t }); return A.chessboard({ x: W / 2, y: 500, size: 980, tilt: 0.55, p }); }
+export const KINGS = [  // name, side colour, file, rank, backer
   ['Muzaffar Jang', 'nizam', 1.5, 2.2, 'french'], ['Chanda Sahib', 'nawab', 2.5, 5.2, 'french'],
   ['Nasir Jang', 'nizam', 5.8, 2.2, 'english'], ['Anwar-ud-din', 'nawab', 5.0, 5.2, 'english']];
 /** draw the four kings + backers. o: kingsP (pop 0..1 per king), backP {french, english}, fall (Anwar-ud-din), crown */
-function pieces(sq, lt, o = {}) {
+export function pieces(sq, lt, o = {}) {
   KINGS.forEach(([n, side, f, r, backer], i) => {
     const kp = o.kingsP ? o.kingsP(i) : 1, bp = (o.backP || {})[backer] ?? 1, off = backer === 'french' ? -0.75 : 0.75;
     if (bp > 0) { const [x0, y0] = sq(f + off * 3, r - 0.9), [x1, y1] = sq(f + off, r - 0.9); A.chessPiece(lerp(x0, x1, eio(bp)), lerp(y0, y1, eio(bp)), { kind: 'pawn', side: backer, s: 1.35, sc: clamp(bp * 4) }); }
-    const fall = i === 3 ? (o.fall || 0) : 0;
-    A.chessPiece(...sq(f, r), { kind: 'king', side, s: 1.45, sc: eob(clamp(kp)), label: n, fall, crown: i === 0 && o.crown });
+    const fall = i === 3 ? (o.fall || 0) : i === 1 ? (o.fallChanda || 0) : 0, wob = backer === 'french' && fall === 0 ? (o.wobble || 0) : 0;
+    A.chessPiece(...sq(f, r), { kind: 'king', side, s: 1.45, sc: eob(clamp(kp)), label: n, fall: fall + wob, dir: i === 1 ? -1 : 1, crown: i === 0 && o.crown });
   });
 }
 

@@ -50,12 +50,11 @@ for g in topo['objects']['land']['geometries']:
         r = ring(poly[0])
         for k, (x0, y0, x1, y1) in BOXES.items():
             if any(x0 <= p[0] <= x1 and y0 <= p[1] <= y1 for p in r):
-                r2 = clip(r, (x0, y0, x1, y1))
-                if len(r2) < 4: continue
-                r = r2
+                rc = clip(r, (x0, y0, x1, y1))
+                if len(rc) < 4: continue
                 # thin the ring: keep a point only if it moved >= 0.04 degree (keeps the look, cuts the size)
-                thin = [r[0]]
-                for p in r[1:]:
+                thin = [rc[0]]
+                for p in rc[1:]:
                     if abs(p[0] - thin[-1][0]) + abs(p[1] - thin[-1][1]) >= 0.04: thin.append(p)
                 if len(thin) >= 4: res[k].append(thin)
 out = Path(__file__).resolve().parent.parent / 'data/geo.json'
