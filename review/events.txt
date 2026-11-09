@@ -32,88 +32,123 @@ CARD1    29.25-30.85   cam=push whip=left
            29.30  page  card page turn
            29.55  ribbon  ribbon 1664
            30.10  seal  fleur-de-lis seal
-D1.1     30.85-33.85   cam=drift whip=left
-           30.90  slip  draft slip
-D1.2     33.85-35.58   cam=drift
-           33.90  slip  draft slip
-D1.3     35.58-40.48   cam=drift  <-- GAP 4.85 s
-           35.63  slip  draft slip
-D1.4     40.48-43.10   cam=drift
-           40.53  slip  draft slip
-D1.5     43.10-46.80   cam=drift
-           43.15  slip  draft slip
-D1.6     46.80-51.41   cam=drift  <-- GAP 4.56 s
-           46.84  slip  draft slip
-D1.7     51.41-53.34   cam=drift
-           51.46  slip  draft slip
-D1.8     53.34-58.16   cam=drift  <-- GAP 4.77 s
-           53.39  slip  draft slip
-D1.9     58.16-62.44   cam=drift  <-- GAP 4.23 s
-           58.21  slip  draft slip
-D1.10    62.44-66.03   cam=drift
-           62.48  slip  draft slip
-D1.11    66.03-68.52   cam=drift
-           66.08  slip  draft slip
-D1.12    68.52-70.86   cam=drift
-           68.57  slip  draft slip
-D1.13    70.86-73.23   cam=drift
-           70.91  slip  draft slip
+P01      30.85-33.85   cam=drift whip=left
+           31.00  flag  portuguese flag
+           31.30  flag  dutch flag
+           31.60  flag  english flag
+           31.90  flag  danish flag
+P02      33.85-35.58   cam=snap snap@34.80
+           33.85  route  blue route draws in
+           34.80  flag  blue flag arrives
+P03      35.58-40.48   cam=push whip=right
+           35.78  ribbon  1664
+           36.78  slip  LOUIS XIV
+           39.26  slip  COLBERT
+P04      40.48-43.10   cam=push
+           40.58  card  charter unrolls
+P05      43.10-46.80   cam=snap snap@43.42
+           43.42  seal  50 YEARS
+P06      46.80-51.41   cam=snap whip=down snap@50.36
+           47.20  coin  coins drain
+           49.20  coin  more coins
+           50.36  slip  MADAGASCAR
+P07      51.41-53.34   cam=push whip=up
+           51.51  push  push to the west coast
+P08      53.34-58.16   cam=drift
+           53.54  ribbon  1668
+           54.34  slip  CARON
+           57.32  slip  SURAT
+P09      58.16-62.44   cam=push whip=right
+           59.56  slip  ARMENIAN MERCHANT
+           61.72  slip  MARCARA
+P10      62.44-66.03   cam=push
+           62.53  card  scroll unrolls
+           65.20  seal  Golconda seal
+P11      66.03-68.52   cam=drift whip=down
+           66.13  route  route to Masulipatnam
+           67.20  pop  Masulipatnam pin
+P12      68.52-70.86   cam=drift
+           68.62  pop  pins pulse
+           68.92  slip  A FOOTHOLD
+P13      70.86-73.23   cam=push
+           71.36  light  empty circle on the coast
 CARD2    73.23-74.83   cam=push whip=left
            73.28  page  card page turn
            73.53  ribbon  ribbon 1674
            74.08  seal  fleur-de-lis seal
-D2.1     74.83-77.18   cam=drift whip=left
-           74.88  slip  draft slip
-D2.2     77.18-82.03   cam=drift  <-- GAP 4.80 s
-           77.23  slip  draft slip
-D2.3     82.03-85.27   cam=drift
-           82.08  slip  draft slip
-D2.4     85.27-88.48   cam=drift
-           85.32  slip  draft slip
-D2.5     88.48-92.50   cam=drift
-           88.53  slip  draft slip
-D2.6     92.50-95.71   cam=drift
-           92.55  slip  draft slip
-D2.7     95.71-99.69   cam=drift
-           95.76  slip  draft slip
-D2.8     99.69-102.38  cam=drift
-           99.74  slip  draft slip
-D2.9    102.38-105.91  cam=drift
-          102.43  slip  draft slip
-D2.10   105.91-107.50  cam=drift
-          105.96  slip  draft slip
-D2.11   107.50-112.48  cam=drift  <-- GAP 4.93 s
-          107.55  slip  draft slip
-D2.12   112.48-115.78  cam=drift
-          112.53  slip  draft slip
+Q01      74.83-77.18   cam=drift whip=left
+           75.03  ribbon  1673
+           75.83  flag  gulls
+Q02      77.18-82.03   cam=push
+           77.38  slip  SHER KHAN LODI
+           78.68  slip  MARTIN
+           80.76  slip  BIJAPUR
+Q03      82.03-85.27   cam=push
+           83.02  drop  stake driven
+           83.94  slip  COROMANDEL COAST
+Q04      85.27-88.48   cam=drift whip=down
+           85.27  route  streets draw
+           86.47  card  Pondicherry card
+Q05      88.48-92.50   cam=push
+           88.98  light  Martin
+           90.68  pop  capital star
+Q06      92.50-95.71   cam=drift whip=up
+           93.54  whip  crowns clash
+Q07      95.71-99.69   cam=push whip=down
+           95.91  ribbon  1693
+           97.72  ink  Dutch take Pondicherry
+Q08      99.69-102.38  cam=drift
+          100.28  page  calendar flips
+          100.98  ink  blue bleeds back
+Q09     102.38-105.91  cam=push
+          102.68  light  hall
+          104.32  seal  1720s
+Q10     105.91-107.50  cam=drift whip=down
+          106.40  brush  net unfurls
+Q11     107.50-112.48  cam=drift
+          110.06  pop  Mauritius
+          111.32  route  sea lane draws
+Q12     112.48-115.78  cam=snap whip=right snap@115.12
+          112.69  slip  MAURITIUS
+          115.12  flag  warships
 CARD3   115.78-117.38  cam=push whip=left
           115.83  page  card page turn
           116.08  ribbon  ribbon 1746
           116.63  seal  fleur-de-lis seal
-D3.1    117.38-121.00  cam=drift whip=left
-          117.43  slip  draft slip
-D3.2    121.00-124.52  cam=drift
-          121.05  slip  draft slip
-D3.3    124.52-127.93  cam=drift
-          124.57  slip  draft slip
-D3.4    127.93-132.21  cam=drift  <-- GAP 4.23 s
-          127.98  slip  draft slip
-D3.5    132.21-133.31  cam=drift
-          132.26  slip  draft slip
-D3.6    133.31-136.20  cam=drift
-          133.36  slip  draft slip
-D3.7    136.20-140.96  cam=drift  <-- GAP 4.71 s
-          136.25  slip  draft slip
-D3.8    140.96-143.94  cam=drift
-          141.01  slip  draft slip
-D3.9    143.94-147.27  cam=drift
-          143.99  slip  draft slip
-D3.10   147.27-150.71  cam=drift
-          147.32  slip  draft slip
-D3.11   150.71-155.13  cam=drift  <-- GAP 4.36 s
-          150.76  slip  draft slip
-D3.12   155.13-158.21  cam=drift
-          155.18  slip  draft slip
+R01     117.38-121.00  cam=drift whip=left
+          117.48  ribbon  1746
+          120.30  whip  crowns clash
+R02     121.00-124.52  cam=push whip=down
+          121.20  slip  MAURITIUS
+          123.36  slip  LA BOURDONNAIS
+R03     124.52-127.93  cam=snap whip=up snap@126.34
+          124.52  route  fleet sails
+          126.34  ink  Madras turns blue
+R04     127.93-132.21  cam=drift whip=right
+          128.48  card  promise scroll
+          129.13  slip  NAWAB
+R05     132.21-133.31  cam=snap snap@132.58
+          132.58  slip  scroll pocketed
+R06     133.31-136.20  cam=push whip=left
+          134.32  flag  green banners advance
+R07     136.20-140.96  cam=push whip=down
+          136.58  ribbon  Adyar date
+          138.70  pop  blue block steadies
+R08     140.96-143.94  cam=snap snap@141.56
+          141.16  pop  green cloud
+          141.86  card  Adyar card
+          143.34  whip  cloud scatters
+R09     143.94-147.27  cam=drift whip=up
+          144.24  flag  pins tilt
+          146.42  slip  THE SAME LESSON
+R10     147.27-150.71  cam=push
+          148.04  seal  DISCIPLINE > NUMBERS
+R11     150.71-155.13  cam=drift whip=left
+          150.76  card  treaty
+          153.42  ink  Madras returns to crimson
+R12     155.13-158.21  cam=push whip=right
+          155.63  light  silhouette
+          156.72  chess  chess piece turns
 CARD4   158.21-159.81  cam=push whip=left
           158.25  page  card page turn
           158.50  ribbon  ribbon 1749
@@ -159,102 +194,138 @@ CARD5   202.46-204.06  cam=push whip=left
           202.51  page  card page turn
           202.76  ribbon  ribbon 1751
           203.31  seal  fleur-de-lis seal
-D5.1    204.06-207.75  cam=drift whip=left
-          204.11  slip  draft slip
-D5.2    207.75-212.24  cam=drift  <-- GAP 4.44 s
-          207.80  slip  draft slip
-D5.3    212.24-214.90  cam=drift
-          212.29  slip  draft slip
-D5.4    214.90-218.37  cam=drift
-          214.95  slip  draft slip
-D5.5    218.37-224.09  cam=drift  <-- GAP 5.67 s
-          218.42  slip  draft slip
-D5.6    224.09-227.00  cam=drift
-          224.14  slip  draft slip
-D5.7    227.00-229.99  cam=drift
-          227.05  slip  draft slip
-D5.8    229.99-233.35  cam=drift
-          230.04  slip  draft slip
-D5.9    233.35-236.24  cam=drift
-          233.40  slip  draft slip
-D5.10   236.24-239.03  cam=drift
-          236.29  slip  draft slip
-D5.11   239.03-241.16  cam=drift
-          239.08  slip  draft slip
+S01     204.06-207.75  cam=snap whip=left snap@206.96
+          204.26  ribbon  1751
+          206.96  drop  ledger slams
+          207.26  slip  ROBERT CLIVE
+S02     207.75-212.24  cam=push whip=down
+          207.95  route  march to Arcot
+          210.64  card  Arcot card
+S03     212.24-214.90  cam=push whip=right
+          212.34  count  day counter
+          213.24  seal  day 52
+S04     214.90-218.37  cam=drift whip=up
+          216.92  chess  kings wobble
+S05     218.37-224.09  cam=push
+          218.57  ribbon  1752
+          221.42  chess  king laid down
+S06     224.09-227.00  cam=push whip=left
+          224.39  route  quills scratch
+          224.80  slip  PARIS
+S07     227.00-229.99  cam=push
+          227.70  card  bill unrolls
+S08     229.99-233.35  cam=drift whip=right
+          230.19  ribbon  1754
+          232.58  slip  RECALLED
+S09     233.35-236.24  cam=drift whip=down
+          233.45  card  truce scroll
+          234.90  seal  truce seal
+S10     236.24-239.03  cam=push whip=up
+          236.44  chess  blue pieces leave
+S11     239.03-241.16  cam=push
+          240.18  chess  blue pawn rocks upright
 CARD6   241.16-242.76  cam=push whip=left
           241.21  page  card page turn
           241.46  ribbon  ribbon 1760
           242.01  seal  fleur-de-lis seal
-D6.1    242.76-244.81  cam=drift whip=left
-          242.81  slip  draft slip
-D6.2    244.81-248.49  cam=drift
-          244.86  slip  draft slip
-D6.3    248.49-251.51  cam=drift
-          248.54  slip  draft slip
-D6.4    251.51-253.73  cam=drift
-          251.56  slip  draft slip
-D6.5    253.73-255.48  cam=drift
-          253.78  slip  draft slip
-D6.6    255.48-257.79  cam=drift
-          255.53  slip  draft slip
-D6.7    257.79-261.40  cam=drift
-          257.84  slip  draft slip
-D6.8    261.40-264.81  cam=drift
-          261.45  slip  draft slip
-D6.9    264.81-269.39  cam=drift  <-- GAP 4.53 s
-          264.86  slip  draft slip
-D6.10   269.39-274.07  cam=drift  <-- GAP 4.63 s
-          269.44  slip  draft slip
-D6.11   274.07-278.22  cam=drift  <-- GAP 4.10 s
-          274.12  slip  draft slip
+U01     242.76-244.81  cam=drift whip=left
+          243.10  slip  SEVEN YEARS WAR
+          243.70  whip  crowns clash
+U02     244.81-248.49  cam=push whip=right
+          246.31  drop  steps ashore
+          246.36  slip  COMTE DE LALLY
+U03     248.49-251.51  cam=drift whip=down
+          249.28  chess  blue pushes
+          250.08  slip  TOWARD MADRAS
+U04     251.51-253.73  cam=snap whip=up snap@253.00
+          252.70  light  Bengal glows
+U05     253.73-255.48  cam=push
+          253.83  ink  Bengal crimson
+          254.88  pop  Plassey pin
+U06     255.48-257.79  cam=snap snap@256.14
+          255.64  route  crimson supply line
+          256.54  slip  SUPPLY LINE
+U07     257.79-261.40  cam=push
+          257.99  route  broken blue line
+          260.30  slip  THE LONG WAY
+U08     261.40-264.81  cam=push whip=right
+          261.70  ribbon  22 JAN 1760
+U09     264.81-269.39  cam=snap snap@264.98
+          265.18  card  Wandiwash card
+          267.48  flag  blue banners pull back
+U10     269.39-274.07  cam=push whip=left
+          269.69  page  months flip
+          273.32  card  siege card
+U11     274.07-278.22  cam=push
+          274.27  ribbon  January 1761
+          277.18  flag  white flag
 CARD7   278.22-279.82  cam=push whip=left
           278.27  page  card page turn
           278.52  ribbon  ribbon 1763
           279.07  seal  fleur-de-lis seal
-D7.1    279.82-283.05  cam=drift whip=left
-          279.87  slip  draft slip
-D7.2    283.05-286.89  cam=drift
-          283.10  slip  draft slip
-D7.3    286.89-290.30  cam=drift
-          286.94  slip  draft slip
-D7.4    290.30-293.47  cam=drift
-          290.35  slip  draft slip
-D7.5    293.47-297.93  cam=drift  <-- GAP 4.41 s
-          293.52  slip  draft slip
-D7.6    297.93-302.90  cam=drift  <-- GAP 4.92 s
-          297.98  slip  draft slip
-D7.7    302.90-305.88  cam=drift
-          302.95  slip  draft slip
-D7.8    305.88-307.59  cam=drift
-          305.93  slip  draft slip
-D7.9    307.59-310.83  cam=drift
-          307.64  slip  draft slip
+V01     279.82-283.05  cam=drift whip=left
+          279.92  card  treaty unrolls
+          280.12  ribbon  1763
+          281.04  seal  treaty seal
+V02     283.05-286.89  cam=push whip=down
+          283.35  pop  pins return
+          285.88  ink  pins shrink
+V03     286.89-290.30  cam=push whip=right
+          287.19  slip  paraphrase label
+V04     290.30-293.47  cam=push
+          291.72  whip  arrows swap
+V05     293.47-297.93  cam=drift whip=down
+          294.96  seal  PLASSEY 1757
+          295.76  slip  turning point?
+V06     297.93-302.90  cam=snap snap@298.28
+          298.28  seal  WANDIWASH 1760
+          301.76  ink  only crimson
+V07     302.90-305.88  cam=push whip=right
+          305.12  slip  THE BLAME
+V08     305.88-307.59  cam=drift whip=down
+          306.96  slip  A PRISONER
+V09     307.59-310.83  cam=snap whip=left snap@309.56
+          307.89  slip  9 MAY 1766
+          309.56  candle  candle goes out
+          309.96  seal  COUPABLE
 CARD8   310.83-312.43  cam=push whip=left
           310.88  page  card page turn
           311.13  ribbon  ribbon 1954
           311.68  seal  fleur-de-lis seal
-D8.1    312.43-314.90  cam=drift whip=left
-          312.48  slip  draft slip
-D8.2    314.90-318.10  cam=drift
-          314.95  slip  draft slip
-D8.3    318.10-323.00  cam=drift  <-- GAP 4.85 s
-          318.15  slip  draft slip
-D8.4    323.00-324.88  cam=drift
-          323.05  slip  draft slip
-D8.5    324.88-327.31  cam=drift
-          324.93  slip  draft slip
-D8.6    327.31-329.51  cam=drift
-          327.36  slip  draft slip
-D8.7    329.51-332.58  cam=drift
-          329.56  slip  draft slip
-D8.8    332.58-334.38  cam=drift
-          332.63  slip  draft slip
-D8.9    334.38-337.44  cam=drift
-          334.43  slip  draft slip
-D8.10   337.44-340.77  cam=drift
-          337.49  slip  draft slip
-D8.11   340.77-344.86  cam=drift  <-- GAP 4.03 s
-          340.82  slip  draft slip
-D8.12   344.86-348.94  cam=drift  <-- GAP 4.03 s
-          344.90  slip  draft slip
-EVENTS: 19 shot(s) with a gap of 4 s or more
+W01     312.43-314.90  cam=drift whip=left
+          312.73  pop  dots pulse
+          314.16  slip  NEVER FULLY LEFT
+W02     314.90-318.10  cam=push
+          316.56  ink  Chandernagore joins India
+          316.86  ribbon  1950
+W03     318.10-323.00  cam=push
+          320.66  ink  Pondicherry joins
+          321.01  ink  Karaikal joins
+          321.36  ink  Mahe joins
+          321.71  ink  Yanam joins
+W04     323.00-324.88  cam=push whip=right
+          323.70  ballot  ballot drops
+          323.90  card  Kizhur card
+W05     324.88-327.31  cam=push whip=left
+          325.84  slip  the question
+W06     327.31-329.51  cam=push
+          327.41  chess  blue pieces return
+          328.74  chess  crown lands
+W07     329.51-332.58  cam=drift
+          329.71  chess  pieces settle
+          331.74  slip  through the thrones
+W08     332.58-334.38  cam=drift whip=down
+          332.69  split  split opens
+          333.62  slip  IDEAS NEED MONEY
+W09     334.38-337.44  cam=push
+          334.77  route  quills
+          336.46  slip  ORDERS FROM PARIS
+W10     337.44-340.77  cam=push
+          340.61  slip  PAYS FOR ITSELF
+W11     340.77-344.86  cam=drift whip=up
+          341.07  chess  pieces turn crimson
+          343.14  chess  last piece turns
+W12     344.86-348.94  cam=push
+          344.86  route  arrow fills the board
+          347.25  slip  NEXT: THE DANES IN INDIA
+EVENTS OK: no gap of 4 s or more

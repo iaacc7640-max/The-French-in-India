@@ -12,6 +12,8 @@ import { build as ch2 } from './chapters/ch2_pondicherry.js';
 import { build as ch3 } from './chapters/ch3_adyar.js';
 import { build as ch5 } from './chapters/ch5_clive.js';
 import { build as ch6 } from './chapters/ch6_wandiwash.js';
+import { build as ch7 } from './chapters/ch7_turning.js';
+import { build as ch8 } from './chapters/ch8_takeaway.js';
 
 export const CHAPTERS = [
   { ch: 0, year: '', title: 'Cold open', music: 'tension' },
@@ -24,7 +26,7 @@ export const CHAPTERS = [
   { ch: 7, year: '1763', title: 'The Real Turning Point', music: 'minor', era: 6 },
   { ch: 8, year: '1954', title: 'What Really Decided India', music: 'warm', era: 7 },
 ];
-const BUILT = { 0: ch0, 1: ch1, 2: ch2, 3: ch3, 4: ch4, 5: ch5, 6: ch6 };          // the pilot chapters; the rest are drafts until built
+const BUILT = { 0: ch0, 1: ch1, 2: ch2, 3: ch3, 4: ch4, 5: ch5, 6: ch6, 7: ch7, 8: ch8 };          // the pilot chapters; the rest are drafts until built
 
 export function buildShots(lab, script) {
   const lines = script.lines, S = [], CUES = [], EV = [];
