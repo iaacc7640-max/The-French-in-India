@@ -23,15 +23,15 @@ for l in plan.splitlines():
     for a, b in PHON: spoken = spoken.replace(a, b)
     lines.append({'text': spoken, 'caps': caps, 'chapter': ch, 'cut': f'{m.group(1)}.{m.group(2)}', 'shot': m.group(5).strip()})
 for i, ln in enumerate(lines):
-    if i + 1 < len(lines) and lines[i + 1]['chapter'] != ln['chapter']: ln['gap'] = 2.0     # chapter card beat (1.6 s card + sting)
+    if i + 1 < len(lines) and lines[i + 1]['chapter'] != ln['chapter']: ln['gap'] = 1.8     # chapter card beat (1.6 s card + sting)
 # half-beat pause BEFORE each cliffhanger line and before "It was a supply line." (on the previous line's gap)
 for i, ln in enumerate(lines):
     if i and 'half-beat pause before' in ln['shot'] and 'gap' not in lines[i - 1]: lines[i - 1]['gap'] = 0.55
     if ln['cut'] == '5.5': lines[i - 1]['gap'] = 0.5; ln['gap'] = 0.9                         # the Chanda Sahib silence beat
 src = plan[plan.index('## Sources'):].splitlines()[1:]
 sources = [s.lstrip('- ').strip() for s in src if s.strip().startswith('-')]
-S = {'title': 'So Close to Empire: The French in India, 1664-1954', 'voice': 'bm_george', 'speed': 0.98, 'lead': 0.5, 'outro': 2.0,
-     'gap': 0.32, 'music': 'chapters', 'sources': sources,
+S = {'title': 'So Close to Empire: The French in India, 1664-1954', 'voice': 'bm_george', 'speed': 1.0, 'lead': 0.5, 'outro': 2.0,
+     'gap': 0.25, 'music': 'chapters', 'sources': sources,
      'lines': [{k: v for k, v in ln.items() if k != 'shot'} for ln in lines]}
 (R / 'script.json').write_text(json.dumps(S, indent=1, ensure_ascii=False))
 print(len(lines), 'lines,', sum(len(l['caps'].replace('|', ' ').split()) for l in lines), 'caption words')

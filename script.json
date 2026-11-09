@@ -1,10 +1,10 @@
 {
  "title": "So Close to Empire: The French in India, 1664-1954",
  "voice": "bm_george",
- "speed": 0.98,
+ "speed": 1.0,
  "lead": 0.5,
  "outro": 2.0,
- "gap": 0.32,
+ "gap": 0.25,
  "music": "chapters",
  "sources": [
   "Rajiv Ahir, *A Brief History of Modern India*, ch. 3, \"The French\" and \"The Anglo-French Struggle for Supremacy: the Carnatic Wars\" (incl. \"Causes for the English Success and the French Failure\"; Dodwell; Lyall).",
@@ -78,7 +78,7 @@
    "caps": "It was a *supply line.",
    "chapter": 0,
    "cut": "0.11",
-   "gap": 2.0
+   "gap": 1.8
   },
   {
    "text": "The French were the last Europeans to arrive,",
@@ -158,7 +158,7 @@
    "caps": "What they still *lacked | was a *home.",
    "chapter": 1,
    "cut": "1.13",
-   "gap": 2.0
+   "gap": 1.8
   },
   {
    "text": "That came in sixteen seventy-three,",
@@ -232,7 +232,7 @@
    "caps": "That *safety net | was about to *become | a *weapon.",
    "chapter": 2,
    "cut": "2.12",
-   "gap": 2.0
+   "gap": 1.8
   },
   {
    "text": "In seventeen forty-six, Europe went to war again.",
@@ -306,7 +306,7 @@
    "caps": "But one *Frenchman | had *learned | something *bigger.",
    "chapter": 3,
    "cut": "3.12",
-   "gap": 2.0
+   "gap": 1.8
   },
   {
    "text": "His name was Joseph François Doo-play,",
@@ -392,7 +392,7 @@
    "caps": "But the *English had | a young *clerk | watching *closely.",
    "chapter": 4,
    "cut": "4.14",
-   "gap": 2.0
+   "gap": 1.8
   },
   {
    "text": "In seventeen fifty-one, that clerk, Robert Clive,",
@@ -462,7 +462,7 @@
    "caps": "But the *game | was *not over.",
    "chapter": 5,
    "cut": "5.11",
-   "gap": 2.0
+   "gap": 1.8
   },
   {
    "text": "When the Seven Years War began,",
@@ -529,7 +529,7 @@
    "caps": "Then, in *January | *1761, | the city *surrendered.",
    "chapter": 6,
    "cut": "6.11",
-   "gap": 2.0
+   "gap": 1.8
   },
   {
    "text": "The Treaty of Paris, in seventeen sixty-three,",
@@ -584,7 +584,7 @@
    "caps": "five years *later, | France *executed him.",
    "chapter": 7,
    "cut": "7.9",
-   "gap": 2.0
+   "gap": 1.8
   },
   {
    "text": "Yet the French never fully left.",
