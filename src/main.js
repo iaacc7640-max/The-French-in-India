@@ -61,7 +61,8 @@ function draw(t) {
     buildCaptions(script);
     const LAB = new URLSearchParams(location.search).get('lab');
     const { buildShots } = LAB ? await import('./lab.js') : await import('./shots.js');
-    const { shots, cues, events = [] } = buildShots(LAB);
+    const { shots, cues, events = [], chapters = [] } = buildShots(LAB, script);
+    OP.chapters = () => chapters;
     shots.sort((a, b) => a.at - b.at);
     OP._shots = shots; OP.script = script; OP.lab = LAB;
     OP.duration = () => T.dur;

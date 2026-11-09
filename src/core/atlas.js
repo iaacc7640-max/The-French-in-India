@@ -199,11 +199,18 @@ export function iconAt(kind, x, y, s = 1) {
 // ═════════════════════════ CHAPTER CARD ═════════════════════════
 /** chapter card (~1.6 s): the page turns in, a gold YEAR ribbon pops, the hook title slip slides in, a fleur-de-lis seal stamps.
  *  lt = time since the card started. Draw it full-frame (the shot's camera adds the whip). */
-export function chapterCard(year, title, lt, { seed = 21 } = {}) {
+export function chapterCard(year, title, lt, { seed = 21, film = null } = {}) {
   parchment(seed);
   const turn = eio(clamp(lt / 0.35));
   // page-turn: a folded corner sweeps across
   if (turn < 1) { ctx.save(); ctx.fillStyle = 'rgba(90,60,30,0.18)'; ctx.beginPath(); ctx.moveTo(W * (1 - turn) - 200, 0); ctx.lineTo(W * (1 - turn) + 120, 0); ctx.lineTo(W * (1 - turn) - 80, H); ctx.lineTo(W * (1 - turn) - 400, H); ctx.closePath(); ctx.fill(); ctx.restore(); }
+  if (film) {   // the opening title doubles as chapter 1's card: film title, its span, then the chapter hook
+    ribbon(film.span, W / 2, 250, eob(seg(lt, 0.15, 0.5)), 90);
+    const fp = eo(seg(lt, 0.3, 0.65)); if (fp > 0) { ctx.save(); ctx.globalAlpha = fp; ctx.font = `700 120px ${SERIF}`; ctx.fillStyle = P.ink; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.letterSpacing = '6px'; ctx.fillText(film.title, W / 2, 470); ctx.letterSpacing = '0px'; ctx.restore(); }
+    const sp2 = eo(seg(lt, 0.8, 1.1)); if (sp2 > 0) { ctx.save(); ctx.translate(lerp(-W * 0.4, 0, sp2), 0); slip(`${year}: ${title.toUpperCase()}`, W / 2, 660, 1, -0.015, 50); ctx.restore(); }
+    const st2 = seg(lt, 1.1, 1.3); if (st2 > 0) fleurSeal(W / 2 + 600, 470, lerp(1.6, 0.7, eo(st2)), clamp(st2 * 3));
+    return;
+  }
   ribbon(year, W / 2, 360, eob(seg(lt, 0.2, 0.55)), 120);
   const sp = eo(seg(lt, 0.45, 0.8)); if (sp > 0) { ctx.save(); ctx.translate(lerp(-W * 0.4, 0, sp), 0); slip(title.toUpperCase(), W / 2, 590, 1, -0.015, 70); ctx.restore(); }
   const st = seg(lt, 0.8, 1.0); if (st > 0) fleurSeal(W / 2 + 520, 590, lerp(1.8, 0.8, eo(st)), clamp(st * 3));
