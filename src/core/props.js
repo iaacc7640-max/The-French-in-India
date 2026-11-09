@@ -72,16 +72,27 @@ export function ledger(x, y, s = 1, { open = 1 } = {}) {
   ctx.strokeStyle = 'rgba(62,44,30,0.4)'; ctx.lineWidth = 2; for (let i = 0; i < 5; i++) { ctx.beginPath(); ctx.moveTo(-110, -54 + i * 11); ctx.lineTo(-14, -48 + i * 11); ctx.moveTo(14, -48 + i * 11); ctx.lineTo(108 * open, -54 + i * 11); ctx.stroke(); }
   ctx.restore();
 }
-/** a horse with a saddle and a turban resting on the empty saddle (Ambur, told with objects) */
+/** a horse in profile with a saddle and a turban resting on the empty saddle (Ambur, told with objects) */
 export function emptySaddle(x, y, t, { s = 1, turban = P.gold } = {}) {
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
-  const b = Math.sin(t * 1.4) * 3;
-  cut(() => { ctx.beginPath(); ctx.ellipse(0, -210 + b * 0.3, 210, 90, 0, 0, TAU); }, '#6E4A34', { shadow: 0.8, edge: 4 });
-  cut(P_poly([[150, -250], [230, -390 + b], [290, -370 + b], [250, -300], [200, -200]]), '#6E4A34', { shadow: 0.6, edge: 4 });
-  for (const lx of [-150, -100, 110, 160]) cut(P_rr(lx - 14, -150, 28, 150, 8), '#5A3B28', { shadow: 0.5, edge: 3 });
-  cut(P_poly([[-60, -300], [70, -300], [60, -250], [-50, -250]]), P.forest, { shadow: 0.6, edge: 3 });
-  cut(P_poly([[-70, -300], [-50, -330], [60, -330], [80, -300]]), P.crimson, { shadow: 0.5, edge: 3 });
-  ctx.save(); ctx.translate(0, -352); cut(() => { ctx.beginPath(); ctx.ellipse(0, 0, 58, 30, 0, Math.PI, TAU); ctx.lineTo(54, 10); ctx.lineTo(-54, 10); ctx.closePath(); }, turban, { shadow: 0.5, edge: 3 }); circle(16, -14, 6, P.crimson); ctx.restore();
+  const b = Math.sin(t * 1.4) * 3, HORSE = '#6E4A34', DARK = '#4E3424';
+  // tail
+  cut(() => { ctx.beginPath(); ctx.moveTo(-200, -300); ctx.quadraticCurveTo(-290, -250 + b, -260, -120); ctx.quadraticCurveTo(-235, -210, -190, -270); ctx.closePath(); }, DARK, { shadow: 0.5, edge: 3 });
+  // legs (far pair darker)
+  for (const [lx, c] of [[-150, DARK], [140, DARK], [-110, HORSE], [180, HORSE]]) cut(P_poly([[lx - 16, -250], [lx + 16, -250], [lx + 12, -10], [lx + 22, 0], [lx - 16, 0]]), c, { shadow: 0.5, edge: 3 });
+  // body
+  cut(() => { ctx.beginPath(); ctx.ellipse(0, -300, 230, 85, 0, 0, TAU); }, HORSE, { shadow: 0.8, edge: 4 });
+  // neck and head (head lowered slightly, ears up)
+  cut(P_poly([[150, -350], [210, -470 + b], [250, -500 + b], [290, -490 + b], [360, -400 + b], [345, -375 + b], [280, -410 + b], [230, -280]]), HORSE, { shadow: 0.7, edge: 4 });
+  cut(P_poly([[248, -500 + b], [256, -540 + b], [270, -498 + b]]), HORSE, { shadow: 0.3, edge: 3 });
+  cut(P_poly([[200, -470 + b], [250, -505 + b], [240, -440 + b], [190, -380]]), DARK, { shadow: 0, edge: 2 });   // mane
+  circle(300, -455 + b, 6, '#1F140C');
+  // saddle cloth (Nawab green + gold) and saddle
+  cut(P_poly([[-80, -385], [90, -385], [80, -300], [-70, -300]]), P.forest, { shadow: 0.6, edge: 3 });
+  ctx.fillStyle = P.gold; ctx.fillRect(-72, -312, 146, 10);
+  cut(P_poly([[-90, -385], [-70, -415], [70, -415], [95, -385]]), P.crimson, { shadow: 0.5, edge: 3 });
+  // the turban resting on the empty saddle
+  ctx.save(); ctx.translate(0, -432); cut(() => { ctx.beginPath(); ctx.ellipse(0, 0, 62, 32, 0, Math.PI, TAU); ctx.lineTo(58, 12); ctx.lineTo(-58, 12); ctx.closePath(); }, turban, { shadow: 0.5, edge: 3 }); circle(18, -16, 7, P.crimson); ctx.restore();
   ctx.restore();
 }
 /** a throne (cut paper) */

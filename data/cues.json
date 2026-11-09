@@ -1,9 +1,669 @@
 {
- "duration": 7.855,
+ "duration": 348.938,
  "cues": [
   {
-   "t": 0.1,
-   "type": "whoosh"
+   "t": 0,
+   "type": "amb",
+   "name": "wind",
+   "dur": 13.616,
+   "gain": 0.6
+  },
+  {
+   "t": 0.6,
+   "type": "parchment"
+  },
+  {
+   "t": 1.2,
+   "type": "drums",
+   "dur": 3,
+   "gain": 0.45
+  },
+  {
+   "t": 2.3,
+   "type": "pop"
+  },
+  {
+   "t": 5.74,
+   "type": "pop"
+  },
+  {
+   "t": 5.98,
+   "type": "snapthump"
+  },
+  {
+   "t": 6.49,
+   "type": "parchment"
+  },
+  {
+   "t": 7.27,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 8.279,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 8.429,
+   "type": "amb",
+   "name": "room",
+   "dur": 5.087,
+   "gain": 0.5
+  },
+  {
+   "t": 8.479,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 8.929,
+   "type": "pop"
+  },
+  {
+   "t": 12.6,
+   "type": "snapthump"
+  },
+  {
+   "t": 12.66,
+   "type": "click"
+  },
+  {
+   "t": 13.336,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 13.486,
+   "type": "amb",
+   "name": "street",
+   "dur": 7.435,
+   "gain": 0.6
+  },
+  {
+   "t": 13.536,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 13.786,
+   "type": "parchment"
+  },
+  {
+   "t": 16.32,
+   "type": "snapthump"
+  },
+  {
+   "t": 16.38,
+   "type": "puff"
+  },
+  {
+   "t": 16.88,
+   "type": "waxthud"
+  },
+  {
+   "t": 16.93,
+   "type": "gavel"
+  },
+  {
+   "t": 17.78,
+   "type": "door",
+   "gain": 0.8
+  },
+  {
+   "t": 19.646,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 19.746,
+   "type": "pop"
+  },
+  {
+   "t": 20.741,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 20.891,
+   "type": "amb",
+   "name": "wind",
+   "dur": 8.641,
+   "gain": 0.5
+  },
+  {
+   "t": 22.091,
+   "type": "pop",
+   "gain": 0.4
+  },
+  {
+   "t": 23.631,
+   "type": "brush"
+  },
+  {
+   "t": 25.115,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 26.18,
+   "type": "pop"
+  },
+  {
+   "t": 26.83,
+   "type": "quill"
+  },
+  {
+   "t": 28.06,
+   "type": "snapthump"
+  },
+  {
+   "t": 28.12,
+   "type": "quill"
+  },
+  {
+   "t": 29.052,
+   "type": "sting"
+  },
+  {
+   "t": 29.102,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 29.302,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 29.302,
+   "type": "pageturn"
+  },
+  {
+   "t": 30.102,
+   "type": "waxthud"
+  },
+  {
+   "t": 30.702,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 73.031,
+   "type": "sting"
+  },
+  {
+   "t": 73.081,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 73.281,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 73.281,
+   "type": "pageturn"
+  },
+  {
+   "t": 74.081,
+   "type": "waxthud"
+  },
+  {
+   "t": 74.681,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 115.578,
+   "type": "sting"
+  },
+  {
+   "t": 115.628,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 115.828,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 115.828,
+   "type": "pageturn"
+  },
+  {
+   "t": 116.628,
+   "type": "waxthud"
+  },
+  {
+   "t": 117.228,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 158.005,
+   "type": "sting"
+  },
+  {
+   "t": 158.055,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 158.205,
+   "type": "amb",
+   "name": "room",
+   "dur": 10.54,
+   "gain": 0.5
+  },
+  {
+   "t": 158.255,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 158.255,
+   "type": "pageturn"
+  },
+  {
+   "t": 159.055,
+   "type": "waxthud"
+  },
+  {
+   "t": 159.655,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 159.855,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 160.105,
+   "type": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 160.805,
+   "type": "pop"
+  },
+  {
+   "t": 162.615,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 164.345,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 164.495,
+   "type": "amb",
+   "name": "pulse",
+   "dur": 14.129,
+   "gain": 0.4
+  },
+  {
+   "t": 164.595,
+   "type": "brush"
+  },
+  {
+   "t": 167.04,
+   "type": "snapthump"
+  },
+  {
+   "t": 167.1,
+   "type": "click"
+  },
+  {
+   "t": 170.3,
+   "type": "click"
+  },
+  {
+   "t": 171.64,
+   "type": "click"
+  },
+  {
+   "t": 172.825,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 173.64,
+   "type": "click"
+  },
+  {
+   "t": 176.465,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 177.12,
+   "type": "click"
+  },
+  {
+   "t": 178.344,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 178.494,
+   "type": "drums",
+   "dur": 4,
+   "gain": 0.6
+  },
+  {
+   "t": 178.544,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 178.694,
+   "type": "parchment"
+  },
+  {
+   "t": 180.24,
+   "type": "pop"
+  },
+  {
+   "t": 181.04,
+   "type": "parchment"
+  },
+  {
+   "t": 182.954,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 183.104,
+   "type": "thud",
+   "gain": 0.5
+  },
+  {
+   "t": 185.297,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 185.547,
+   "type": "quill",
+   "dur": 1.2
+  },
+  {
+   "t": 187.36,
+   "type": "waxthud"
+  },
+  {
+   "t": 189.46,
+   "type": "brush"
+  },
+  {
+   "t": 190.337,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 190.487,
+   "type": "amb",
+   "name": "court",
+   "dur": 6.085,
+   "gain": 0.7
+  },
+  {
+   "t": 190.537,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 190.687,
+   "type": "pop"
+  },
+  {
+   "t": 191.96,
+   "type": "pop"
+  },
+  {
+   "t": 194.317,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 194.36,
+   "type": "coins"
+  },
+  {
+   "t": 197.14,
+   "type": "sparkle",
+   "dur": 0.6,
+   "gain": 0.4
+  },
+  {
+   "t": 198.523,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 198.673,
+   "type": "amb",
+   "name": "room",
+   "dur": 3.964,
+   "gain": 0.5
+  },
+  {
+   "t": 198.873,
+   "type": "pop"
+  },
+  {
+   "t": 200.28,
+   "type": "snapthump"
+  },
+  {
+   "t": 200.34,
+   "type": "pop",
+   "gain": 0.5
+  },
+  {
+   "t": 202.257,
+   "type": "sting"
+  },
+  {
+   "t": 202.307,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 202.507,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 202.507,
+   "type": "pageturn"
+  },
+  {
+   "t": 203.307,
+   "type": "waxthud"
+  },
+  {
+   "t": 203.907,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 240.956,
+   "type": "sting"
+  },
+  {
+   "t": 241.006,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 241.206,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 241.206,
+   "type": "pageturn"
+  },
+  {
+   "t": 242.006,
+   "type": "waxthud"
+  },
+  {
+   "t": 242.606,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 278.021,
+   "type": "sting"
+  },
+  {
+   "t": 278.071,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 278.271,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 278.271,
+   "type": "pageturn"
+  },
+  {
+   "t": 279.071,
+   "type": "waxthud"
+  },
+  {
+   "t": 279.671,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 310.632,
+   "type": "sting"
+  },
+  {
+   "t": 310.682,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 310.882,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 310.882,
+   "type": "pageturn"
+  },
+  {
+   "t": 311.682,
+   "type": "waxthud"
+  },
+  {
+   "t": 312.282,
+   "type": "whoosh",
+   "gain": 0.8
+  }
+ ],
+ "chapters": [
+  {
+   "ch": 0,
+   "year": "",
+   "title": "Cold open",
+   "music": "tension",
+   "start": 0,
+   "end": 29.252,
+   "firstLine": 0.5
+  },
+  {
+   "ch": 1,
+   "year": "1664",
+   "title": "Last to the Party",
+   "music": "bed",
+   "era": 0,
+   "start": 29.252,
+   "end": 73.231,
+   "firstLine": 30.932
+  },
+  {
+   "ch": 2,
+   "year": "1674",
+   "title": "A Home Called Pondicherry",
+   "music": "bed",
+   "era": 1,
+   "start": 73.231,
+   "end": 115.778,
+   "firstLine": 74.911
+  },
+  {
+   "ch": 3,
+   "year": "1746",
+   "title": "One Thousand vs Ten Thousand",
+   "music": "rising",
+   "era": 2,
+   "start": 115.778,
+   "end": 158.205,
+   "firstLine": 117.458
+  },
+  {
+   "ch": 4,
+   "year": "1749",
+   "title": "The Kingmaker",
+   "music": "pulse",
+   "era": 3,
+   "start": 158.205,
+   "end": 202.457,
+   "firstLine": 159.885
+  },
+  {
+   "ch": 5,
+   "year": "1751",
+   "title": "The Clerk Who Struck Back",
+   "music": "tension",
+   "era": 4,
+   "start": 202.457,
+   "end": 241.156,
+   "firstLine": 204.137
+  },
+  {
+   "ch": 6,
+   "year": "1760",
+   "title": "Wandiwash",
+   "music": "tension",
+   "era": 5,
+   "start": 241.156,
+   "end": 278.221,
+   "firstLine": 242.836
+  },
+  {
+   "ch": 7,
+   "year": "1763",
+   "title": "The Real Turning Point",
+   "music": "minor",
+   "era": 6,
+   "start": 278.221,
+   "end": 310.832,
+   "firstLine": 279.901
+  },
+  {
+   "ch": 8,
+   "year": "1954",
+   "title": "What Really Decided India",
+   "music": "warm",
+   "era": 7,
+   "start": 310.832,
+   "end": 348.938,
+   "firstLine": 312.512
   }
  ]
 }

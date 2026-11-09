@@ -1,0 +1,260 @@
+H01       0.00-5.07    cam=drift
+            0.60  ribbon  1746
+            1.20  drums  dots march
+            2.30  slip  ~1,000
+H02       5.07-8.43    cam=snap snap@6.04
+            5.74  pop  green cloud appears
+            6.49  card  Adyar stat card
+            7.27  whip  cloud scatters
+H03       8.43-11.48   cam=push whip=right
+            8.93  slip  name slip DUPLEIX
+           10.33  light  candle glow swells
+H04      11.48-13.49   cam=snap snap@12.66
+           12.66  chess  crown lands on the king
+H05      13.49-15.91   cam=push whip=left
+           13.79  ribbon  1766
+H06      15.91-19.60   cam=snap snap@16.38
+           16.38  candle  candle goes out
+           16.88  seal  COUPABLE seal
+H07      19.60-20.89   cam=push
+           19.75  slip  COMTE DE LALLY
+H08      20.89-23.53   cam=drift whip=down
+           21.29  ink  blue and red territory
+           22.09  pop  blue pins pulse
+H09      23.53-25.07   cam=drift
+           23.63  ink  blue drains away
+H10      25.07-27.49   cam=push
+           26.18  pop  crossed swords
+           26.83  route  struck through
+H11      27.49-29.25   cam=snap snap@28.12
+           28.12  route  supply line teaser
+CARD1    29.25-30.85   cam=push whip=left
+           29.30  page  card page turn
+           29.55  ribbon  ribbon 1664
+           30.10  seal  fleur-de-lis seal
+D1.1     30.85-33.85   cam=drift whip=left
+           30.90  slip  draft slip
+D1.2     33.85-35.58   cam=drift
+           33.90  slip  draft slip
+D1.3     35.58-40.48   cam=drift  <-- GAP 4.85 s
+           35.63  slip  draft slip
+D1.4     40.48-43.10   cam=drift
+           40.53  slip  draft slip
+D1.5     43.10-46.80   cam=drift
+           43.15  slip  draft slip
+D1.6     46.80-51.41   cam=drift  <-- GAP 4.56 s
+           46.84  slip  draft slip
+D1.7     51.41-53.34   cam=drift
+           51.46  slip  draft slip
+D1.8     53.34-58.16   cam=drift  <-- GAP 4.77 s
+           53.39  slip  draft slip
+D1.9     58.16-62.44   cam=drift  <-- GAP 4.23 s
+           58.21  slip  draft slip
+D1.10    62.44-66.03   cam=drift
+           62.48  slip  draft slip
+D1.11    66.03-68.52   cam=drift
+           66.08  slip  draft slip
+D1.12    68.52-70.86   cam=drift
+           68.57  slip  draft slip
+D1.13    70.86-73.23   cam=drift
+           70.91  slip  draft slip
+CARD2    73.23-74.83   cam=push whip=left
+           73.28  page  card page turn
+           73.53  ribbon  ribbon 1674
+           74.08  seal  fleur-de-lis seal
+D2.1     74.83-77.18   cam=drift whip=left
+           74.88  slip  draft slip
+D2.2     77.18-82.03   cam=drift  <-- GAP 4.80 s
+           77.23  slip  draft slip
+D2.3     82.03-85.27   cam=drift
+           82.08  slip  draft slip
+D2.4     85.27-88.48   cam=drift
+           85.32  slip  draft slip
+D2.5     88.48-92.50   cam=drift
+           88.53  slip  draft slip
+D2.6     92.50-95.71   cam=drift
+           92.55  slip  draft slip
+D2.7     95.71-99.69   cam=drift
+           95.76  slip  draft slip
+D2.8     99.69-102.38  cam=drift
+           99.74  slip  draft slip
+D2.9    102.38-105.91  cam=drift
+          102.43  slip  draft slip
+D2.10   105.91-107.50  cam=drift
+          105.96  slip  draft slip
+D2.11   107.50-112.48  cam=drift  <-- GAP 4.93 s
+          107.55  slip  draft slip
+D2.12   112.48-115.78  cam=drift
+          112.53  slip  draft slip
+CARD3   115.78-117.38  cam=push whip=left
+          115.83  page  card page turn
+          116.08  ribbon  ribbon 1746
+          116.63  seal  fleur-de-lis seal
+D3.1    117.38-121.00  cam=drift whip=left
+          117.43  slip  draft slip
+D3.2    121.00-124.52  cam=drift
+          121.05  slip  draft slip
+D3.3    124.52-127.93  cam=drift
+          124.57  slip  draft slip
+D3.4    127.93-132.21  cam=drift  <-- GAP 4.23 s
+          127.98  slip  draft slip
+D3.5    132.21-133.31  cam=drift
+          132.26  slip  draft slip
+D3.6    133.31-136.20  cam=drift
+          133.36  slip  draft slip
+D3.7    136.20-140.96  cam=drift  <-- GAP 4.71 s
+          136.25  slip  draft slip
+D3.8    140.96-143.94  cam=drift
+          141.01  slip  draft slip
+D3.9    143.94-147.27  cam=drift
+          143.99  slip  draft slip
+D3.10   147.27-150.71  cam=drift
+          147.32  slip  draft slip
+D3.11   150.71-155.13  cam=drift  <-- GAP 4.36 s
+          150.76  slip  draft slip
+D3.12   155.13-158.21  cam=drift
+          155.18  slip  draft slip
+CARD4   158.21-159.81  cam=push whip=left
+          158.25  page  card page turn
+          158.50  ribbon  ribbon 1749
+          159.06  seal  fleur-de-lis seal
+K01     159.81-162.56  cam=push whip=left
+          160.10  whip  Dupleix turns
+          160.81  slip  name slip
+K02     162.56-164.50  cam=push
+          162.76  light  king lifted
+K03     164.50-166.59  cam=drift whip=down
+          164.59  ink  board bleeds in
+K04     166.59-168.62  cam=snap snap@167.10
+          167.10  chess  blue piece set down
+K05     168.62-172.78  cam=drift
+          170.30  chess  Hyderabad pair
+          171.64  chess  Carnatic pair
+K06     172.78-176.41  cam=push
+          173.64  chess  blue pieces slide in
+K07     176.41-178.49  cam=push
+          177.12  chess  crimson pieces slide in
+K08     178.49-182.90  cam=push whip=right
+          178.69  ribbon  1749
+          180.24  pop  Ambur pin
+          181.04  card  Ambur stat card
+K09     182.90-185.45  cam=push
+          183.10  fall  green king tips over
+          184.86  whip  cut-in: empty saddle
+K10     185.45-190.49  cam=drift whip=up
+          185.55  route  Krishna draws itself
+          187.36  seal  gold seal
+          189.46  ink  blue bleeds south of the Krishna
+K11     190.49-194.27  cam=push whip=right
+          190.69  slip  HYDERABAD
+          191.96  slip  name slip BUSSY
+K12     194.27-196.54  cam=push
+          194.36  coin  purse passes
+K13     196.54-198.67  cam=drift
+          197.14  light  gold glint
+K14     198.67-202.46  cam=snap whip=right snap@200.34
+          198.87  slip  MADRAS
+          200.34  pop  the clerk looks up
+CARD5   202.46-204.06  cam=push whip=left
+          202.51  page  card page turn
+          202.76  ribbon  ribbon 1751
+          203.31  seal  fleur-de-lis seal
+D5.1    204.06-207.75  cam=drift whip=left
+          204.11  slip  draft slip
+D5.2    207.75-212.24  cam=drift  <-- GAP 4.44 s
+          207.80  slip  draft slip
+D5.3    212.24-214.90  cam=drift
+          212.29  slip  draft slip
+D5.4    214.90-218.37  cam=drift
+          214.95  slip  draft slip
+D5.5    218.37-224.09  cam=drift  <-- GAP 5.67 s
+          218.42  slip  draft slip
+D5.6    224.09-227.00  cam=drift
+          224.14  slip  draft slip
+D5.7    227.00-229.99  cam=drift
+          227.05  slip  draft slip
+D5.8    229.99-233.35  cam=drift
+          230.04  slip  draft slip
+D5.9    233.35-236.24  cam=drift
+          233.40  slip  draft slip
+D5.10   236.24-239.03  cam=drift
+          236.29  slip  draft slip
+D5.11   239.03-241.16  cam=drift
+          239.08  slip  draft slip
+CARD6   241.16-242.76  cam=push whip=left
+          241.21  page  card page turn
+          241.46  ribbon  ribbon 1760
+          242.01  seal  fleur-de-lis seal
+D6.1    242.76-244.81  cam=drift whip=left
+          242.81  slip  draft slip
+D6.2    244.81-248.49  cam=drift
+          244.86  slip  draft slip
+D6.3    248.49-251.51  cam=drift
+          248.54  slip  draft slip
+D6.4    251.51-253.73  cam=drift
+          251.56  slip  draft slip
+D6.5    253.73-255.48  cam=drift
+          253.78  slip  draft slip
+D6.6    255.48-257.79  cam=drift
+          255.53  slip  draft slip
+D6.7    257.79-261.40  cam=drift
+          257.84  slip  draft slip
+D6.8    261.40-264.81  cam=drift
+          261.45  slip  draft slip
+D6.9    264.81-269.39  cam=drift  <-- GAP 4.53 s
+          264.86  slip  draft slip
+D6.10   269.39-274.07  cam=drift  <-- GAP 4.63 s
+          269.44  slip  draft slip
+D6.11   274.07-278.22  cam=drift  <-- GAP 4.10 s
+          274.12  slip  draft slip
+CARD7   278.22-279.82  cam=push whip=left
+          278.27  page  card page turn
+          278.52  ribbon  ribbon 1763
+          279.07  seal  fleur-de-lis seal
+D7.1    279.82-283.05  cam=drift whip=left
+          279.87  slip  draft slip
+D7.2    283.05-286.89  cam=drift
+          283.10  slip  draft slip
+D7.3    286.89-290.30  cam=drift
+          286.94  slip  draft slip
+D7.4    290.30-293.47  cam=drift
+          290.35  slip  draft slip
+D7.5    293.47-297.93  cam=drift  <-- GAP 4.41 s
+          293.52  slip  draft slip
+D7.6    297.93-302.90  cam=drift  <-- GAP 4.92 s
+          297.98  slip  draft slip
+D7.7    302.90-305.88  cam=drift
+          302.95  slip  draft slip
+D7.8    305.88-307.59  cam=drift
+          305.93  slip  draft slip
+D7.9    307.59-310.83  cam=drift
+          307.64  slip  draft slip
+CARD8   310.83-312.43  cam=push whip=left
+          310.88  page  card page turn
+          311.13  ribbon  ribbon 1954
+          311.68  seal  fleur-de-lis seal
+D8.1    312.43-314.90  cam=drift whip=left
+          312.48  slip  draft slip
+D8.2    314.90-318.10  cam=drift
+          314.95  slip  draft slip
+D8.3    318.10-323.00  cam=drift  <-- GAP 4.85 s
+          318.15  slip  draft slip
+D8.4    323.00-324.88  cam=drift
+          323.05  slip  draft slip
+D8.5    324.88-327.31  cam=drift
+          324.93  slip  draft slip
+D8.6    327.31-329.51  cam=drift
+          327.36  slip  draft slip
+D8.7    329.51-332.58  cam=drift
+          329.56  slip  draft slip
+D8.8    332.58-334.38  cam=drift
+          332.63  slip  draft slip
+D8.9    334.38-337.44  cam=drift
+          334.43  slip  draft slip
+D8.10   337.44-340.77  cam=drift
+          337.49  slip  draft slip
+D8.11   340.77-344.86  cam=drift  <-- GAP 4.03 s
+          340.82  slip  draft slip
+D8.12   344.86-348.94  cam=drift  <-- GAP 4.03 s
+          344.90  slip  draft slip
+EVENTS: 19 shot(s) with a gap of 4 s or more

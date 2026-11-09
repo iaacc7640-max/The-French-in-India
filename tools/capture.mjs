@@ -2,7 +2,7 @@
 //   node tools/capture.mjs check                         boot, list shots + captions, report errors
 //   node tools/capture.mjs events                        per-shot camera move + ev() list; flags gaps of 4 s or more
 //   node tools/capture.mjs cues                          write data/cues.json (the sound cues, for tools/mix.py)
-//   node tools/capture.mjs sheet review/all.jpg [step=0.5] [cols=9]   contact sheet, a frame every `step` s, time-stamped
+//   node tools/capture.mjs sheet review/all.jpg [step=0.5] [cols=9] [start end]   contact sheet, a frame every `step` s, time-stamped
 //   node tools/capture.mjs frames review/full "1.2,8.4"  full-size JPEGs of those times
 //   node tools/capture.mjs video renders/out.mp4 [start end] [--draft]   the film (30 fps) with data/mix.wav if it exists
 //   node tools/capture.mjs preview                       serve the project and print a URL to watch it in a browser
@@ -102,16 +102,18 @@ else {
     } else if (mode === 'cues') {
       const cues = await P.ev('OP.cues()');
       fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });
-      fs.writeFileSync(path.join(ROOT, 'data/cues.json'), JSON.stringify({ duration: dur, cues }, null, 1));
+      const chapters = await P.ev('OP.chapters ? OP.chapters() : []');
+      fs.writeFileSync(path.join(ROOT, 'data/cues.json'), JSON.stringify({ duration: dur, cues, chapters }, null, 1));
+      if (chapters.length) fs.writeFileSync(path.join(ROOT, 'data/chapters.json'), JSON.stringify(chapters.map((c) => ({ ch: c.ch, year: c.year, title: c.title, start: c.start, end: c.end, music: c.music })), null, 1));
       console.log(`data/cues.json: ${cues.length} cues, ${dur.toFixed(2)} s`);
     } else if (mode === 'frames') {
       const dir = path.resolve(ROOT, rest[0] || 'review/frames'); fs.mkdirSync(dir, { recursive: true });
       for (const t of (rest[1] || '0').split(',').map(Number)) { fs.writeFileSync(path.join(dir, `t${t.toFixed(2)}.jpg`), jpg(await P.ev(FRAME(t, 0.92)))); }
       console.log(dir);
     } else if (mode === 'sheet') {
-      const out = path.resolve(ROOT, rest[0] || 'review/all.jpg'), step = +(rest[1] || 0.5), cols = +(rest[2] || 9);
+      const out = path.resolve(ROOT, rest[0] || 'review/all.jpg'), step = +(rest[1] || 0.5), cols = +(rest[2] || 9), s0 = rest[3] ? +rest[3] : 0, s1 = rest[4] ? Math.min(+rest[4], dur) : dur;
       const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'fs-sheet-')); let n = 0;
-      for (let t = step / 2; t < dur; t += step) fs.writeFileSync(path.join(tmp, `f${String(n++).padStart(4, '0')}.jpg`), jpg(await P.ev(FRAME(t, 0.8, true))));
+      for (let t = s0 + step / 2; t < s1; t += step) fs.writeFileSync(path.join(tmp, `f${String(n++).padStart(4, '0')}.jpg`), jpg(await P.ev(FRAME(t, 0.8, true))));
       const rows = Math.ceil(n / cols); fs.mkdirSync(path.dirname(out), { recursive: true });
       const r = spawnSync('ffmpeg', ['-v', 'error', '-y', '-framerate', '1', '-i', path.join(tmp, 'f%04d.jpg'), '-vf', `scale=384:216,tile=${cols}x${rows}:padding=4:color=black`, '-frames:v', '1', '-q:v', '3', out]);
       fs.rmSync(tmp, { recursive: true, force: true });

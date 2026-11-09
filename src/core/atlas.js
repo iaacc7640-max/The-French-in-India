@@ -164,7 +164,7 @@ export function chessPiece(x, y, { kind = 'pawn', side = 'french', s = 1, fall =
     cut(P_circ(0, -54, 15), S.fill, { shadow: 0.4, edge: 3 });
   }
   ctx.restore();
-  if (lab && fall < 0.5) placeLabel(lab, x, y - lift - (kind === 'king' ? 150 : 74) * s * sc, { size: 22, dy: -14 });
+  if (lab && fall < 0.5) placeLabel(lab, x, y - lift - (kind === 'king' ? 150 : 74) * s * sc, { size: 30, dy: -18 });
 }
 
 // ═════════════════════════ SUPPLY LINE ═════════════════════════

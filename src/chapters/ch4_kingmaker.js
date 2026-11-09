@@ -10,7 +10,7 @@ const { P } = K;
 /** Dupleix's study in Pondicherry at night: window over the sea, candle */
 function study(t) { R.room({ wall: '#C2AE88', floor: '#7A5236', fl: 860, seed: 43, wash: '#2F3550', washA: 0.4 }); R.windowPane(260, 110, 340, 480, { t, moon: true }); R.table(1420, 700, 420, { h: 160 }); R.candle(1420, 676, t, { s: 1.0 }); }
 /** the chessboard over the south India map; returns the square→xy function */
-function boardOver(t, { p = 1, view = 'south' } = {}) { A.realMap({ view, t }); return A.chessboard({ x: W / 2, y: 470, size: 720, tilt: 0.6, p }); }
+function boardOver(t, { p = 1, view = 'south' } = {}) { A.realMap({ view, t }); return A.chessboard({ x: W / 2, y: 500, size: 980, tilt: 0.55, p }); }
 const KINGS = [  // name, side colour, file, rank, backer
   ['Muzaffar Jang', 'nizam', 1.5, 2.2, 'french'], ['Chanda Sahib', 'nawab', 2.5, 5.2, 'french'],
   ['Nasir Jang', 'nizam', 5.8, 2.2, 'english'], ['Anwar-ud-din', 'nawab', 5.0, 5.2, 'english']];
@@ -18,9 +18,9 @@ const KINGS = [  // name, side colour, file, rank, backer
 function pieces(sq, lt, o = {}) {
   KINGS.forEach(([n, side, f, r, backer], i) => {
     const kp = o.kingsP ? o.kingsP(i) : 1, bp = (o.backP || {})[backer] ?? 1, off = backer === 'french' ? -0.75 : 0.75;
-    if (bp > 0) { const [x0, y0] = sq(f + off * 3, r - 0.9), [x1, y1] = sq(f + off, r - 0.9); A.chessPiece(lerp(x0, x1, eio(bp)), lerp(y0, y1, eio(bp)), { kind: 'pawn', side: backer, s: 0.85, sc: clamp(bp * 4) }); }
+    if (bp > 0) { const [x0, y0] = sq(f + off * 3, r - 0.9), [x1, y1] = sq(f + off, r - 0.9); A.chessPiece(lerp(x0, x1, eio(bp)), lerp(y0, y1, eio(bp)), { kind: 'pawn', side: backer, s: 1.35, sc: clamp(bp * 4) }); }
     const fall = i === 3 ? (o.fall || 0) : 0;
-    A.chessPiece(...sq(f, r), { kind: 'king', side, s: 0.95, sc: eob(clamp(kp)), label: n, fall, crown: i === 0 && o.crown });
+    A.chessPiece(...sq(f, r), { kind: 'king', side, s: 1.45, sc: eob(clamp(kp)), label: n, fall, crown: i === 0 && o.crown });
   });
 }
 
@@ -50,8 +50,8 @@ export function build(X, C) {
     sh({ id: 'K04', at: st, move: cam.snap(cho, 0.15, [W / 2 - 60, 380]), note: 'snap "choose": a hand sets a blue pawn behind a king', draw(lt, d, t) {
       const sq = boardOver(t); pieces(sq, lt, { backP: { french: 0, english: 0 } });
       const [x, y] = sq(0.75, 1.3), down = eio(seg(lt, cho - 0.5, cho)), up = eio(seg(lt, cho + 0.25, cho + 0.8));
-      if (lt < cho) R.reachingHand(x, lerp(y - 260, y, down), { hold: () => A.chessPiece(0, 40, { kind: 'pawn', side: 'french', s: 0.85 }) });
-      else { A.chessPiece(x, y, { kind: 'pawn', side: 'french', s: 0.85 }); R.reachingHand(x, lerp(y, y - 600, up)); }
+      if (lt < cho) R.reachingHand(x, lerp(y - 260, y, down), { hold: () => A.chessPiece(0, 40, { kind: 'pawn', side: 'french', s: 1.35 }) });
+      else { A.chessPiece(x, y, { kind: 'pawn', side: 'french', s: 1.35 }); R.reachingHand(x, lerp(y, y - 600, up)); }
     } });
     X.ev(st + cho, 'chess', 'blue piece set down'); }
   // 4.5 · four kings pop in pairs facing each other
@@ -88,7 +88,7 @@ export function build(X, C) {
   { const st = X.at('4.9'), ki = X.w('killed', '4.9') - st;
     sh({ id: 'K09', at: st, move: cam.push(0.06, [1120, 470]), note: 'Anwar-ud-din king falls slowly → turban on an empty saddle', draw(lt, d, t) {
       if (lt < ki + 0.1) { const sq = boardOver(t); pieces(sq, lt, { fall: seg(lt, 0.2, ki) }); }
-      else { K.parchment(47); ctx.save(); ctx.globalAlpha = 0.25; ctx.fillStyle = '#2F3550'; ctx.fillRect(-300, -300, W + 600, H + 600); ctx.restore(); R.emptySaddle(W / 2 - 40, 840, t, { s: 1.4, turban: P.gold }); }
+      else { K.parchment(47); ctx.save(); ctx.globalAlpha = 0.25; ctx.fillStyle = '#2F3550'; ctx.fillRect(-300, -300, W + 600, H + 600); ctx.restore(); R.emptySaddle(W / 2 - 60, 830, t, { s: 1.15, turban: P.gold }); K.slip('AMBUR · 1749', W / 2, 190, 1, -0.02, 40); }
     } });
     X.ev(st + 0.2, 'fall', 'green king tips over', { gain: 0.5 }); X.ev(st + ki + 0.1, 'whip', 'cut-in: empty saddle', { sound: false }); }
   // 4.10 · the Krishna draws itself; blue ink-bleeds over everything south of it; gold title seal
@@ -96,7 +96,7 @@ export function build(X, C) {
     sh({ id: 'K10', at: st, whip: 'up', move: cam.drift(0.03, [900, 560]), note: 'the Krishna draws itself; blue bleeds south of it; gold seal', draw(lt, d, t) {
       const v = A.realMap({ view: 'south', t }), at = (n) => A.at(v, n);
       A.krishna(v, seg(lt, 0.1, kr), 9);
-      A.inkBleed(...at('Pondicherry'), 1100, seg(lt, kr - 0.2, kr + 1.2), P.royal, { clipFn: () => { clipSouthOfKrishna(v); }, seed: 3, alpha: 0.6 });
+      A.inkBleed(...at('Pondicherry'), 1100, seg(lt, kr - 0.2, kr + 1.2), P.royal, { clipFn: () => { clipSouthOfKrishna(v); }, seed: 3, alpha: 0.82 });
       A.pin(...at('Pondicherry'), 'french', { star: true }); A.placeLabel('KRISHNA', ...A.proj(v, 77.4, 16.1), { dy: -34, size: 26, sc: eob(seg(lt, kr - 0.4, kr)) });
       A.wordSeal('GOVERNOR', 1560, 300, eob(seg(lt, gov + 0.2, gov + 0.5)) * 0.85, clamp((lt - gov - 0.2) * 4), P.gold, 26);
     } });

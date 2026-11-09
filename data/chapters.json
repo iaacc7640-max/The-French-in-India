@@ -1,0 +1,74 @@
+[
+ {
+  "ch": 0,
+  "year": "",
+  "title": "Cold open",
+  "start": 0,
+  "end": 29.252,
+  "music": "tension"
+ },
+ {
+  "ch": 1,
+  "year": "1664",
+  "title": "Last to the Party",
+  "start": 29.252,
+  "end": 73.231,
+  "music": "bed"
+ },
+ {
+  "ch": 2,
+  "year": "1674",
+  "title": "A Home Called Pondicherry",
+  "start": 73.231,
+  "end": 115.778,
+  "music": "bed"
+ },
+ {
+  "ch": 3,
+  "year": "1746",
+  "title": "One Thousand vs Ten Thousand",
+  "start": 115.778,
+  "end": 158.205,
+  "music": "rising"
+ },
+ {
+  "ch": 4,
+  "year": "1749",
+  "title": "The Kingmaker",
+  "start": 158.205,
+  "end": 202.457,
+  "music": "pulse"
+ },
+ {
+  "ch": 5,
+  "year": "1751",
+  "title": "The Clerk Who Struck Back",
+  "start": 202.457,
+  "end": 241.156,
+  "music": "tension"
+ },
+ {
+  "ch": 6,
+  "year": "1760",
+  "title": "Wandiwash",
+  "start": 241.156,
+  "end": 278.221,
+  "music": "tension"
+ },
+ {
+  "ch": 7,
+  "year": "1763",
+  "title": "The Real Turning Point",
+  "start": 278.221,
+  "end": 310.832,
+  "music": "minor"
+ },
+ {
+  "ch": 8,
+  "year": "1954",
+  "title": "What Really Decided India",
+  "start": 310.832,
+  "end": 348.938,
+  "music": "warm"
+ }
+]
