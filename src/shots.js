@@ -7,6 +7,7 @@ import * as A from './core/atlas.js';
 import { cam, sfxFor, WHIP } from './core/motion.js';
 import { build as ch0 } from './chapters/ch0_hook.js';
 import { build as ch4 } from './chapters/ch4_kingmaker.js';
+import { build as ch1 } from './chapters/ch1_party.js';
 
 export const CHAPTERS = [
   { ch: 0, year: '', title: 'Cold open', music: 'tension' },
@@ -19,7 +20,7 @@ export const CHAPTERS = [
   { ch: 7, year: '1763', title: 'The Real Turning Point', music: 'minor', era: 6 },
   { ch: 8, year: '1954', title: 'What Really Decided India', music: 'warm', era: 7 },
 ];
-const BUILT = { 0: ch0, 4: ch4 };          // the pilot chapters; the rest are drafts until built
+const BUILT = { 0: ch0, 1: ch1, 4: ch4 };          // the pilot chapters; the rest are drafts until built
 
 export function buildShots(lab, script) {
   const lines = script.lines, S = [], CUES = [], EV = [];

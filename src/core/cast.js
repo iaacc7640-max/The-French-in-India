@@ -20,6 +20,7 @@ export const CAST = {
   dupleix:      { label: 'DUPLEIX',          coat: P.royal,  trim: P.gold,  hat: 'wig', sash: WHITE, prop: 'chess' },
   muzaffar:     { label: 'MUZAFFAR JANG',    coat: NIZAM,    trim: WHITE,   robe: 1, hat: 'turban', turban: WHITE, sash: WHITE },
   nizam:        { label: 'THE NIZAM',        coat: NIZAM,    trim: P.gold,  robe: 1, hat: 'turban', turban: P.gold, sash: P.gold },
+  sultan:       { label: 'SULTAN OF GOLCONDA', coat: '#4E5A7A', trim: P.gold, robe: 1, hat: 'turban', turban: '#E8D6A8', sash: P.gold },
   chanda:       { label: 'CHANDA SAHIB',     coat: '#5E6B3A', trim: P.gold, robe: 1, hat: 'turban', turban: '#E8D6A8', sash: P.gold },
   bussy:        { label: 'BUSSY',            coat: P.royal,  trim: WHITE,   hat: 'tricorne', sword: 1 },
   clerk:        { label: 'ROBERT CLIVE',     coat: '#4A4A52', trim: WHITE,  hat: 'none', hair: '#5A4030', prop: 'quill' },

@@ -34,7 +34,9 @@ export const VIEWS = {
   south: { lon: 80.6, lat: 13.6, deg: 17 },      // the Carnatic + Hyderabad
   carnatic: { lon: 80.0, lat: 12.4, deg: 9 },    // Madras, Arcot, Ambur, Wandiwash, Pondicherry, Trichinopoly
   bengal: { lon: 87.5, lat: 22.0, deg: 9 },
-  ocean: { lon: 66, lat: 2, deg: 62 },            // Mauritius → India sea lane
+  ocean: { lon: 68, lat: -4.5, deg: 78 },         // Mauritius → India sea lane (Mauritius low, Madras high)
+  madagascar: { lon: 52, lat: -16, deg: 30 },     // Madagascar + Mauritius + Reunion
+  deccan: { lon: 80, lat: 15.8, deg: 14 },        // Golconda, Hyderabad, Masulipatnam
   europe: { lon: 6, lat: 48, deg: 34 },
 };
 export function proj(v, lon, lat) {
