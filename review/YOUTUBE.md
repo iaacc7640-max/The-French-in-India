@@ -1,6 +1,6 @@
 # YouTube upload kit: So Close to Empire
 
-**File:** `renders/french-in-india.mp4` (1920×1080, 30 fps, 6:04). A share copy is in `review/` if the main file is over 35 MB.
+**File:** `renders/french-in-india.mp4` (1920×1080, 30 fps, 6:05). A share copy is in `review/` if the main file is over 35 MB.
 **Thumbnail:** `review/thumbnail.jpg` (1280×720)
 
 ## Title (framed as the paradox)
@@ -19,7 +19,7 @@ Chapters
 2:43 1749: The Kingmaker
 3:28 1751: The Clerk Who Struck Back
 4:07 1760: Wandiwash
-4:51 1763: The Real Turning Point
+4:52 1763: The Real Turning Point
 5:26 1954: What Really Decided India
 
 Sources

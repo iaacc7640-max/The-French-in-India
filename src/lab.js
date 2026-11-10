@@ -53,8 +53,8 @@ export function buildShots(lab) {
   }
   if (lab === 'thumb') {
     S.push({ id: 'THUMB', at: 0, move: cam.drift(0), draw(lt, d, t) {
-      const v = A.realMap({ view: 'india', t: 0 }), at = (n) => A.at(v, n);
-      A.inkBleed(...at('Calcutta'), 760, 1, P.crimson, { clipFn: A.mainland(v), seed: 5, alpha: 0.6 });
+      const v = A.realMap({ view: 'peninsula', t: 0 }), at = (n) => A.at(v, n);
+      A.inkBleed(...at('Calcutta'), 450, 1, P.crimson, { clipFn: A.mainland(v), seed: 5, alpha: 0.6 });
       A.inkBleed(...at('Pondicherry'), 560, 1, P.royal, { clipFn: A.mainland(v), seed: 2, alpha: 0.82 });
       person('dupleix', { x: 1450, y: 1000, h: 820, t: 0, arm: 95 });
       K.ribbon('1760', 1450, 150, 1, 90);
