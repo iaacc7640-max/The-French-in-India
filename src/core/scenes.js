@@ -24,9 +24,9 @@ export function adyarMap(t, { blue = 1, green = 0, scatter = 0, labels = 1 } = {
   const v = A.realMap({ view: ADYAR_VIEW, t }), md = A.at(v, 'Madras'), pd = A.at(v, 'Pondicherry');
   A.drawPolyline([[79.72, 12.96], [79.9, 13.03], [80.08, 12.99], [80.27, 13.01]].map(([a, b]) => A.proj(v, a, b)), 1, P.sea, 16);
   A.pin(md[0], md[1], 'french', { r: 15 }); A.pin(pd[0], pd[1], 'french', { r: 15, star: true });
-  if (labels > 0) { A.placeLabel('MADRAS', md[0], md[1], { dx: 110, dy: 0, size: 26 }); A.placeLabel('PONDICHERRY', pd[0], pd[1], { dx: 160, dy: 0, size: 26 }); A.placeLabel('ADYAR RIVER', ...A.proj(v, 79.82, 13.0), { dy: 36, size: 22 }); }
-  if (green > 0) { R.army(620, 300, 22, 8, P.forest, { t, march: clamp(green), scatter, dir: -1, turban: true, seed: 9, step: 1 }); if (scatter < 0.3) for (const fx of [400, 620, 840]) A.flag(fx, 215, t, A.FLAGS.nawab, { s: 0.6, seed: fx }); }
-  if (blue > 0) { R.army(940, 560, 9, 4, P.royal, { t, march: clamp(blue), seed: 3, step: blue < 1 ? 1 : 0 }); A.flag(1075, 555, t, A.FLAGS.french, { s: 0.6 }); }
+  if (labels > 0) { A.placeLabel('MADRAS', md[0], md[1], { dx: 110, dy: 0, size: 26 }); A.placeLabel('PONDICHERRY', pd[0], pd[1], { dx: 160, dy: 0, size: 26 }); A.placeLabel('ADYAR RIVER', ...A.proj(v, 79.72, 12.96), { dx: -100, dy: 0, size: 22 }); }
+  if (green > 0) { R.army(560, 320, 22, 8, P.forest, { t, s: 1.25, march: clamp(green), scatter, dir: -1, turban: true, seed: 9, step: 1 }); if (scatter < 0.3) for (const fx of [300, 560, 820]) A.flag(fx, 205, t, A.FLAGS.nawab, { s: 0.7, seed: fx }); }
+  if (blue > 0) { R.army(900, 590, 9, 4, P.royal, { t, s: 1.5, march: clamp(blue), seed: 3, step: blue < 1 ? 1 : 0 }); A.flag(1090, 590, t, A.FLAGS.french, { s: 0.7 }); }
   if (scatter > 0.05 && scatter < 1) { R.smokeDrift(700, 330, t, { s: 0.7, a: 0.4 }); }
   return v;
 }
@@ -197,12 +197,14 @@ export function kingPieces(v, o = {}) {
 // ═════════════════════════ THE VOYAGE MAP (France → India) ═════════════════════════
 /** the wide map from France to India. blue 0..1 draws the long French sea route (round the Cape, via Mauritius) with a ship riding its tip;
  *  red 0..1 draws the short English route Bengal → Madras. labels 0..1 */
-export function voyageMap(t, { blue = 0, red = 0, labels = 1, broken = false, ship = true } = {}) {
+export function voyageMap(t, { blue = 0, red = 0, labels = 1, broken = false, ship = true, simple = false } = {}) {
   const v = A.realMap({ view: 'voyage', t }), P2 = (pts) => pts.map(([a, b]) => A.proj(v, a, b));
   const fr = A.proj(v, 2.3, 47), pd = A.at(v, 'Pondicherry'), ca = A.at(v, 'Calcutta'), mu = A.at(v, 'Mauritius');
   if (blue > 0) { const h = A.drawPolyline(P2(A.SEA_ROUTE), blue, P.royal, 7, broken ? [18, 16] : [26, 12]); if (ship && blue < 1) { ctx.save(); ctx.translate(h[0], h[1] - 6); shipSmall(0.12, t, A.FLAGS.french); ctx.restore(); } }
   if (red > 0) { const pts = P2(A.BENGAL_ROUTE); ctx.save(); ctx.shadowColor = 'rgba(70,45,20,0.35)'; ctx.shadowBlur = 8; ctx.shadowOffsetY = 4; A.drawPolyline(pts, red, P.crimson, 18); ctx.restore(); }
-  A.pin(fr[0], fr[1], 'french', { r: 14, star: true }); A.pin(pd[0], pd[1], 'french', { r: 10 }); A.pin(ca[0], ca[1], 'english', { r: 10 }); A.pin(mu[0], mu[1], 'french', { r: 8 });
+  A.pin(fr[0], fr[1], 'french', { r: 14, star: true });
+  if (simple) { const sc = eob(clamp(labels)); A.placeLabel('FRANCE', fr[0], fr[1], { dx: 120, dy: 0, size: 28, sc }); A.placeLabel('INDIA', ...A.proj(v, 79, 21), { size: 28, dy: 0, sc }); A.placeLabel('CAPE OF GOOD HOPE', ...A.proj(v, 18.5, -34), { dx: -170, dy: 0, size: 20, sc }); return v; }
+  A.pin(pd[0], pd[1], 'french', { r: 10 }); A.pin(ca[0], ca[1], 'english', { r: 10 }); A.pin(mu[0], mu[1], 'french', { r: 8 });
   if (labels > 0) { const sc = eob(clamp(labels)); A.placeLabel('FRANCE', fr[0], fr[1], { dx: 120, dy: 0, size: 28, sc }); A.placeLabel('MAURITIUS', mu[0], mu[1], { dx: 130, dy: 6, size: 22, sc }); A.placeLabel('PONDICHERRY', pd[0], pd[1], { dx: 150, dy: 16, size: 22, sc }); A.placeLabel('BENGAL', ca[0], ca[1], { dx: 100, dy: -10, size: 22, sc }); A.placeLabel('CAPE OF GOOD HOPE', ...A.proj(v, 18.5, -34), { dx: -170, dy: 0, size: 20, sc }); }
   return v;
 }

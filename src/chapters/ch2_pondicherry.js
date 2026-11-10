@@ -64,8 +64,8 @@ export function build(X, C) {
   // 2.5 · François Martin turned it into the heart of French India: the town fills out; the capital star
   { const st = X.at('2.5'), ma = X.w('martin', '2.5') - st, he = X.w('heart', '2.5') - st;
     sh({ id: 'Q05', at: st, move: cam.push(0.05, [960, 520]), note: 'Martin in front of the finished town; card: capital of French India', draw(lt, d, t) {
-      SC.townScene(t, lerp(0.62, 1, eo(seg(lt, 0, he + 0.4))), { ships: [[1500, A.FLAGS.french, -1], [300, A.FLAGS.french, 1]] });
-      person('martin', { x: 250, y: 720, h: 430, t, arm: 30 }); K.slip('FRANÇOIS MARTIN', 300, 220, eob(seg(lt, ma, ma + 0.3)), -0.02, 34);
+      SC.townScene(t, lerp(0.62, 1, eo(seg(lt, 0, he + 0.4))), { ships: [[1500, A.FLAGS.french, -1], [1790, A.FLAGS.french, -1]] });
+      person('martin', { x: 250, y: 700, h: 430, t, arm: 30 }); K.slip('FRANÇOIS MARTIN', 300, 220, eob(seg(lt, ma, ma + 0.3)), -0.02, 34);
       A.pin(960, 420, 'french', { star: true, sc: eob(seg(lt, he, he + 0.3)), r: 24, glow: 1 });
       A.statCard({ x: 1500, y: 300, title: 'Pondicherry', stats: ['French from 1674', 'capital of French India'], p: seg(lt, he + 0.1, he + 0.7), portrait: portrait('martin') });
     } });

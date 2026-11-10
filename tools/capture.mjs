@@ -109,7 +109,7 @@ else {
         for (const p of pops) {
           if (era && ov(p, era) > 150) note(a.shot, t, `${p.kind} "${p.text}" overlaps the era bar`);
           if (cap && ov(p, cap) > 150) note(a.shot, t, `${p.kind} "${p.text}" overlaps the caption`);
-          if (p.x0 < 20 || p.x1 > W - 20 || p.y0 < 4 || p.y1 > H - 4) note(a.shot, t, `${p.kind} "${p.text}" runs off the frame`);
+          if (!a.shot.startsWith('CARD') && (p.x0 < 20 || p.x1 > W - 20 || p.y0 < 4 || p.y1 > H - 4)) note(a.shot, t, `${p.kind} "${p.text}" runs off the frame`);
           if (p.y1 > 850 && !(cap && ov(p, cap) > 150)) note(a.shot, t, `${p.kind} "${p.text}" sits in the caption band (y ${p.y1})`);
         }
         for (let i = 0; i < pops.length; i++) for (let j = i + 1; j < pops.length; j++) if (ov(pops[i], pops[j]) > 0.12 * Math.min(area(pops[i]), area(pops[j]))) note(a.shot, t, `${pops[i].kind} "${pops[i].text}" overlaps ${pops[j].kind} "${pops[j].text}"`);

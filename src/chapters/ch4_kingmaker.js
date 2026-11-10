@@ -42,7 +42,7 @@ export function build(X, C) {
     } });
     X.ev(st + cho, 'chess', 'a blue piece is set down'); }
   { const st = X.at('4.5'), hy = X.w('hyderabad', '4.5') - st, ca = X.w('carnatic', '4.5') - st;
-    sh({ id: 'K05', at: st, move: cam.push(0.04, [W / 2, 500]), note: 'four rival princes stand as kings: two at Hyderabad, two in the Carnatic', draw(lt, d, t) { const v = SC.kingsMap(t); SC.kingPieces(v, { backP: { french: 0, english: 0 }, kingsP: (i) => seg(lt, (i < 2 ? hy : ca) - 0.2 + (i % 2) * 0.2, (i < 2 ? hy : ca) + 0.2 + (i % 2) * 0.2) }); K.slip('RIVAL PRINCES', 1560, 520, eob(seg(lt, 0.6, 0.9)), 0.02, 36); } });
+    sh({ id: 'K05', at: st, move: cam.push(0.04, [W / 2, 500]), note: 'four rival princes stand as kings: two at Hyderabad, two in the Carnatic', draw(lt, d, t) { const v = SC.kingsMap(t); crowns(v, t, 1 - seg(lt, hy - 0.3, hy)); SC.kingPieces(v, { backP: { french: 0, english: 0 }, kingsP: (i) => seg(lt, (i < 2 ? hy : ca) - 0.2 + (i % 2) * 0.2, (i < 2 ? hy : ca) + 0.2 + (i % 2) * 0.2) }); K.slip('RIVAL PRINCES', 1560, 520, eob(seg(lt, 0.6, 0.9)), 0.02, 36); } });
     X.ev(st + 0.6, 'slip', 'RIVAL PRINCES'); X.ev(st + hy - 0.2, 'chess', 'the Hyderabad rivals'); X.ev(st + ca - 0.2, 'chess', 'the Carnatic rivals'); }
   { const st = X.at('4.6'), b = X.w('backed', '4.6') - st;
     sh({ id: 'K06', at: st, move: cam.push(0.05, [800, 500]), note: 'French blue pieces slide in behind Muzaffar Jang and Chanda Sahib', draw(lt, d, t) { const v = SC.kingsMap(t); SC.kingPieces(v, { backP: { french: seg(lt, b, b + 0.9), english: 0 } }); K.slip('FRENCH-BACKED', 300, 520, eob(seg(lt, b + 0.5, b + 0.8)), -0.02, 34); } });
@@ -70,15 +70,15 @@ export function build(X, C) {
     } });
     X.ev(st + 0.3, 'fall', 'the green king tips over', { gain: 0.5 }); X.ev(st + ki + 0.1, 'light', 'cut-in: the empty saddle'); }
   // 4.10 · governor of the Mughal lands south of the Krishna: the river draws itself, blue ink bleeds south of it
-  { const st = X.at('4.10'), kr = X.w('krishna', '4.10') - st, gov = X.w('governor', '4.10') - st;
+  { const st = X.at('4.10'), kr = X.w('south', '4.10') - st, gov = X.w('governor', '4.10') - st;
     sh({ id: 'K10', at: st, whip: 'up', move: cam.push(0.04, [800, 600]), note: 'the Krishna draws itself; blue ink bleeds over the lands south of it; GOVERNOR seal', draw(lt, d, t) {
       const v = A.realMap({ view: 'peninsula', t }), at = (n) => A.at(v, n);
       A.krishna(v, seg(lt, 0.1, gov + 0.6), 9);
-      A.inkBleed(...at('Pondicherry'), 900, seg(lt, kr - 0.6, kr + 0.9), P.royal, { clipFn: () => { A.mainland(v)(); ctx.clip(); const pts = A.KRISHNA.map(([a, b]) => A.proj(v, a, b)); ctx.beginPath(); ctx.moveTo(-400, pts[0][1]); pts.forEach((q) => ctx.lineTo(...q)); ctx.lineTo(W + 400, pts[pts.length - 1][1]); ctx.lineTo(W + 400, H + 400); ctx.lineTo(-400, H + 400); ctx.closePath(); }, seed: 3, alpha: 0.82 });
+      A.inkBleed(...at('Pondicherry'), 900, seg(lt, kr - 0.3, kr + 1.1), P.royal, { clipFn: () => { A.mainland(v)(); ctx.clip(); const pts = A.KRISHNA.map(([a, b]) => A.proj(v, a, b)); ctx.beginPath(); ctx.moveTo(-400, pts[0][1]); pts.forEach((q) => ctx.lineTo(...q)); ctx.lineTo(W + 400, pts[pts.length - 1][1]); ctx.lineTo(W + 400, H + 400); ctx.lineTo(-400, H + 400); ctx.closePath(); }, seed: 3, alpha: 0.82 });
       A.pin(...at('Pondicherry'), 'french', { star: true }); A.placeLabel('RIVER KRISHNA', ...A.proj(v, 77.4, 16.1), { dy: -34, size: 24, sc: eob(seg(lt, gov + 0.3, gov + 0.6)) });
       A.wordSeal('GOVERNOR', 1500, 420, eob(seg(lt, gov, gov + 0.3)) * 0.9, clamp((lt - gov) * 4), P.gold, 26);
     } });
-    X.ev(st + 0.1, 'route', 'the Krishna draws itself', { dur: 1.2 }); X.ev(st + gov, 'seal', 'GOVERNOR seal'); X.ev(st + kr - 0.6, 'ink', 'blue bleeds south of the Krishna'); }
+    X.ev(st + 0.1, 'route', 'the Krishna draws itself', { dur: 1.2 }); X.ev(st + gov, 'seal', 'GOVERNOR seal'); X.ev(st + kr - 0.3, 'ink', 'blue bleeds south of the Krishna'); }
   { const st = X.at('4.11'), bu = X.w('boo', '4.11') - st, hy = X.w('hyderabad', '4.11') - st;
     sh({ id: 'K11', at: st, whip: 'right', move: cam.push(0.05, [W / 2, 520]), note: 'the Hyderabad court: Bussy and French soldiers beside the throne', draw(lt, d, t) { hydCourt(t); R.army(1500, 800, 5, 2, P.royal, { t, s: 3.2, gap: 30, rowGap: 14, seed: 4 }); person('bussy', { x: 1240, y: 900, h: 560, t, dir: -1 }); K.slip('BUSSY', 1240, 200, eob(seg(lt, bu, bu + 0.3)), 0.02, 40); K.slip('HYDERABAD', 420, 200, eob(seg(lt, hy, hy + 0.3)), -0.02, 40); } });
     X.ev(st + 0.3, 'drums', 'French soldiers stand guard', { dur: 1.5, gain: 0.35 }); X.ev(st + bu, 'slip', 'name slip BUSSY'); X.ev(st + hy, 'slip', 'HYDERABAD'); X.amb(st, X.end('4.12') + 0.2, 'court', 0.7); }

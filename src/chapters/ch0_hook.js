@@ -10,11 +10,11 @@ import { cam } from '../core/motion.js';
 const { P } = K;
 
 const POSTS = [['Pondicherry', 'french', 1], ['Chandernagore', 'french'], ['Masulipatnam', 'french'], ['Mahe', 'french'], ['Karaikal', 'french'], ['Yanam', 'french'], ['Madras', 'english'], ['Calcutta', 'english'], ['Bombay', 'english']];
-/** the whole subcontinent, half blue, half red: blue 0..1 = how much French ink is left */
+/** the whole subcontinent: French blue over the south, English red in Bengal. blue 0..1 = how much French ink is left */
 function twoColour(t, blue, red = 1) {
   const v = A.realMap({ view: 'india', t }), at = (n) => A.at(v, n);
-  A.inkBleed(...at('Calcutta'), 620, red, P.crimson, { clipFn: A.mainland(v), seed: 5, alpha: 0.55 });
-  A.inkBleed(...at('Pondicherry'), 330, blue, P.royal, { clipFn: A.mainland(v), seed: 2, alpha: 0.82 });
+  A.inkBleed(...at('Calcutta'), 190, red, P.crimson, { clipFn: A.mainland(v), seed: 5, alpha: 0.6 });      // English: Bengal
+  A.inkBleed(...at('Pondicherry'), 235, blue, P.royal, { clipFn: A.mainland(v), seed: 2, alpha: 0.82 });   // French influence: the south, up to about the Krishna
   for (const [n, side, star] of POSTS) A.pin(...at(n), side, { r: 9, star: !!star, glow: side === 'french' ? 0.5 + 0.5 * Math.sin(t * 3) : 0 });
   return v;
 }

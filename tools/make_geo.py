@@ -38,7 +38,8 @@ def load(name, obj):
         polys = g['arcs'] if g['type'] == 'MultiPolygon' else [g['arcs']]
         shp = []
         for poly in polys:
-            ext = ring(poly[0])
+            ext = ring(poly[0]); xs = [q[0] for q in ext]; ys = [q[1] for q in ext]
+            if xs and max(xs) - min(xs) > 300 and max(ys) - min(ys) < 8: continue   # a polygon smeared across the date line (Fiji): drop it
             if len(ext) >= 4:
                 p = Polygon(ext, [ring(h) for h in poly[1:] if len(ring(h)) >= 4])
                 shp.append(p if p.is_valid else p.buffer(0))

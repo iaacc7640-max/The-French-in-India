@@ -8,11 +8,11 @@ import { person } from '../core/cast.js';
 import { cam } from '../core/motion.js';
 const { P } = K;
 
-const NATIONS = [['portuguese', 'Goa', 'PORTUGUESE', -150], ['dutch', 'Pulicat', 'DUTCH', 120], ['english', 'Surat', 'ENGLISH', -130], ['danish', 'Tranquebar', 'DANES', 110]];
+const NATIONS = [['portuguese', 'Goa', 'PORTUGUESE', -150, 20], ['dutch', 'Pulicat', 'DUTCH', 150, -64], ['english', 'Surat', 'ENGLISH', -130, 10], ['danish', 'Tranquebar', 'DANES', 140, 16]];
 /** the whole subcontinent with the four earlier European nations' flags (pop 0..1 each) */
 function europeans(t, pop) {
   const v = A.realMap({ view: 'india', t });
-  NATIONS.forEach(([s, place, name, dx], i) => { const [x, y] = A.at(v, place), p = eob(clamp(pop(i))); if (p <= 0) return; A.pin(x, y, 'maratha', { r: 7 }); ctx.save(); ctx.translate(x, y); ctx.scale(p, p); A.flag(0, 0, t, A.FLAGS[s], { s: 0.75, seed: i }); ctx.restore(); A.placeLabel(name, x, y, { dx, dy: -40, size: 22, sc: p }); });
+  NATIONS.forEach(([s, place, name, dx, dy], i) => { const [x, y] = A.at(v, place), p = eob(clamp(pop(i))); if (p <= 0) return; A.pin(x, y, 'maratha', { r: 7 }); ctx.save(); ctx.translate(x, y); ctx.scale(p, p); A.flag(0, 0, t, A.FLAGS[s], { s: 1.05, seed: i }); ctx.restore(); A.placeLabel(name, x, y, { dx, dy, size: 24, sc: p }); });
   return v;
 }
 function versailles(t, { sign = 0, seal = 0 } = {}) {
@@ -37,7 +37,7 @@ export function build(X, C) {
     NATIONS.forEach((n, i) => X.ev(st + 0.2 + i * 0.35, 'flag', `${n[2]} flag`)); X.ev(st + la, 'slip', 'last to arrive'); X.amb(st, X.end('1.2') + 0.2, 'sea', 0.5); }
   // 1.2 · so they had to move fast: a ship races from France round Africa
   { const st = X.at('1.2'), f = X.w('fast', '1.2') - st;
-    sh({ id: 'P02', at: st, whip: 'left', move: cam.snap(f, 0.08, [900, 500]), note: 'the voyage map: a French ship races from France round Africa toward India', draw(lt, d, t) { SC.voyageMap(t, { blue: eo(seg(lt, 0.1, d - 0.1)), labels: seg(lt, 0.1, 0.4) }); } });
+    sh({ id: 'P02', at: st, whip: 'left', move: cam.snap(f, 0.08, [900, 500]), note: 'the voyage map: a French ship races from France round Africa toward India', draw(lt, d, t) { SC.voyageMap(t, { blue: eo(seg(lt, 0.1, d - 0.1)), labels: seg(lt, 0.1, 0.4), simple: true }); } });
     X.ev(st + 0.1, 'route', 'the route from France draws'); X.ev(st + f, 'flag', 'the ship races on'); }
   X.amb(X.at('1.3'), X.end('1.5') + 0.2, 'court', 0.8);
   { const st = X.at('1.3'), lo = X.w('louis', '1.3') - st, co = X.w('kol', '1.3') - st;

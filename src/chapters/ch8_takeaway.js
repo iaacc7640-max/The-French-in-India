@@ -62,7 +62,7 @@ export function build(X, C) {
       const v = SC.kingsMap(t); A.inkBleed(W + 100, -100, 2600, seg(lt, em - 0.5, em + 1.6), P.crimson, { clipFn: A.mainland(v), seed: 5, alpha: 0.45 });
       SC.kingPieces(v, { crown: 'Muzaffar Jang', backP: { french: 1, english: 1 }, turned: 1 });
       K.slip('AN EMPIRE', 1600, 520, eob(seg(lt, em, em + 0.3)), 0.02, 44);
-      const e = seg(lt, d - 2.2, d - 1.6); if (e > 0) { ctx.save(); ctx.globalAlpha = e; K.slip('NEXT: THE DANES IN INDIA', 520, 790, 1, -0.02, 44); ctx.restore(); }
+      const e = seg(lt, d - 2.2, d - 1.6); if (e > 0) { ctx.save(); ctx.globalAlpha = e; K.slip('NEXT: THE DANES IN INDIA', 560, 740, 1, -0.02, 44); ctx.restore(); }
     } });
     X.ev(st + em - 0.5, 'ink', 'English red spreads from Bengal'); X.ev(st + em, 'slip', 'AN EMPIRE'); X.ev(st + 2.4, 'slip', 'NEXT: THE DANES IN INDIA', { sound: false }); }
 }
