@@ -34,7 +34,7 @@ export function build(X, C) {
   { const st = X.at('0.1'), th = X.w('thousand', '0.1') - st;
     sh({ id: 'H01', at: st, whip: 'down', move: cam.push(0.05, [940, 520]), note: 'southern India (Madras, Adyar river): ~1,000 French-led soldiers march in', draw(lt, d, t) {
       SC.adyarMap(t, { blue: seg(lt, 0.3, th + 0.4) });
-      K.ribbon('1746', 1500, 220, eob(seg(lt, 0.25, 0.65)), 80); K.slip('~1,000 FRENCH-LED', 1180, 700, eob(seg(lt, th, th + 0.3)), -0.02, 34);
+      K.ribbon('1746', 1500, 220, eob(seg(lt, 0.25, 0.65)), 80); K.slip('~1,000 FRENCH-LED', 700, 745, eob(seg(lt, th, th + 0.3)), -0.02, 34);
     } });
     X.ev(st + 0.25, 'ribbon', '1746'); X.ev(st + 0.6, 'drums', 'French-led soldiers march', { dur: 3.5, gain: 0.5 }); X.ev(st + th, 'slip', '~1,000'); X.amb(st, X.end('0.2') + 0.3, 'wind', 0.5); }
 
@@ -42,8 +42,8 @@ export function build(X, C) {
   { const st = X.at('0.2'), ten = X.w('ten', '0.2') - st, so = X.w('southern', '0.2') - st;
     sh({ id: 'H02', at: st, move: cam.snap(ten, 0.1, [700, 380]), note: 'snap: the army of ~10,000 across the river; Adyar card; it breaks and flows away', draw(lt, d, t) {
       SC.adyarMap(t, { blue: 1, green: clamp((lt - ten + 0.5) / 0.6), scatter: eio(seg(lt, so + 0.2, d + 0.3)) });
-      K.ribbon('1746', 1500, 220, 1, 80); K.slip('~1,000 FRENCH-LED', 1180, 700, 1, -0.02, 34);
-      A.statCard({ x: 1500, y: 470, title: 'Adyar', stats: ['~350 French + ~700 sepoys', 'vs ~10,000'], date: '24 Oct 1746', p: seg(lt, ten + 0.4, ten + 1.0), hi: 1, portrait: portrait('paradis') });
+      K.ribbon('1746', 1500, 220, 1, 80); K.slip('~1,000 FRENCH-LED', 700, 745, 1, -0.02, 34);
+      A.statCard({ x: 1470, y: 610, title: 'Adyar', stats: ['~350 French + ~700 sepoys', 'vs ~10,000'], date: '24 Oct 1746', p: seg(lt, ten + 0.4, ten + 1.0), hi: 1, portrait: portrait('paradis') });
     } });
     X.ev(st + ten - 0.5, 'pop', 'the big army appears'); X.ev(st + ten + 0.4, 'card', 'Adyar stat card'); X.ev(st + so + 0.2, 'whip', 'the big army breaks', { gain: 0.5 }); }
 

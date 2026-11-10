@@ -52,23 +52,23 @@
   "year": "1760",
   "title": "Wandiwash",
   "start": 247.384,
-  "end": 291.591,
+  "end": 292.06,
   "music": "tension"
  },
  {
   "ch": 7,
   "year": "1763",
   "title": "The Real Turning Point",
-  "start": 291.591,
-  "end": 326.385,
+  "start": 292.06,
+  "end": 326.853,
   "music": "minor"
  },
  {
   "ch": 8,
   "year": "1954",
   "title": "What Really Decided India",
-  "start": 326.385,
-  "end": 364.491,
+  "start": 326.853,
+  "end": 364.959,
   "music": "warm"
  }
 ]
