@@ -151,3 +151,46 @@ export function smokeDrift(x, y, t, { s = 1, a = 0.6, seed = 1 } = {}) {
   }
   ctx.restore();
 }
+
+/** an army of small paper soldiers in ranks (not dots): cols x rows around (cx, cy). col = coat colour.
+ *  march 0..1 fills the ranks in; scatter 0..1 breaks the formation and sends it away in direction dir (nobody is shown hurt);
+ *  turban = Indian cavalry/infantry look; s = soldier scale; gap/rowGap = spacing. */
+export function army(cx, cy, cols, rows, col, { t = 0, s = 1, gap = 26, rowGap = 20, scatter = 0, march = 1, seed = 1, dir = 1, turban = false, face = 1, step = 0 } = {}) {
+  for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
+    const k = j * cols + i; if (rnd(k * 0.37 + seed) > march) continue;
+    let x = cx + (i - (cols - 1) / 2) * gap * s + (j % 2) * gap * s * 0.5, y = cy + (j - (rows - 1) / 2) * rowGap * s + Math.abs(Math.sin(t * 5 + k * 1.3)) * 2 * step, a = 1;
+    if (scatter > 0) { const an = rnd(k * 1.7 + seed) * TAU, d = scatter * (60 + rnd(k + 9) * 380); x += Math.cos(an) * d * 0.6 + dir * scatter * 420; y += Math.sin(an) * d * 0.35; a = 1 - scatter * 0.9; }
+    ctx.globalAlpha = a; ctx.save(); ctx.translate(x, y); ctx.scale(s * face, s);
+    ctx.fillStyle = '#3A3030'; ctx.fillRect(-4, -8, 3, 8); ctx.fillRect(1, -8, 3, 8);                    // legs
+    ctx.fillStyle = col; ctx.beginPath(); ctx.roundRect(-6, -22, 12, 15, 3); ctx.fill(); ctx.strokeStyle = P.edge; ctx.lineWidth = 1; ctx.stroke();
+    ctx.fillStyle = '#F4EEDD'; ctx.fillRect(-1, -21, 2, 13);                                           // cross-belt
+    ctx.fillStyle = P.skin; ctx.beginPath(); ctx.arc(0, -27, 4.5, 0, TAU); ctx.fill();
+    if (turban) { ctx.fillStyle = '#E8D6A8'; ctx.beginPath(); ctx.ellipse(0, -30, 6, 3.6, 0, 0, TAU); ctx.fill(); ctx.strokeStyle = '#6E4A34'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(6, -4); ctx.lineTo(8, -36); ctx.stroke(); }
+    else { ctx.fillStyle = '#2A2421'; ctx.beginPath(); ctx.moveTo(-7, -30); ctx.lineTo(0, -35); ctx.lineTo(7, -30); ctx.closePath(); ctx.fill(); ctx.strokeStyle = '#4E3424'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(5, -6); ctx.lineTo(9, -34); ctx.stroke(); }
+    ctx.restore();
+  }
+  ctx.globalAlpha = 1;
+}
+/** a small paper house: x = centre, y = ground */
+export function house(x, y, w, h, wall = '#E3D2AC', roof = '#A8503E', sc = 1) {
+  if (sc <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(sc, sc);
+  cut(P_rr(-w / 2, -h, w, h, 3), wall, { shadow: 0.6, edge: 4 });
+  cut(P_poly([[-w / 2 - 10, -h + 3], [0, -h - w * 0.42], [w / 2 + 10, -h + 3]]), roof, { shadow: 0.5, edge: 4 });
+  ctx.fillStyle = '#5E3B28'; ctx.fillRect(-w * 0.1, -h * 0.45, w * 0.2, h * 0.45); ctx.fillStyle = '#6E7F8C'; for (const dx of [-0.3, 0.3]) ctx.fillRect(dx * w - w * 0.07, -h * 0.75, w * 0.14, h * 0.2);
+  ctx.restore();
+}
+/** a palm tree that sways */
+export function palm(x, y, s, t, seed = 0) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); const sw = Math.sin(t * 1.2 + seed) * 0.05;
+  cut(() => { ctx.beginPath(); ctx.moveTo(-7, 0); ctx.quadraticCurveTo(-2 + sw * 200, -90, 6 + sw * 300, -170); ctx.lineTo(16 + sw * 300, -170); ctx.quadraticCurveTo(10 + sw * 200, -90, 9, 0); ctx.closePath(); }, '#7A5236', { shadow: 0.4, edge: 3 });
+  ctx.translate(11 + sw * 300, -172); for (let i = 0; i < 6; i++) { ctx.save(); ctx.rotate(-2.6 + i * 0.52 + sw * 2 + Math.sin(t * 2 + i) * 0.04); cut(() => { ctx.beginPath(); ctx.moveTo(0, 0); ctx.quadraticCurveTo(50, -26, 96, 0); ctx.quadraticCurveTo(50, -8, 0, 0); ctx.closePath(); }, i % 2 ? P.forest : '#5E7A48', { shadow: 0.3, edge: 2 }); ctx.restore(); }
+  ctx.restore();
+}
+/** goods: a bale (cloth), a barrel or a crate, popping in with sc */
+export function goods(kind, x, y, sc = 1, col = '#C9AE84') {
+  if (sc <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(sc, sc);
+  if (kind === 'bale') { cut(P_rr(-34, -40, 68, 40, 8), col, { shadow: 0.5, edge: 3 }); ctx.strokeStyle = 'rgba(62,44,30,0.5)'; ctx.lineWidth = 3; for (const dx of [-14, 14]) { ctx.beginPath(); ctx.moveTo(dx, -40); ctx.lineTo(dx, 0); ctx.stroke(); } }
+  else if (kind === 'barrel') { cut(P_rr(-22, -54, 44, 54, 12), '#8C5A3C', { shadow: 0.5, edge: 3 }); ctx.strokeStyle = '#3E2C1E'; ctx.lineWidth = 3; for (const dy of [-42, -14]) { ctx.beginPath(); ctx.moveTo(-22, dy); ctx.lineTo(22, dy); ctx.stroke(); } }
+  else { cut(P_rr(-30, -46, 60, 46, 3), '#B08A5C', { shadow: 0.5, edge: 3 }); ctx.strokeStyle = 'rgba(62,44,30,0.5)'; ctx.lineWidth = 3; ctx.strokeRect(-24, -40, 48, 34); }
+  ctx.restore();
+}

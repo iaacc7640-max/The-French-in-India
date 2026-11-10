@@ -8,6 +8,9 @@ export const P = {
   royal: '#3D5A80', green: '#4F6D4A', wine: '#7A2E3A', stone: '#B9A98C', stoneDark: '#9C8C70', sky: '#E7D7AE',
 };
 const SERIF = 'Caladea';
+/** layout audit: every pop-up (slip, ribbon, card, label), the caption and the era bar record their on-screen box here each frame */
+export const AUDIT = { boxes: [] };
+export function rec(kind, text, x0, y0, x1, y1) { const m = ctx.getTransform(), P4 = [[x0, y0], [x1, y0], [x1, y1], [x0, y1]].map(([x, y]) => [m.a * x + m.c * y + m.e, m.b * x + m.d * y + m.f]); AUDIT.boxes.push({ kind, text, x0: Math.min(...P4.map((q) => q[0])), y0: Math.min(...P4.map((q) => q[1])), x1: Math.max(...P4.map((q) => q[0])), y1: Math.max(...P4.map((q) => q[1])) }); }
 
 // ═════════════════════════ CUT PAPER ═════════════════════════
 /** draw a path as a piece of cut paper: soft shadow, light paper edge, then the fill. path() builds the path. */
@@ -126,7 +129,7 @@ export function ribbon(text, x, y, sc = 1, size = 110) {
   if (sc <= 0) return; ctx.save(); ctx.translate(x, y); ctx.scale(sc, sc); ctx.font = `700 ${size}px ${SERIF}`;
   const w = ctx.measureText(text).width + size * 1.2, h = size * 1.35;
   for (const s of [-1, 1]) cut(P_poly([[s * w / 2, -h / 2 + 30], [s * (w / 2 + 110), -h / 2 + 30], [s * (w / 2 + 70), 30], [s * (w / 2 + 110), h / 2 + 30], [s * w / 2, h / 2 + 30]]), '#A87A22', { shadow: 0.6, edge: 4 });
-  cut(P_rr(-w / 2, -h / 2, w, h, 6), P.gold); ctx.fillStyle = P.ink; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 0, 6);
+  cut(P_rr(-w / 2, -h / 2, w, h, 6), P.gold); ctx.fillStyle = P.ink; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 0, 6); if (sc > 0.6) rec('ribbon', text, -w / 2 - 110, -h / 2, w / 2 + 110, h / 2 + 30);
   ctx.restore();
 }
 /** red wax seal with an initial */
@@ -138,7 +141,7 @@ export function timeline(years, x, y, w, p = 0, active = -1) {
   const mx = x + w * clamp(p); cut(P_poly([[mx, y - 26], [mx - 26, y - 70], [mx + 26, y - 70]]), P.crimson, { shadow: 0.5, edge: 4 });
 }
 /** a pinned paper slip with a few words (for names, places, numbers) */
-export function slip(text, x, y, sc = 1, rot = -0.03, size = 54) { if (sc <= 0) return; ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(sc, sc); ctx.font = `700 ${size}px ${SERIF}`; const w = ctx.measureText(text).width + 70; cut(P_rr(-w / 2, -size * 0.8, w, size * 1.6, 4), P.edge); ctx.fillStyle = P.ink; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 0, 4); circle(0, -size * 0.8 + 6, 10, P.crimson); ctx.restore(); }
+export function slip(text, x, y, sc = 1, rot = -0.03, size = 54) { if (sc <= 0) return; ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(sc, sc); ctx.font = `700 ${size}px ${SERIF}`; const w = ctx.measureText(text).width + 70; if (sc > 0.6) rec('slip', text, -w / 2, -size * 0.8, w / 2, size * 0.8); cut(P_rr(-w / 2, -size * 0.8, w, size * 1.6, 4), P.edge); ctx.fillStyle = P.ink; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 0, 4); circle(0, -size * 0.8 + 6, 10, P.crimson); ctx.restore(); }
 
 // ═════════════════════════ CAPTION LOOK ═════════════════════════
 export const CAPLOOK = { font: `700 68px ${SERIF}`, size: 68, y: 935, maxW: 1500, fg: P.ink, hi: P.crimson };
@@ -146,7 +149,7 @@ export const CAPLOOK = { font: `700 68px ${SERIF}`, size: 68, y: 935, maxW: 1500
 export function captionStrip(words, x, y, sc = 1, look = CAPLOOK) {
   ctx.save(); ctx.translate(x, y); ctx.scale(sc, sc); ctx.font = look.font; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
   const k = (look.size || 88) / 88, sp = 24 * k, ws = words.map((w) => ctx.measureText(w.txt).width), tw = ws.reduce((a, b) => a + b, 0) + sp * (words.length - 1), hw = tw / 2 + 50 * k, sh = 70 * k;
-  const fit = Math.min(1, (look.maxW || 960) / (tw + 100 * k)); ctx.scale(fit, fit);
+  const fit = Math.min(1, (look.maxW || 960) / (tw + 100 * k)); ctx.scale(fit, fit); rec('caption', words.map((w) => w.txt).join(' '), -hw, -sh, hw, sh);
   cut(() => { ctx.beginPath(); ctx.moveTo(-hw, -sh); for (let x = -hw; x <= hw; x += 24) ctx.lineTo(x, -sh + (rnd(x) - 0.5) * 12 * k); for (let x = hw; x >= -hw; x -= 24) ctx.lineTo(x, sh + (rnd(x + 7) - 0.5) * 12 * k); ctx.closePath(); }, '#F3E9D2', { shadow: 0.8, edge: 0 });
   let cx = -tw / 2; words.forEach((w, i) => { ctx.fillStyle = w.hi ? look.hi : look.fg; ctx.fillText(w.txt, cx, 6 * k); cx += ws[i] + sp; });
   ctx.restore();
@@ -159,7 +162,7 @@ export const ERA = { y: 70, x0: 300, x1: 1620, ticks: ['1664', '1674', '1746', '
 /** the era bar at the top: a thin ink rule with year ticks; `active` = index of the current era (blue), p = 0..1 pop-in */
 export function eraBar(active = -1, p = 1, o = ERA) {
   if (p <= 0) return; const n = o.ticks.length, w = o.x1 - o.x0;
-  ctx.save(); ctx.globalAlpha = clamp(p); ctx.translate(0, (1 - clamp(p)) * -30);
+  ctx.save(); ctx.globalAlpha = clamp(p); ctx.translate(0, (1 - clamp(p)) * -30); rec('era', 'era bar', o.x0 - 60, o.y - 30, o.x1 + 60, o.y + 34);
   cut(P_rr(o.x0 - 60, o.y - 30, w + 120, 64, 32), '#F3E9D2', { shadow: 0.5, edge: 3 });
   line([[o.x0, o.y - 8], [o.x1, o.y - 8]], P.ink, 3);
   o.ticks.forEach((yr, i) => {

@@ -99,6 +99,23 @@ else {
         evs.filter((e) => e.t >= s.at && e.t < s.end).forEach((e) => console.log(`         ${e.t.toFixed(2).padStart(7)}  ${e.kind}${e.note ? '  ' + e.note : ''}`));
       });
       console.log(gaps ? `EVENTS: ${gaps} shot(s) with a gap of 4 s or more` : 'EVENTS OK: no gap of 4 s or more');
+    } else if (mode === 'audit') {
+      // layout audit: sample every 0.2 s and report pop-ups that overlap the era bar, the caption, the frame edge or each other
+      const seen = new Map(), W = 1920, H = 1080, ov = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0)), area = (a) => (a.x1 - a.x0) * (a.y1 - a.y0);
+      const note = (shot, t, msg) => { const k = shot + '|' + msg; if (!seen.has(k)) seen.set(k, { t, n: 0 }); seen.get(k).n++; };
+      for (let t = 0.1; t < dur; t += 0.2) {
+        const a = await P.ev(`OP.audit(${t})`); if (a.inWhip) continue;
+        const pops = a.boxes.filter((b) => ['slip', 'ribbon', 'card'].includes(b.kind) && b.x1 - b.x0 > 30), era = a.boxes.find((b) => b.kind === 'era'), cap = a.boxes.find((b) => b.kind === 'caption');
+        for (const p of pops) {
+          if (era && ov(p, era) > 150) note(a.shot, t, `${p.kind} "${p.text}" overlaps the era bar`);
+          if (cap && ov(p, cap) > 150) note(a.shot, t, `${p.kind} "${p.text}" overlaps the caption`);
+          if (p.x0 < 20 || p.x1 > W - 20 || p.y0 < 4 || p.y1 > H - 4) note(a.shot, t, `${p.kind} "${p.text}" runs off the frame`);
+          if (p.y1 > 850 && !(cap && ov(p, cap) > 150)) note(a.shot, t, `${p.kind} "${p.text}" sits in the caption band (y ${p.y1})`);
+        }
+        for (let i = 0; i < pops.length; i++) for (let j = i + 1; j < pops.length; j++) if (ov(pops[i], pops[j]) > 0.12 * Math.min(area(pops[i]), area(pops[j]))) note(a.shot, t, `${pops[i].kind} "${pops[i].text}" overlaps ${pops[j].kind} "${pops[j].text}"`);
+      }
+      for (const [k, v] of seen) console.log(`${k.split('|')[0].padEnd(6)} ${v.t.toFixed(1).padStart(6)} s  ${k.split('|')[1]}  (${(v.n * 0.2).toFixed(1)} s)`);
+      console.log(seen.size ? `AUDIT: ${seen.size} layout issue(s)` : 'AUDIT OK: no pop-up overlaps the era bar, the caption, the frame edge or another pop-up');
     } else if (mode === 'cues') {
       const cues = await P.ev('OP.cues()');
       fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });

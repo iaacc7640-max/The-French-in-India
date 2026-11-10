@@ -6,7 +6,7 @@ import { setGeo } from './core/atlas.js';
 import { dustMotes } from './core/props.js';
 import { T, loadTiming } from './core/timing.js';
 import { buildCaptions, drawCaption, captionList } from './core/captions.js';
-import { eraBar, guides } from './core/kit.js';
+import { eraBar, guides, AUDIT } from './core/kit.js';
 const GUIDES = new URLSearchParams(location.search).has('guides');
 
 const cv = document.getElementById('cv');
@@ -22,20 +22,23 @@ function drawShot(i, t, ox = 0, oy = 0) {
   sh.draw(lt, d, t);
   ctx.restore(); ctx.globalAlpha = 1; ctx.letterSpacing = '0px';
 }
-/** whip pan across the cut into shot j: both shots slide together (outgoing out, incoming in);
- *  6 sub-frame samples spread over one frame's travel are averaged (running mean) for directional motion blur */
+const offB = document.createElement('canvas'); offB.width = W; offB.height = H; const offBCtx = offB.getContext('2d');
+/** whip pan across the cut into shot j: both shots slide together (outgoing out, incoming in). Each shot is drawn once,
+ *  then 24 sub-frame positions spread over one frame's travel are averaged, so the blur is smooth (no ghost copies). */
 function whipBlur(j, t, dir) {
-  const S = OP._shots, cutAt = S[j].at, [vx, vy] = WHIP_DIR[dir] || [-1, 0], main = ctx, N = 6, fr = 1 / 30;
+  const S = OP._shots, cutAt = S[j].at, [vx, vy] = WHIP_DIR[dir] || [-1, 0], main = ctx, N = 24, fr = 1 / 30;
+  setCtx(offCtx); offCtx.setTransform(1, 0, 0, 1, 0, 0); offCtx.globalAlpha = 1; offCtx.fillStyle = '#000'; offCtx.fillRect(0, 0, W, H); drawShot(j - 1, Math.min(t, cutAt - 1e-3));
+  setCtx(offBCtx); offBCtx.setTransform(1, 0, 0, 1, 0, 0); offBCtx.globalAlpha = 1; offBCtx.fillStyle = '#000'; offBCtx.fillRect(0, 0, W, H); drawShot(j, Math.max(t, cutAt));
+  setCtx(main); main.setTransform(1, 0, 0, 1, 0, 0);
   for (let k = 0; k < N; k++) {
     const tt = t + fr * ((k + 0.5) / N - 0.5), u = eio(clamp((tt - (cutAt - WHIP / 2)) / WHIP));
-    setCtx(offCtx); offCtx.setTransform(1, 0, 0, 1, 0, 0); offCtx.fillStyle = '#000'; offCtx.fillRect(0, 0, W, H);
-    drawShot(j - 1, Math.min(t, cutAt - 1e-3), -vx * W * u, -vy * H * u);
-    drawShot(j, Math.max(t, cutAt), vx * W * (1 - u), vy * H * (1 - u));
-    setCtx(main); main.globalAlpha = 1 / (k + 1); main.drawImage(off, 0, 0); main.globalAlpha = 1;
+    main.globalAlpha = 1 / (k + 1); main.drawImage(off, -vx * W * u, -vy * H * u); main.drawImage(offB, vx * W * (1 - u), vy * H * (1 - u));
   }
+  main.globalAlpha = 1;
 }
 function draw(t) {
   t = clamp(t, 0, T.dur - 1e-4);
+  AUDIT.boxes.length = 0;
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.letterSpacing = '0px';
   ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
   const S = OP._shots; let i = S.length - 1; while (i > 0 && S[i].at > t) i--;
@@ -73,6 +76,7 @@ function draw(t) {
     OP.shots = () => shots.map((s, i) => ({ id: s.id, at: +s.at.toFixed(3), end: +(i < shots.length - 1 ? shots[i + 1].at : T.dur).toFixed(3), note: s.note || '' }));
     OP.captions = () => captionList().map((c) => ({ s: +c.s.toFixed(3), e: +c.e.toFixed(3), text: c.words.map((w) => (w.hi ? '*' : '') + w.txt).join(' ') }));
     OP.cues = () => cues.slice().sort((a, b) => a.t - b.t);
+    OP.audit = (t) => { draw(t); const S = OP._shots; let i = S.length - 1; while (i > 0 && S[i].at > t) i--; const inWhip = (S[i].whip && t - S[i].at < WHIP / 2) || (S[i + 1] && S[i + 1].whip && S[i + 1].at - t < WHIP / 2); return { shot: S[i].id, inWhip: !!inWhip, boxes: AUDIT.boxes.map((b) => ({ ...b, x0: Math.round(b.x0), y0: Math.round(b.y0), x1: Math.round(b.x1), y1: Math.round(b.y1) })) }; };
     OP.events = () => events.slice().sort((a, b) => a.t - b.t);
     OP.moves = () => shots.map((s) => ({ id: s.id, at: s.at, move: s.move ? s.move.kind : 'drift(default)', whip: s.whip || '', snapAt: s.move && s.move.kind === 'snap' ? +(s.at + s.move.at).toFixed(3) : null }));
     OP.ready = true;

@@ -1,62 +1,74 @@
-"""Build data/geo.json from Natural Earth land (world-atlas land-50m.json, ISC licence, public-domain data).
+"""Build data/geo.json from Natural Earth (world-atlas 2.0.2, ISC licence; public-domain data).
 
-  python3 tools/make_geo.py path/to/land-50m.json
+  ~/.faceless-shorts/venv/bin/python tools/make_geo.py path/to/world-atlas/package
 
-Keeps the rings inside three boxes: SOUTH_ASIA (India, Bengal, Ceylon), INDIAN_OCEAN (Madagascar, Mauritius,
-Reunion) and EUROPE. Coordinates are [lon, lat] rounded to 0.01 degree.
+Sets (rings of [lon, lat], rounded to 0.01 degree):
+  subcontinent   India + Pakistan + Bangladesh + Nepal + Bhutan merged into ONE outline (no modern borders inside),
+                 plus the Siachen Glacier area and an APPROXIMATE Aksai Chin polygon so the north is not cut short.
+                 The first ring is the mainland (the largest); the rest are islands (Andamans, Nicobars, ...).
+  asia           all land around the subcontinent (lon 40-132, lat -2-46): the neighbours, drawn muted
+  indian_ocean   East Africa, Madagascar, the Mascarenes, Arabia, India (lon 25-102, lat -36-32)
+  europe         lon -12-32, lat 35-61
+  world          1:110m land for the France -> India voyage view (lon -85-165, lat -52-66)
+Needs shapely (uv pip install shapely).
 """
 import json, sys
 from pathlib import Path
+from shapely.geometry import Polygon, MultiPolygon, box
+from shapely.ops import unary_union
 
-topo = json.loads(Path(sys.argv[1]).read_text())
-sc, tr = topo['transform']['scale'], topo['transform']['translate']
-arcs = []
-for a in topo['arcs']:
-    x = y = 0; pts = []
-    for dx, dy in a:
-        x += dx; y += dy; pts.append((round(x * sc[0] + tr[0], 2), round(y * sc[1] + tr[1], 2)))
-    arcs.append(pts)
-def arc(i): return arcs[i] if i >= 0 else arcs[~i][::-1]
-def ring(idx):
-    out = []
-    for k, i in enumerate(idx): out += arc(i)[1 if k else 0:]
-    return out
-def clip(poly, box):
-    """Sutherland-Hodgman clip of a ring to a lon/lat box (edges outside the box land on the box border)."""
-    x0, y0, x1, y1 = box
-    def cut(pts, inside, inter):
+PKG = Path(sys.argv[1])
+
+def load(name, obj):
+    topo = json.loads((PKG / name).read_text()); sc, tr = topo['transform']['scale'], topo['transform']['translate']
+    arcs = []
+    for a in topo['arcs']:
+        x = y = 0; pts = []
+        for dx, dy in a:
+            x += dx; y += dy; pts.append((x * sc[0] + tr[0], y * sc[1] + tr[1]))
+        arcs.append(pts)
+    def arc(i): return arcs[i] if i >= 0 else arcs[~i][::-1]
+    def ring(idx):
         out = []
-        for i, cur in enumerate(pts):
-            prev = pts[i - 1]
-            if inside(cur):
-                if not inside(prev): out.append(inter(prev, cur))
-                out.append(cur)
-            elif inside(prev): out.append(inter(prev, cur))
+        for k, i in enumerate(idx): out += arc(i)[1 if k else 0:]
         return out
-    def ix(xv):
-        return lambda a, b: (xv, round(a[1] + (b[1] - a[1]) * (xv - a[0]) / ((b[0] - a[0]) or 1e-9), 2))
-    def iy(yv):
-        return lambda a, b: (round(a[0] + (b[0] - a[0]) * (yv - a[1]) / ((b[1] - a[1]) or 1e-9), 2), yv)
-    pts = poly
-    for inside, inter in ((lambda p: p[0] >= x0, ix(x0)), (lambda p: p[0] <= x1, ix(x1)), (lambda p: p[1] >= y0, iy(y0)), (lambda p: p[1] <= y1, iy(y1))):
-        if not pts: break
-        pts = cut(pts, inside, inter)
-    return pts
-BOXES = {'south_asia': (66, 5, 97, 28), 'indian_ocean': (42, -27, 58, -11), 'europe': (-12, 35, 32, 61)}
-res = {k: [] for k in BOXES}
-for g in topo['objects']['land']['geometries']:
-    polys = g['arcs'] if g['type'] == 'MultiPolygon' else [g['arcs']]
-    for poly in polys:
-        r = ring(poly[0])
-        for k, (x0, y0, x1, y1) in BOXES.items():
-            if any(x0 <= p[0] <= x1 and y0 <= p[1] <= y1 for p in r):
-                rc = clip(r, (x0, y0, x1, y1))
-                if len(rc) < 4: continue
-                # thin the ring: keep a point only if it moved >= 0.04 degree (keeps the look, cuts the size)
-                thin = [rc[0]]
-                for p in rc[1:]:
-                    if abs(p[0] - thin[-1][0]) + abs(p[1] - thin[-1][1]) >= 0.04: thin.append(p)
-                if len(thin) >= 4: res[k].append(thin)
+    feats = []
+    for g in topo['objects'][obj]['geometries']:
+        if g.get('arcs') is None: continue
+        polys = g['arcs'] if g['type'] == 'MultiPolygon' else [g['arcs']]
+        shp = []
+        for poly in polys:
+            ext = ring(poly[0])
+            if len(ext) >= 4:
+                p = Polygon(ext, [ring(h) for h in poly[1:] if len(ring(h)) >= 4])
+                shp.append(p if p.is_valid else p.buffer(0))
+        feats.append(((g.get('properties') or {}).get('name'), unary_union(shp)))
+    return feats
+
+def rings(geom, tol, min_area=0.0):
+    geom = geom.simplify(tol, preserve_topology=True)
+    polys = list(geom.geoms) if isinstance(geom, MultiPolygon) else [geom]
+    polys = [p for p in polys if not p.is_empty and p.area >= min_area]
+    polys.sort(key=lambda p: -p.area)
+    return [[[round(x, 2), round(y, 2)] for x, y in p.exterior.coords] for p in polys]
+
+land50 = unary_union([g for _, g in load('land-50m.json', 'land')])
+land110 = unary_union([g for _, g in load('land-110m.json', 'land')])
+countries = dict(load('countries-50m.json', 'countries'))
+names = ['India', 'Pakistan', 'Bangladesh', 'Nepal', 'Bhutan', 'Siachen Glacier']
+missing = [n for n in names if n not in countries]
+if missing: raise SystemExit(f'missing countries: {missing}')
+aksai = Polygon([(77.8, 35.5), (78.0, 34.3), (78.9, 33.6), (79.5, 33.9), (80.3, 34.6), (80.3, 35.6), (79.0, 36.0), (78.0, 35.9)])   # approximate
+sub = unary_union([countries[n] for n in names] + [aksai]).buffer(0.02).buffer(-0.02)       # close hairline seams
+
+res = {
+    'source': 'Natural Earth 1:50m and 1:110m via world-atlas 2.0.2 (ISC); subcontinent = India+Pakistan+Bangladesh+Nepal+Bhutan merged, Aksai Chin approximate',
+    'subcontinent': rings(sub, 0.03, 0.01),
+    'asia': rings(land50.intersection(box(40, -2, 132, 46)), 0.05, 0.02),
+    'indian_ocean': rings(land50.intersection(box(25, -36, 102, 32)), 0.05, 0.004),
+    'europe': rings(land50.intersection(box(-12, 35, 32, 61)), 0.03, 0.01),
+    'world': rings(land110.intersection(box(-85, -52, 165, 66)), 0.1, 0.3),
+}
 out = Path(__file__).resolve().parent.parent / 'data/geo.json'
-out.write_text(json.dumps({'source': 'Natural Earth 1:50m land via world-atlas 2.0.2 (ISC)', **res}, separators=(',', ':')))
-print(out, {k: (len(v), sum(map(len, v))) for k, v in res.items()}, out.stat().st_size // 1024, 'KB')
+out.write_text(json.dumps(res, separators=(',', ':')))
+print(out, {k: (len(v), sum(map(len, v))) for k, v in res.items() if k != 'source'}, out.stat().st_size // 1024, 'KB')

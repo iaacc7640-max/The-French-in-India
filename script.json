@@ -507,8 +507,8 @@
    "cut": "6.6"
   },
   {
-   "text": "Lally's supplies had to come the long way, overland.",
-   "caps": "Lally's *supplies | had to *come | the *long way, | *overland.",
+   "text": "Lally's supplies had to come the long way, by sea from France.",
+   "caps": "Lally's *supplies | had to come | the *long way, | by sea from *France.",
    "chapter": 6,
    "cut": "6.7"
   },

@@ -2,7 +2,7 @@
 // realMap (Natural Earth land, data/geo.json) · pins · inkBleed · statCard · chessboard · supplyLine · chapterCard.
 // Everything is cut paper (K.cut) in the style palette. French = royal blue, English = crimson (fixed all video).
 import { ctx, W, H, TAU, lerp, clamp, seg, eo, eob, eio, rnd, rr, circle, line } from './lib.js';
-import { P, cut, P_rr, P_circ, P_poly, parchment, label, slip, ribbon, compass } from './kit.js';
+import { P, cut, P_rr, P_circ, P_poly, parchment, label, slip, ribbon, compass, rec } from './kit.js';
 
 const SERIF = 'Caladea';
 export const SIDE = {
@@ -25,19 +25,30 @@ export const PLACES = {
   Arcot: [79.32, 12.90], Ambur: [78.72, 12.79], Trichinopoly: [78.69, 10.80], Srirangam: [78.69, 10.86],
   Adyar: [80.26, 13.01], Wandiwash: [79.62, 12.50], Hyderabad: [78.48, 17.38], Golconda: [78.40, 17.38],
   Bijapur: [75.71, 16.83], Plassey: [88.25, 23.80], Kizhur: [79.75, 11.98], Tanjore: [79.14, 10.79],
+  Goa: [73.83, 15.40], Pulicat: [80.32, 13.42], Tranquebar: [79.85, 11.03], Gingee: [79.40, 12.25], Valikondapuram: [78.92, 11.32],
+  Delhi: [77.21, 28.61], Mauritius: [57.55, -20.2], Reunion: [55.5, -21.1], Lorient: [-3.37, 47.75], Paris: [2.35, 48.86], 'Fort Dauphin': [46.99, -25.03],
 };
+/** the Bijapur Sultanate about 1673, APPROXIMATE: from the west coast near Goa across the Karnataka plateau to the Carnatic lowlands (Gingee, Valikondapuram, Tanjore) */
+export const BIJAPUR = [[73.3, 17.6], [74.6, 18.1], [76.4, 17.6], [77.3, 16.5], [77.6, 15.2], [78.2, 14.0], [79.0, 13.3], [79.9, 12.6], [79.9, 11.6], [79.6, 10.5], [78.6, 10.4], [77.9, 11.4], [77.0, 12.4], [76.0, 13.2], [75.2, 14.0], [74.3, 14.6], [73.9, 15.6], [73.4, 16.6]];
+/** the sea route France → India (Lorient, round the Cape, Mauritius, Pondicherry) and the short route Bengal → Madras */
+export const SEA_ROUTE = [[-3.4, 47.7], [-12, 41], [-19, 22], [-17, 6], [-4, -12], [8, -28], [18.5, -37], [32, -36], [46, -30], [57.5, -20.2], [68, -6], [78, 5], [80.6, 10.5], [79.83, 11.93]];
+export const BENGAL_ROUTE = [[88.36, 22.57], [88.2, 21.2], [86.5, 17.5], [82.8, 14.2], [80.28, 13.08]];
 /** the Krishna river, simplified (west → east, ends at the delta) */
 export const KRISHNA = [[73.6, 17.9], [74.6, 16.9], [75.7, 16.4], [76.6, 16.3], [77.6, 16.1], [78.3, 16.1], [79.2, 16.6], [80.1, 16.6], [80.6, 16.3], [81.1, 15.8]];
-/** map views: centre lon/lat and degrees of longitude across the frame */
+/** map views: centre lon/lat, degrees of longitude across the frame, and the land set drawn around the subcontinent */
 export const VIEWS = {
-  india: { lon: 83, lat: 15.6, deg: 36 },          // south India + Bengal, Bay of Bengal on the right for cards
-  south: { lon: 80.6, lat: 13.6, deg: 17 },      // the Carnatic + Hyderabad
-  carnatic: { lon: 80.0, lat: 12.4, deg: 9 },    // Madras, Arcot, Ambur, Wandiwash, Pondicherry, Trichinopoly
-  bengal: { lon: 87.5, lat: 22.0, deg: 9 },
-  ocean: { lon: 68, lat: -4.5, deg: 78 },         // Mauritius → India sea lane (Mauritius low, Madras high)
-  madagascar: { lon: 52, lat: -16, deg: 30 },     // Madagascar + Mauritius + Reunion
-  deccan: { lon: 80, lat: 15.8, deg: 14 },        // Golconda, Hyderabad, Masulipatnam
-  europe: { lon: 6, lat: 48, deg: 34 },
+  india: { lon: 86.4, lat: 18.95, deg: 88.2, base: 'asia' },      // the WHOLE subcontinent, Kashmir to Cape Comorin, room for cards on the right
+  peninsula: { lon: 83, lat: 15.6, deg: 36, base: 'asia' },        // south India + Bengal (closer)
+  south: { lon: 80.6, lat: 13.6, deg: 17, base: 'asia' },          // the Carnatic + Hyderabad
+  kings: { lon: 80.0, lat: 14.82, deg: 25.5, base: 'asia' },       // Hyderabad (upper) and the Carnatic (lower): the map as a chessboard
+  carnatic: { lon: 80.0, lat: 12.4, deg: 9, base: 'asia' },        // Madras, Arcot, Ambur, Wandiwash, Pondicherry
+  bijapur: { lon: 78.6, lat: 14.2, deg: 21, base: 'asia' },        // Bijapur to the Coromandel coast
+  deccan: { lon: 80, lat: 15.8, deg: 14, base: 'asia' },           // Golconda, Hyderabad, Masulipatnam
+  bengal: { lon: 87.5, lat: 22.0, deg: 9, base: 'asia' },
+  ocean: { lon: 64, lat: -5.5, deg: 96, base: 'indian_ocean' },      // Madagascar, Mauritius and India in one frame
+  madagascar: { lon: 52.6, lat: -17, deg: 56, base: 'indian_ocean' }, // Madagascar with the African coast beside it
+  europe: { lon: 6, lat: 48, deg: 34, base: 'europe', sub: false },
+  voyage: { lon: 40, lat: 1, deg: 236, base: 'world' },            // France → around Africa → India
 };
 export function proj(v, lon, lat) {
   const c = Math.cos(v.lat * Math.PI / 180), k = W / (v.deg * c);
@@ -45,11 +56,13 @@ export function proj(v, lon, lat) {
 }
 export const at = (v, name) => proj(v, ...PLACES[name]);
 function ringPath(v, rings) { ctx.beginPath(); for (const r of rings) { r.forEach(([lo, la], i) => { const [x, y] = proj(v, lo, la); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.closePath(); } }
-export const landPath = (v, set = 'south_asia') => () => ringPath(v, GEO[set]);
-/** the Indian mainland only (rings reaching north of 10.5°N): territory ink never spills onto Ceylon or the islands */
-export const mainland = (v) => () => { ringPath(v, GEO.south_asia.filter((r) => Math.max(...r.map((p) => p[1])) > 10.5)); ctx.clip(); const [x] = proj(v, 92.3, v.lat); ctx.beginPath(); ctx.rect(-500, -500, x + 500, H + 1000); };   // ...and not east of Bengal (no Burma)
+export const landPath = (v, set = 'subcontinent') => () => ringPath(v, GEO[set]);
+/** the subcontinent's mainland only (its largest ring): territory ink never spills onto Ceylon, Burma or the islands */
+export const mainland = (v) => () => ringPath(v, [GEO.subcontinent[0]]);
+const NEIGHBOUR = '#CDBE9A';
 
-/** a real-coastline map page. o = { view, set ('south_asia'|'indian_ocean'|'europe'), t (water ripple), grid } */
+/** a real-coastline map page. o = { view (name or object), t (water ripple), grid }.
+ *  The lands around are drawn muted; the Indian subcontinent is one highlighted piece of cut paper (no modern borders). */
 export function realMap(o = {}) {
   const v = typeof o.view === 'string' ? VIEWS[o.view] : (o.view || VIEWS.india), t = o.t || 0;
   parchment(o.seed || 3);
@@ -58,12 +71,15 @@ export function realMap(o = {}) {
   ctx.save(); ctx.strokeStyle = 'rgba(247,239,220,0.22)'; ctx.lineWidth = 3;
   for (let i = 0; i < 14; i++) { const y = 40 + i * 80; ctx.beginPath(); for (let x = -40; x <= W + 40; x += 30) { const yy = y + Math.sin(x * 0.012 + t * 0.9 + i * 1.7) * 6; x === -40 ? ctx.moveTo(x, yy) : ctx.lineTo(x, yy); } ctx.setLineDash([40, 60]); ctx.lineDashOffset = -t * 20 - i * 30; ctx.stroke(); }
   ctx.restore();
-  if (o.grid !== false) { ctx.strokeStyle = 'rgba(62,44,30,0.12)'; ctx.lineWidth = 2; for (let lo = -180; lo <= 180; lo += 5) { const [x] = proj(v, lo, v.lat); if (x > -10 && x < W + 10) { ctx.beginPath(); ctx.moveTo(x, -10); ctx.lineTo(x, H + 10); ctx.stroke(); } } for (let la = -60; la <= 70; la += 5) { const [, y] = proj(v, v.lon, la); if (y > -10 && y < H + 10) { ctx.beginPath(); ctx.moveTo(-10, y); ctx.lineTo(W + 10, y); ctx.stroke(); } } }
-  for (const set of [o.set || 'south_asia', ...(o.also || [])]) cut(landPath(v, set), P.land, { shadow: 0.8, edge: 5 });
+  if (o.grid !== false) { const step = v.deg > 120 ? 30 : v.deg > 50 ? 10 : 5; ctx.strokeStyle = 'rgba(62,44,30,0.10)'; ctx.lineWidth = 2; for (let lo = -180; lo <= 180; lo += step) { const [x] = proj(v, lo, v.lat); if (x > -10 && x < W + 10) { ctx.beginPath(); ctx.moveTo(x, -10); ctx.lineTo(x, H + 10); ctx.stroke(); } } for (let la = -60; la <= 70; la += step) { const [, y] = proj(v, v.lon, la); if (y > -10 && y < H + 10) { ctx.beginPath(); ctx.moveTo(-10, y); ctx.lineTo(W + 10, y); ctx.stroke(); } } }
+  const base = v.base || 'asia', world = base === 'world';
+  cut(landPath(v, base), world || v.sub === false || base === 'indian_ocean' ? P.land : NEIGHBOUR, { shadow: 0.7, edge: world ? 3 : 4 });
+  if (v.sub !== false && !world && base !== 'indian_ocean') cut(landPath(v, 'subcontinent'), P.land, { shadow: 0.5, edge: 5 });
+  if (v.sub !== false && (world || base === 'indian_ocean')) { ctx.save(); landPath(v, 'subcontinent')(); ctx.fillStyle = '#E6D3A4'; ctx.fill(); ctx.strokeStyle = P.edge; ctx.lineWidth = 2; ctx.stroke(); ctx.restore(); }
   return v;
 }
 /** clip subsequent drawing to the land of a view (use inside save/restore) */
-export function clipLand(v, set = 'south_asia') { landPath(v, set)(); ctx.clip(); }
+export function clipLand(v, set = 'subcontinent') { landPath(v, set)(); ctx.clip(); }
 /** the Krishna drawn as a river line; p 0..1 draws it on */
 export function krishna(v, p = 1, w = 7) { const pts = KRISHNA.map(([a, b]) => proj(v, a, b)); drawPolyline(pts, p, P.sea, w); }
 export function drawPolyline(pts, p, color, w, dash) {
@@ -92,20 +108,33 @@ export function placeLabel(text, x, y, { size = 26, sc = 1, dy = -36, dx = 0, co
   ctx.fillStyle = color; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 0, 1); ctx.letterSpacing = '0px'; ctx.restore();
 }
 /** a small cloth flag on a pole that flutters (sine-wave cloth). colours = stripes top→bottom or a function */
-export function flag(x, y, t, colours, { s = 1, droop = 0, seed = 0, vertical = false } = {}) {
+export function flag(x, y, t, spec, { s = 1, droop = 0, seed = 0, raise = 1 } = {}) {
+  // spec: an array = horizontal stripes; or { v: [..] } vertical stripes; { field, fleurs } the French royal flag
+  // (white strewn with gold fleurs-de-lis); { field, cross } a cross flag. raise 0..1 slides the cloth up the pole.
   ctx.save(); ctx.translate(x, y); ctx.scale(s, s);
   cut(P_rr(-3, -110, 6, 110, 2), P.ink, { shadow: 0.4, edge: 2 });
-  const fw = 74, fh = 48, n = 10, wave = (u) => Math.sin(u * 4 - t * 6 + seed) * 4 * u + droop * u * u * 46;
-  const band = (i0, i1, col) => { ctx.beginPath(); for (let i = 0; i <= n; i++) { const u = i / n; ctx.lineTo(u * fw, -110 + i0 * fh + wave(u)); } for (let i = n; i >= 0; i--) { const u = i / n; ctx.lineTo(u * fw, -110 + i1 * fh + wave(u)); } ctx.closePath(); ctx.fillStyle = col; ctx.fill(); };
+  const fw = 74, fh = 48, n = 10, top = -110 + (1 - clamp(raise)) * 62, wave = (u) => Math.sin(u * 4 - t * 6 + seed) * 4 * u + droop * u * u * 46;
+  const quad = (u0, u1, v0, v1, col) => { ctx.beginPath(); for (let i = 0; i <= n; i++) { const u = lerp(u0, u1, i / n); ctx.lineTo(u * fw, top + v0 * fh + wave(u)); } for (let i = n; i >= 0; i--) { const u = lerp(u0, u1, i / n); ctx.lineTo(u * fw, top + v1 * fh + wave(u)); } ctx.closePath(); ctx.fillStyle = col; ctx.fill(); };
   ctx.save(); ctx.shadowColor = 'rgba(70,45,20,0.3)'; ctx.shadowBlur = 6; ctx.shadowOffsetX = 3; ctx.shadowOffsetY = 4;
-  if (vertical) { const k = colours.length; colours.forEach((c, i) => { ctx.beginPath(); for (let j = 0; j <= n; j++) { const u = (i + j / n) / k; ctx.lineTo(u * fw, -110 + wave(u)); } for (let j = n; j >= 0; j--) { const u = (i + j / n) / k; ctx.lineTo(u * fw, -110 + fh + wave(u)); } ctx.closePath(); ctx.fillStyle = c; ctx.fill(); }); }
-  else colours.forEach((c, i) => band(i / colours.length, (i + 1) / colours.length, c));
-  ctx.restore(); ctx.restore();
+  if (Array.isArray(spec)) spec.forEach((c, i) => quad(0, 1, i / spec.length, (i + 1) / spec.length, c));
+  else if (spec.v) spec.v.forEach((c, i) => quad(i / spec.v.length, (i + 1) / spec.v.length, 0, 1, c));
+  else quad(0, 1, 0, 1, spec.field);
+  ctx.restore();
+  if (!Array.isArray(spec) && !spec.v) {
+    ctx.strokeStyle = 'rgba(62,44,30,0.35)'; ctx.lineWidth = 1.5; ctx.beginPath(); for (let i = 0; i <= n; i++) { const u = i / n; ctx.lineTo(u * fw, top + wave(u)); } for (let i = n; i >= 0; i--) { const u = i / n; ctx.lineTo(u * fw, top + fh + wave(u)); } ctx.closePath(); ctx.stroke();
+    if (spec.cross) { const o = spec.cross.off ?? 0.5; quad(o - 0.09, o + 0.09, 0, 1, spec.cross.col); quad(0, 1, 0.36, 0.64, spec.cross.col); }
+    if (spec.fleurs) for (const [u, vv] of [[0.2, 0.3], [0.5, 0.3], [0.8, 0.3], [0.35, 0.72], [0.65, 0.72]]) { ctx.save(); ctx.translate(u * fw, top + vv * fh + wave(u)); ctx.scale(0.17, 0.17); ctx.fillStyle = P.gold; fleurShape(); ctx.restore(); }
+    if (spec.shield) { ctx.save(); ctx.translate(0.5 * fw, top + 0.5 * fh + wave(0.5)); ctx.fillStyle = spec.shield; ctx.beginPath(); ctx.moveTo(-9, -11); ctx.lineTo(9, -11); ctx.lineTo(9, 3); ctx.quadraticCurveTo(0, 15, -9, 3); ctx.closePath(); ctx.fill(); ctx.restore(); }
+  }
+  ctx.restore();
 }
+/** flags. French = the royal flag of the Kingdom of France (white strewn with gold fleurs-de-lis) for 1664-1763;
+ *  the blue-white-red tricolour (adopted 1794) only for the 1950s chapter. */
 export const FLAGS = {
-  french: [P.royal, '#F4EEDD', P.royal], english: ['#F4EEDD', P.crimson, '#F4EEDD'], dutch: ['#D9792B', '#F4EEDD', P.royal],
-  portuguese: ['#F4EEDD', P.royal, '#F4EEDD'], danish: [P.crimson, '#F4EEDD', P.crimson], nawab: [P.forest, P.gold, P.forest],
-  india: ['#D98C2B', '#F4EEDD', '#4F7D3A'],
+  french: { field: '#F7F1E1', fleurs: true }, tricolour: { v: ['#2F4E8C', '#F7F1E1', '#C0392B'] },
+  english: { field: '#F7F1E1', cross: { col: P.crimson } }, dutch: ['#D9792B', '#F4EEDD', P.royal],
+  portuguese: { field: '#F7F1E1', shield: P.royal }, danish: { field: P.crimson, cross: { col: '#F7F1E1', off: 0.36 } }, nawab: [P.forest, P.gold, P.forest],
+  nizam: ['#3F5E3A', '#F4EEDD', '#3F5E3A'], india: ['#D98C2B', '#F4EEDD', '#4F7D3A'], white: { field: '#F7F1E1' },
 };
 
 // ═════════════════════════ INK-BLEED ═════════════════════════
@@ -128,7 +157,7 @@ export function statCard(o) {
   ctx.font = `700 31px ${SERIF}`; const tw = Math.max(...lines.map((l) => ctx.measureText(l).width), 0); ctx.font = `700 40px ${SERIF}`;
   const w = o.w || Math.max(300, Math.max(tw, ctx.measureText(o.title).width) + (o.portrait ? 150 : 70));
   if (o.from) { ctx.save(); ctx.globalAlpha = clamp(p * 2); ctx.setLineDash([6, 8]); line([o.from, [lerp(o.from[0], o.x, sc), lerp(o.from[1], o.y, sc)]], P.ink, 3); ctx.restore(); }
-  ctx.save(); ctx.translate(o.x, o.y); ctx.scale(sc, sc); ctx.rotate(o.rot ?? -0.02);
+  ctx.save(); ctx.translate(o.x, o.y); ctx.scale(sc, sc); ctx.rotate(o.rot ?? -0.02); if (sc > 0.6) rec('card', o.title, -w / 2, -h / 2, w / 2, h / 2);
   cut(() => { ctx.beginPath(); ctx.moveTo(-w / 2, -h / 2); for (let x = -w / 2; x <= w / 2; x += 20) ctx.lineTo(x, -h / 2 + (rnd(x + 3) - 0.5) * 8); for (let y = -h / 2; y <= h / 2; y += 20) ctx.lineTo(w / 2 + (rnd(y + 9) - 0.5) * 8, y); for (let x = w / 2; x >= -w / 2; x -= 20) ctx.lineTo(x, h / 2 + (rnd(x + 7) - 0.5) * 8); ctx.closePath(); }, '#F3E9D2', { shadow: 0.9, edge: 0 });
   circle(0, -h / 2 + 8, 9, P.crimson);
   const tx = o.portrait ? -w / 2 + 112 : -w / 2 + 30;
@@ -226,6 +255,7 @@ export function fleurSeal(x, y, s = 1, a = 1, col = P.crimson) {
   ctx.beginPath(); ctx.arc(0, 0, 62, 0, TAU); ctx.strokeStyle = 'rgba(0,0,0,0.25)'; ctx.lineWidth = 6; ctx.stroke();
   ctx.fillStyle = 'rgba(0,0,0,0.28)'; fleur(); ctx.restore();
 }
+export function fleurShape() { fleur(); }
 function fleur() {
   ctx.beginPath(); ctx.moveTo(0, -46); ctx.bezierCurveTo(16, -30, 16, -10, 0, 6); ctx.bezierCurveTo(-16, -10, -16, -30, 0, -46); ctx.fill();
   for (const d of [-1, 1]) { ctx.beginPath(); ctx.moveTo(d * 6, 0); ctx.bezierCurveTo(d * 30, -26, d * 50, -6, d * 36, 14); ctx.bezierCurveTo(d * 30, 4, d * 18, 4, d * 6, 10); ctx.closePath(); ctx.fill(); }

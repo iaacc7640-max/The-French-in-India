@@ -20,7 +20,7 @@ export function camAt(move, lt, d) {
   else { s = 1 + m.amt * clamp(lt / d); dx = -W * 0.012 * eio(clamp(lt / d)); }
   return { s, fx, fy, dx };
 }
-export const WHIP = 0.30;
+export const WHIP = 0.36;
 export const WHIP_DIR = { left: [-1, 0], right: [1, 0], up: [0, -1], down: [0, 1] };
 
 /** event kinds → sound cue types in tools/mix.py (soft, -24..-18 LUFS-ish under the voice) */
