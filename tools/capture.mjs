@@ -116,6 +116,11 @@ else {
       }
       for (const [k, v] of seen) console.log(`${k.split('|')[0].padEnd(6)} ${v.t.toFixed(1).padStart(6)} s  ${k.split('|')[1]}  (${(v.n * 0.2).toFixed(1)} s)`);
       console.log(seen.size ? `AUDIT: ${seen.size} layout issue(s)` : 'AUDIT OK: no pop-up overlaps the era bar, the caption, the frame edge or another pop-up');
+    } else if (mode === 'srt') {
+      // subtitle file from the film's own caption strips (correct spellings, word-synced): node tools/capture.mjs srt review/youtube/captions-en.srt
+      const caps = await P.ev('OP.captions()'), out = path.resolve(ROOT, rest[0] || 'review/captions-en.srt'), ts = (t) => { const ms = Math.round(t * 1000), h = Math.floor(ms / 3600000), m = Math.floor(ms / 60000) % 60, sec = Math.floor(ms / 1000) % 60; return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')},${String(ms % 1000).padStart(3, '0')}`; };
+      const body = caps.map((c, i) => `${i + 1}\n${ts(c.s)} --> ${ts(Math.max(c.s + 0.3, c.e - 0.02))}\n${c.text.replace(/\*/g, '')}\n`).join('\n');
+      fs.mkdirSync(path.dirname(out), { recursive: true }); fs.writeFileSync(out, body); console.log(`${out}: ${caps.length} subtitles`);
     } else if (mode === 'cues') {
       const cues = await P.ev('OP.cues()');
       fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });
