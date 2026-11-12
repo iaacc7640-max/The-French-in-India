@@ -1,0 +1,682 @@
+{
+ "title": "So Close to Empire: The French in India, 1664-1954",
+ "voice": "bm_george",
+ "speed": 1.0,
+ "lead": 0.5,
+ "outro": 2.0,
+ "gap": 0.25,
+ "music": "chapters",
+ "sources": [
+  "Rajiv Ahir, *A Brief History of Modern India*, ch. 3, \"The French\" and \"The Anglo-French Struggle for Supremacy: the Carnatic Wars\" (incl. \"Causes for the English Success and the French Failure\"; Dodwell; Lyall).",
+  "Wikipedia: French India; French East India Company; Battle of Adyar; Siege of Arcot; Robert Clive; Battle of Ambur; Muzaffar Jang; Chanda Sahib; Joseph François Dupleix; Battle of Wandiwash; Thomas Arthur, comte de Lally; History of Puducherry; Chandannagar.",
+  "Encyclopedia.com, \"French East India Company\" (50-year monopoly)."
+ ],
+ "lines": [
+  {
+   "text": "How did France beat an army ten times its size, and still lose India?",
+   "caps": "How did *France | *beat an army | ten times its *size, | and still *lose India?",
+   "chapter": 0,
+   "cut": "0.0"
+  },
+  {
+   "text": "In seventeen forty-six, about a thousand French-led soldiers",
+   "caps": "In *1746, | about a *thousand | *French-led soldiers",
+   "chapter": 0,
+   "cut": "0.1"
+  },
+  {
+   "text": "beat an army of ten thousand in southern India.",
+   "caps": "*beat an army | of ten *thousand | in southern *India.",
+   "chapter": 0,
+   "cut": "0.2"
+  },
+  {
+   "text": "Within a few years, a French governor was choosing",
+   "caps": "Within a few *years, | a French *governor | was *choosing",
+   "chapter": 0,
+   "cut": "0.3"
+  },
+  {
+   "text": "who sat on India's thrones.",
+   "caps": "who *sat on | India's *thrones.",
+   "chapter": 0,
+   "cut": "0.4"
+  },
+  {
+   "text": "Yet in May seventeen sixty-six,",
+   "caps": "Yet in May *1766,",
+   "chapter": 0,
+   "cut": "0.5"
+  },
+  {
+   "text": "France executed its own general, the Kont duh Lally,",
+   "caps": "France *executed | its own *general, | the Comte de *Lally,",
+   "chapter": 0,
+   "cut": "0.6"
+  },
+  {
+   "text": "for losing it all.",
+   "caps": "for losing it *all.",
+   "chapter": 0,
+   "cut": "0.7"
+  },
+  {
+   "text": "So what went wrong,",
+   "caps": "So what went *wrong,",
+   "chapter": 0,
+   "cut": "0.8"
+  },
+  {
+   "text": "between almost winning and losing everything?",
+   "caps": "between almost *winning | and losing *everything?",
+   "chapter": 0,
+   "cut": "0.9"
+  },
+  {
+   "text": "The answer wasn't a battle.",
+   "caps": "The *answer wasn't | a *battle.",
+   "chapter": 0,
+   "cut": "0.10",
+   "gap": 0.55
+  },
+  {
+   "text": "It was a supply line.",
+   "caps": "It was a *supply line.",
+   "chapter": 0,
+   "cut": "0.11",
+   "gap": 1.8
+  },
+  {
+   "text": "The French were the last Europeans to arrive,",
+   "caps": "The *French were | the *last Europeans | to *arrive,",
+   "chapter": 1,
+   "cut": "1.1"
+  },
+  {
+   "text": "so they had to move fast.",
+   "caps": "so they *had to | move *fast.",
+   "chapter": 1,
+   "cut": "1.2"
+  },
+  {
+   "text": "In sixteen sixty-four, King Louis the Fourteenth's ambitious minister, Kol-bair,",
+   "caps": "In *1664, | King *Louis XIV's | *ambitious minister, | *Colbert,",
+   "chapter": 1,
+   "cut": "1.3"
+  },
+  {
+   "text": "created the French East India Company,",
+   "caps": "*created the French | East India *Company,",
+   "chapter": 1,
+   "cut": "1.4"
+  },
+  {
+   "text": "with a fifty-year monopoly on France's eastern trade.",
+   "caps": "a *50-year | *monopoly | on eastern *trade.",
+   "chapter": 1,
+   "cut": "1.5"
+  },
+  {
+   "text": "But it wasted its first years, and much of its money, on Madagascar.",
+   "caps": "But it *wasted | its first *years, | much of its *money, | on *Madagascar.",
+   "chapter": 1,
+   "cut": "1.6"
+  },
+  {
+   "text": "So it turned to India.",
+   "caps": "So it *turned | to *India.",
+   "chapter": 1,
+   "cut": "1.7"
+  },
+  {
+   "text": "In sixteen sixty-eight, François Ka-ron opened a factory at Surat,",
+   "caps": "In *1668, | François *Caron | opened a *factory | at *Surat,",
+   "chapter": 1,
+   "cut": "1.8"
+  },
+  {
+   "text": "and a year later, an Armenian merchant in French service, Mar-kaa-ra,",
+   "caps": "a year *later, | an *Armenian merchant | in French *service, | *Marcara,",
+   "chapter": 1,
+   "cut": "1.9"
+  },
+  {
+   "text": "won trading rights from the Sultan of Golconda,",
+   "caps": "won trading *rights | from the *Sultan | of *Golconda,",
+   "chapter": 1,
+   "cut": "1.10"
+  },
+  {
+   "text": "opening the way to Mussoo-lee-putnam.",
+   "caps": "*opening the way | to *Masulipatnam.",
+   "chapter": 1,
+   "cut": "1.11"
+  },
+  {
+   "text": "The French had a foothold.",
+   "caps": "The *French had | a *foothold.",
+   "chapter": 1,
+   "cut": "1.12",
+   "gap": 0.55
+  },
+  {
+   "text": "What they still lacked was a home.",
+   "caps": "What they still *lacked | was a *home.",
+   "chapter": 1,
+   "cut": "1.13",
+   "gap": 1.8
+  },
+  {
+   "text": "That came in sixteen seventy-three,",
+   "caps": "That *came | in *1673,",
+   "chapter": 2,
+   "cut": "2.1"
+  },
+  {
+   "text": "when Shayr Khaan Lo-dee, a governor under the Sultan of Bee-jah-poor,",
+   "caps": "when *Sher Khan Lodi, | a *governor under | the Sultan of *Bijapur,",
+   "chapter": 2,
+   "cut": "2.2"
+  },
+  {
+   "text": "granted them a site on the Coromandel coast.",
+   "caps": "granted them a *site | on the *Coromandel coast.",
+   "chapter": 2,
+   "cut": "2.3"
+  },
+  {
+   "text": "Pon-di-cherry grew there from sixteen seventy-four,",
+   "caps": "*Pondicherry grew there | from *1674,",
+   "chapter": 2,
+   "cut": "2.4"
+  },
+  {
+   "text": "and François Martin turned it into the heart of French India.",
+   "caps": "François *Martin | *turned it into | the *heart | of *French India.",
+   "chapter": 2,
+   "cut": "2.5"
+  },
+  {
+   "text": "But France's wars in Europe kept following it.",
+   "caps": "But France's *wars | in *Europe | kept *following it.",
+   "chapter": 2,
+   "cut": "2.6"
+  },
+  {
+   "text": "So in sixteen ninety-three, the Dutch captured Pon-di-cherry,",
+   "caps": "So in *1693, | the *Dutch | *captured Pondicherry,",
+   "chapter": 2,
+   "cut": "2.7"
+  },
+  {
+   "text": "and only a peace treaty in Europe got it back.",
+   "caps": "only a peace *treaty | got it *back.",
+   "chapter": 2,
+   "cut": "2.8"
+  },
+  {
+   "text": "So when the company was rebuilt in the seventeen-twenties,",
+   "caps": "So when the *company | was *rebuilt | in the *1720s,",
+   "chapter": 2,
+   "cut": "2.9"
+  },
+  {
+   "text": "it built a safety net:",
+   "caps": "it *built | a safety *net:",
+   "chapter": 2,
+   "cut": "2.10"
+  },
+  {
+   "text": "French islands in the Indian Ocean, Mauritius and Ray-oon-yon.",
+   "caps": "French *islands | in the *Indian Ocean, | *Mauritius | and *Réunion.",
+   "chapter": 2,
+   "cut": "2.11",
+   "gap": 0.55
+  },
+  {
+   "text": "That safety net was about to become a weapon.",
+   "caps": "That *safety net | was about to *become | a *weapon.",
+   "chapter": 2,
+   "cut": "2.12",
+   "gap": 1.8
+  },
+  {
+   "text": "But in seventeen forty-six, Europe went to war again.",
+   "caps": "But in *1746, | Europe went to *war again.",
+   "chapter": 3,
+   "cut": "3.1"
+  },
+  {
+   "text": "A French fleet from Mauritius, under La Boor-do-nay,",
+   "caps": "A French *fleet | from *Mauritius, | under *La Bourdonnais,",
+   "chapter": 3,
+   "cut": "3.2"
+  },
+  {
+   "text": "sailed to India and captured Madras from the English.",
+   "caps": "*sailed to India | and captured *Madras | from the *English.",
+   "chapter": 3,
+   "cut": "3.3"
+  },
+  {
+   "text": "The French had promised Madras to the Nawab of the Carnatic.",
+   "caps": "The French had *promised | Madras to the *Nawab | of the *Carnatic.",
+   "chapter": 3,
+   "cut": "3.4"
+  },
+  {
+   "text": "But they kept it,",
+   "caps": "But they *kept it,",
+   "chapter": 3,
+   "cut": "3.5"
+  },
+  {
+   "text": "so the Nawab sent an army to throw them out.",
+   "caps": "so the *Nawab | sent an *army | to throw them *out.",
+   "chapter": 3,
+   "cut": "3.6"
+  },
+  {
+   "text": "At the Ud-yaar river, about a thousand French soldiers and trained sepoys",
+   "caps": "At the *Adyar river, | about a *thousand | French *soldiers | and trained *sepoys",
+   "chapter": 3,
+   "cut": "3.7"
+  },
+  {
+   "text": "faced some ten thousand men, and won.",
+   "caps": "faced some ten *thousand, | and *won.",
+   "chapter": 3,
+   "cut": "3.8"
+  },
+  {
+   "text": "Every European in India learned the same lesson:",
+   "caps": "Every *European | in India *learned | the same *lesson:",
+   "chapter": 3,
+   "cut": "3.9"
+  },
+  {
+   "text": "a small, drilled army could beat a far bigger one.",
+   "caps": "a small, *drilled army | *could beat | a far *bigger one.",
+   "chapter": 3,
+   "cut": "3.10"
+  },
+  {
+   "text": "A treaty in Europe soon handed Madras back to the English.",
+   "caps": "A *treaty in Europe | handed *Madras back | to the *English.",
+   "chapter": 3,
+   "cut": "3.11",
+   "gap": 0.55
+  },
+  {
+   "text": "But one Frenchman had learned something bigger.",
+   "caps": "But one *Frenchman | had *learned | something *bigger.",
+   "chapter": 3,
+   "cut": "3.12",
+   "gap": 1.8
+  },
+  {
+   "text": "His name was Joseph François Doo-play,",
+   "caps": "His *name was | Joseph François *Dupleix,",
+   "chapter": 4,
+   "cut": "4.1"
+  },
+  {
+   "text": "and his idea was simple:",
+   "caps": "his *idea | was *simple:",
+   "chapter": 4,
+   "cut": "4.2"
+  },
+  {
+   "text": "why conquer India's thrones,",
+   "caps": "why *conquer | India's *thrones,",
+   "chapter": 4,
+   "cut": "4.3"
+  },
+  {
+   "text": "when you can choose who sits on them?",
+   "caps": "when you can *choose | who *sits on them?",
+   "chapter": 4,
+   "cut": "4.4"
+  },
+  {
+   "text": "So when rival princes fought over Hyderabad and the Carnatic,",
+   "caps": "So when rival *princes | fought over *Hyderabad | and the *Carnatic,",
+   "chapter": 4,
+   "cut": "4.5"
+  },
+  {
+   "text": "Doo-play backed Moo-zaf-far Jung and Chun-da Saa-hib,",
+   "caps": "Dupleix *backed | Muzaffar *Jang | and Chanda *Sahib,",
+   "chapter": 4,
+   "cut": "4.6"
+  },
+  {
+   "text": "and the English backed their rivals.",
+   "caps": "the *English backed | their *rivals.",
+   "chapter": 4,
+   "cut": "4.7"
+  },
+  {
+   "text": "So in seventeen forty-nine, at Aam-boor, Doo-play's side won,",
+   "caps": "So in *1749, | at *Ambur, | Dupleix's side *won,",
+   "chapter": 4,
+   "cut": "4.8"
+  },
+  {
+   "text": "and the Nawab Un-war-ood-deen was killed.",
+   "caps": "the Nawab *Anwar-ud-din | was *killed.",
+   "chapter": 4,
+   "cut": "4.9"
+  },
+  {
+   "text": "Therefore Doo-play was made governor of the Mughal lands south of the Krishna,",
+   "caps": "*Therefore Dupleix | was made *governor | of the *Mughal lands | south of the *Krishna,",
+   "chapter": 4,
+   "cut": "4.10"
+  },
+  {
+   "text": "and a French army under Boo-see stayed at Hyderabad,",
+   "caps": "a *French army | under *Bussy | stayed at *Hyderabad,",
+   "chapter": 4,
+   "cut": "4.11"
+  },
+  {
+   "text": "paid for by the ruler it protected.",
+   "caps": "*paid for | by the *ruler | it *protected.",
+   "chapter": 4,
+   "cut": "4.12"
+  },
+  {
+   "text": "It was a brilliant plan.",
+   "caps": "It was a *brilliant plan.",
+   "chapter": 4,
+   "cut": "4.13",
+   "gap": 0.55
+  },
+  {
+   "text": "But the English had a young clerk who was watching closely.",
+   "caps": "But the *English had | a young *clerk | watching *closely.",
+   "chapter": 4,
+   "cut": "4.14",
+   "gap": 1.8
+  },
+  {
+   "text": "In seventeen fifty-one, that clerk, Robert Clive,",
+   "caps": "In *1751, | that *clerk, | Robert *Clive,",
+   "chapter": 5,
+   "cut": "5.1"
+  },
+  {
+   "text": "took the Carnatic capital, Aar-kot, with about five hundred men,",
+   "caps": "took the capital, *Arcot, | with *about | *500 men,",
+   "chapter": 5,
+   "cut": "5.2"
+  },
+  {
+   "text": "and held it through a fifty-two-day siege.",
+   "caps": "held it *through | a *52-day siege.",
+   "chapter": 5,
+   "cut": "5.3"
+  },
+  {
+   "text": "Therefore Doo-play's princes started losing.",
+   "caps": "*Therefore | *Dupleix's princes | started *losing.",
+   "chapter": 5,
+   "cut": "5.4",
+   "gap": 0.5
+  },
+  {
+   "text": "So in seventeen fifty-two, Chun-da Saa-hib was captured and put to death.",
+   "caps": "So in *1752, | Chanda Sahib | was *captured | and put to *death.",
+   "chapter": 5,
+   "cut": "5.5",
+   "gap": 0.9
+  },
+  {
+   "text": "And back in Paris, the company's directors",
+   "caps": "And back in *Paris, | the company's *directors",
+   "chapter": 5,
+   "cut": "5.6"
+  },
+  {
+   "text": "were adding up the cost of Doo-play's wars.",
+   "caps": "adding up the *cost | of Dupleix's *wars.",
+   "chapter": 5,
+   "cut": "5.7"
+  },
+  {
+   "text": "So in seventeen fifty-four they called him home,",
+   "caps": "So in *1754 | they called him *home,",
+   "chapter": 5,
+   "cut": "5.8"
+  },
+  {
+   "text": "and his successor signed a truce with the English.",
+   "caps": "his *successor signed | a *truce | with the *English.",
+   "chapter": 5,
+   "cut": "5.9"
+  },
+  {
+   "text": "France had walked away from the board.",
+   "caps": "France had *walked away | from the *board.",
+   "chapter": 5,
+   "cut": "5.10",
+   "gap": 0.55
+  },
+  {
+   "text": "But the game was not over.",
+   "caps": "But the *game | was *not over.",
+   "chapter": 5,
+   "cut": "5.11",
+   "gap": 1.8
+  },
+  {
+   "text": "When the Seven Years War began,",
+   "caps": "When the *Seven Years War | *began,",
+   "chapter": 6,
+   "cut": "6.1"
+  },
+  {
+   "text": "France sent the Kont duh Lally, a proud and desperate general, to finish the English for good.",
+   "caps": "*France sent | the Comte de *Lally, | a proud, *desperate general, | to finish the *English | for *good.",
+   "chapter": 6,
+   "cut": "6.2"
+  },
+  {
+   "text": "At first, he pushed them back toward Madras.",
+   "caps": "At first, he *pushed them | back toward *Madras.",
+   "chapter": 6,
+   "cut": "6.3"
+  },
+  {
+   "text": "But the English had something he didn't:",
+   "caps": "But the *English had | something he *didn't:",
+   "chapter": 6,
+   "cut": "6.4"
+  },
+  {
+   "text": "Bengal, won at Plassey,",
+   "caps": "*Bengal, | won at *Plassey,",
+   "chapter": 6,
+   "cut": "6.5"
+  },
+  {
+   "text": "sending them money, food and men.",
+   "caps": "sending them *money, | *food | and *men.",
+   "chapter": 6,
+   "cut": "6.6"
+  },
+  {
+   "text": "Lally's supplies had to come the long way, by sea from France.",
+   "caps": "Lally's *supplies | had to come | the *long way, | by sea from *France.",
+   "chapter": 6,
+   "cut": "6.7"
+  },
+  {
+   "text": "So on the twenty-second of January, seventeen sixty,",
+   "caps": "So on the *22nd | of *January, | *1760,",
+   "chapter": 6,
+   "cut": "6.8"
+  },
+  {
+   "text": "at Won-dee-wosh, Sir Air Koot, patient and well supplied, defeated him decisively.",
+   "caps": "at *Wandiwash, | Sir Eyre *Coote, | patient and well *supplied, | defeated him *decisively.",
+   "chapter": 6,
+   "cut": "6.9"
+  },
+  {
+   "text": "Lally retreated into Pon-di-cherry and held out for about eight months.",
+   "caps": "Lally *retreated | into *Pondicherry | *held out for | about eight *months.",
+   "chapter": 6,
+   "cut": "6.10"
+  },
+  {
+   "text": "Therefore, in January seventeen sixty-one, the city surrendered.",
+   "caps": "*Therefore, in January | *1761, | the city *surrendered.",
+   "chapter": 6,
+   "cut": "6.11",
+   "gap": 0.55
+  },
+  {
+   "text": "But France still needed someone to blame.",
+   "caps": "But France still *needed | someone to *blame.",
+   "chapter": 6,
+   "cut": "6.12",
+   "gap": 1.8
+  },
+  {
+   "text": "The Treaty of Paris, in seventeen sixty-three,",
+   "caps": "The *Treaty of Paris, | in *1763,",
+   "chapter": 7,
+   "cut": "7.1"
+  },
+  {
+   "text": "gave the French back their trading posts, but not their power.",
+   "caps": "gave the *French back | their trading *posts, | but not their *power.",
+   "chapter": 7,
+   "cut": "7.2"
+  },
+  {
+   "text": "Clive himself said the English had done to the French",
+   "caps": "*Clive himself said | the *English had done | to the *French",
+   "chapter": 7,
+   "cut": "7.3"
+  },
+  {
+   "text": "exactly what the French had planned to do to them.",
+   "caps": "*exactly what the French | had *planned | to *do to them.",
+   "chapter": 7,
+   "cut": "7.4"
+  },
+  {
+   "text": "Many historians call Plassey the turning point for British India.",
+   "caps": "Many historians call *Plassey | the *turning point | for British *India.",
+   "chapter": 7,
+   "cut": "7.5"
+  },
+  {
+   "text": "But it was Won-dee-wosh that left the English with no European rival at all.",
+   "caps": "But it was *Wandiwash | that left the *English | with no European *rival | at *all.",
+   "chapter": 7,
+   "cut": "7.6"
+  },
+  {
+   "text": "So the blame fell on one man.",
+   "caps": "So the *blame | fell on one *man.",
+   "chapter": 7,
+   "cut": "7.7"
+  },
+  {
+   "text": "Lally went home a prisoner,",
+   "caps": "*Lally went home | a *prisoner,",
+   "chapter": 7,
+   "cut": "7.8"
+  },
+  {
+   "text": "and five years later, France executed him.",
+   "caps": "five years *later, | France *executed him.",
+   "chapter": 7,
+   "cut": "7.9",
+   "gap": 0.55
+  },
+  {
+   "text": "But was the loss really his fault?",
+   "caps": "But was the *loss | really his *fault?",
+   "chapter": 7,
+   "cut": "7.10",
+   "gap": 1.8
+  },
+  {
+   "text": "Yet the French never fully left.",
+   "caps": "Yet the *French | never fully *left.",
+   "chapter": 8,
+   "cut": "8.1"
+  },
+  {
+   "text": "Chun-der-na-gore joined India in nineteen fifty,",
+   "caps": "*Chandernagore | *joined India | in *1950,",
+   "chapter": 8,
+   "cut": "8.2"
+  },
+  {
+   "text": "and Pon-di-cherry and the other French towns followed in nineteen fifty-four,",
+   "caps": "and *Pondicherry | and the other *French towns | followed in *1954,",
+   "chapter": 8,
+   "cut": "8.3"
+  },
+  {
+   "text": "after a vote at Kee-zhoor.",
+   "caps": "after a *vote | at *Kizhur.",
+   "chapter": 8,
+   "cut": "8.4"
+  },
+  {
+   "text": "So what really decided India?",
+   "caps": "So what *really | *decided India?",
+   "chapter": 8,
+   "cut": "8.5"
+  },
+  {
+   "text": "France had the smartest idea:",
+   "caps": "*France had the | *smartest idea:",
+   "chapter": 8,
+   "cut": "8.6"
+  },
+  {
+   "text": "rule through India's thrones, not around them.",
+   "caps": "rule *through | India's *thrones, | not *around them.",
+   "chapter": 8,
+   "cut": "8.7"
+  },
+  {
+   "text": "But ideas need money,",
+   "caps": "But *ideas | need *money,",
+   "chapter": 8,
+   "cut": "8.8"
+  },
+  {
+   "text": "and a company that waits for orders from Paris",
+   "caps": "a company that *waits | for *orders | from *Paris",
+   "chapter": 8,
+   "cut": "8.9"
+  },
+  {
+   "text": "can't outlast one that pays for itself from Bengal.",
+   "caps": "can't *outlast one | that pays for *itself | from *Bengal.",
+   "chapter": 8,
+   "cut": "8.10"
+  },
+  {
+   "text": "The English took Doo-play's idea, added Bengal's money,",
+   "caps": "The *English took | Dupleix's *idea, | added Bengal's *money,",
+   "chapter": 8,
+   "cut": "8.11"
+  },
+  {
+   "text": "and built an empire with both.",
+   "caps": "and built an *empire | with *both.",
+   "chapter": 8,
+   "cut": "8.12"
+  }
+ ]
+}
